@@ -39,9 +39,12 @@ def parse_currency(val_str: Optional[str]) -> Optional[int]:
     # Xóa dấu phân cách nghìn (. hoặc ,)
     # Trong tiếng Việt: "86.400" hoặc "86,400"
     cleaned = re.sub(r"[\.,\s]", "", s)
+    digits_only = re.sub(r"[^\d]", "", cleaned)
+    if not digits_only:
+        return None
     try:
-        val = int(cleaned)
-        return val * (-1 if is_negative else 1)
+        val = int(digits_only)
+        return -val if is_negative else val
     except ValueError:
         return None
 
@@ -113,7 +116,7 @@ class RegexBaselineExtractor(BaseExtractor):
                 break
 
         # 6. Trích xuất Tạm tính
-        subtotal_pattern = re.compile(r"(?:Tạm\s*tính|Cộng\s*tiền\s*hàng|Tiền\s*hàng|Subtotal)\s*[:\.]?\s*([\d\.,\-]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
+        subtotal_pattern = re.compile(r"(?:Tạm\s*tính|Cộng\s*tiền\s*hàng|Tiền\s*hàng|Subtotal)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
         for line in lines:
             m = subtotal_pattern.search(line)
             if m:
@@ -124,7 +127,7 @@ class RegexBaselineExtractor(BaseExtractor):
                     break
 
         # 7. Trích xuất Giảm giá
-        discount_pattern = re.compile(r"(?:Giảm\s*giá|Chiết\s*khấu|Khuyến\s*mãi|Voucher|Discount)\s*[:\.]?\s*([\d\.,\-]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
+        discount_pattern = re.compile(r"(?:Giảm\s*giá|Chiết\s*khấu|Khuyến\s*mãi|Voucher|Discount)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
         for line in lines:
             m = discount_pattern.search(line)
             if m:
@@ -135,7 +138,10 @@ class RegexBaselineExtractor(BaseExtractor):
                     break
 
         # 8. Trích xuất VAT
-        vat_pattern = re.compile(r"(?:Thuế\s*VAT|VAT|Thuế\s*GTGT)\s*(?:\([^\)]*\))?\s*[:\.]?\s*([\d\.,\-]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
+        vat_pattern = re.compile(
+            r"(?:Thuế\s*VAT|VAT|Thuế\s*GTGT)(?:\s*\(?\s*\d+(?:[\.,]\d+)?\s*%\s*\)?)?[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)",
+            re.IGNORECASE
+        )
         for line in lines:
             m = vat_pattern.search(line)
             if m:
@@ -147,7 +153,7 @@ class RegexBaselineExtractor(BaseExtractor):
 
         # 9. Trích xuất Tổng tiền thanh toán (TOTAL)
         total_pattern = re.compile(
-            r"(?:Tổng\s*thanh\s*toán|Tổng\s*cộng|Tổng\s*tiền|Thanh\s*toán|Phải\s*thu|TOTAL)\s*[:\.]?\s*([\d\.,\-]+(?:\s*[đĐkKvVnNdD])?)",
+            r"(?:Tổng\s*thanh\s*toán|Tổng\s*cộng|Tổng\s*tiền|Thanh\s*toán|Phải\s*thu|TOTAL)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)",
             re.IGNORECASE
         )
         for line in lines:
