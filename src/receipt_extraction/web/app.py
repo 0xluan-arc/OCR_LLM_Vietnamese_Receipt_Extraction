@@ -1,10 +1,17 @@
 """Ứng dụng Web Streamlit: Hệ thống Trích xuất Thông tin Hóa đơn Bán lẻ Việt Nam (MVP)."""
 
 import json
+import sys
 import time
 from typing import Optional
 from pathlib import Path
 import streamlit as st
+
+# Tự động thêm thư mục 'src/' vào sys.path để tránh lỗi ModuleNotFoundError
+# ngay cả khi người dùng chạy streamlit từ Python global ngoài môi trường ảo (.venv)
+_SRC_DIR = str(Path(__file__).resolve().parents[2])
+if _SRC_DIR not in sys.path:
+    sys.path.insert(0, _SRC_DIR)
 
 from receipt_extraction.config import config
 from receipt_extraction.preprocess.image_validator import validate_image

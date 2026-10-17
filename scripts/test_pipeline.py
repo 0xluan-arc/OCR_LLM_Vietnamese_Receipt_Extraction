@@ -13,6 +13,10 @@ if sys.platform == "win32":
     except Exception:
         pass
 
+_SRC_DIR = str(Path(__file__).resolve().parents[1] / "src")
+if _SRC_DIR not in sys.path:
+    sys.path.insert(0, _SRC_DIR)
+
 from receipt_extraction.ocr.factory import get_ocr_engine
 from receipt_extraction.extraction.regex_baseline import RegexBaselineExtractor
 from receipt_extraction.validation.receipt_validator import validate_receipt_data
