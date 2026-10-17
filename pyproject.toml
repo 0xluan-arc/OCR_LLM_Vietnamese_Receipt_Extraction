@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "receipt-extraction"
+version = "0.1.0"
+description = "Nghiên cứu ứng dụng OCR kết hợp mô hình ngôn ngữ lớn để trích xuất thông tin trên ảnh hóa đơn bán lẻ Việt Nam"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Nguyen Minh Luan" },
+    { name = "Dang Thanh Hoa" },
+    { name = "Nguyen Thanh Trung" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+pythonpath = ["src"]

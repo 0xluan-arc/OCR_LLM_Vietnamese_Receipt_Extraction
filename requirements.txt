@@ -1,0 +1,37 @@
+# ==============================================================================
+# OCR & LLM VIETNAMESE RECEIPT EXTRACTION - MINIMAL REQUIREMENTS (PHASE 1 - MVP)
+# ==============================================================================
+
+# Core & Xử lý dữ liệu
+numpy>=1.24.0,<2.0.0
+Pillow>=10.0.0
+opencv-python>=4.8.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Xác thực Schema & Cấu hình
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+
+# Giao diện Web MVP
+streamlit>=1.30.0
+
+# Kiểm thử & Đánh giá (Unit Test & Metrics)
+pytest>=7.4.0
+jiwer>=3.0.0
+
+# HTTP & API Requests (Phục vụ adapter LLM)
+requests>=2.31.0
+
+# ------------------------------------------------------------------------------
+# HƯỚNG DẪN CÀI ĐẶT CÁC THƯ VIỆN NẶNG (KHI ĐẾN GIAI ĐOẠN 2 & 3):
+# 1. PyTorch (chọn phiên bản CUDA tương ứng driver):
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# 2. VietOCR:
+#    pip install vietocr
+# 3. PaddleOCR:
+#    pip install paddlepaddle-gpu paddleocr (hoặc paddlepaddle bản CPU)
+# 4. Tesseract OCR wrapper:
+#    pip install pytesseract
+# ------------------------------------------------------------------------------
