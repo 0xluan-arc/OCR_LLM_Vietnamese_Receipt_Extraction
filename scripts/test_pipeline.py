@@ -41,14 +41,21 @@ SAMPLE_RECEIPT_TEXT_LINES = [
 
 def create_synthetic_receipt_image(target_path: Path):
     """Tạo ảnh hóa đơn tổng hợp rõ nét phục vụ kiểm thử OCR."""
-    width, height = 700, 750
+    width, height = 800, 780
     img = Image.new("RGB", (width, height), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
+    try:
+        font = ImageFont.truetype("cour.ttf", 22)
+    except Exception:
+        try:
+            font = ImageFont.truetype("arial.ttf", 22)
+        except Exception:
+            font = ImageFont.load_default()
 
     y = 30
     for line in SAMPLE_RECEIPT_TEXT_LINES:
-        draw.text((30, y), line, fill=(0, 0, 0))
-        y += 40
+        draw.text((30, y), line, fill=(0, 0, 0), font=font)
+        y += 42
 
     target_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(target_path, quality=95)

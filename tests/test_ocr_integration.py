@@ -39,12 +39,21 @@ def test_tesseract_ocr_on_synthetic_receipt_image(tesseract_or_skip):
     """Kiểm tra Tesseract nhận dạng chữ trên ảnh hóa đơn tổng hợp."""
     engine = tesseract_or_skip
     
-    # Tạo ảnh có chữ rõ ràng
+    # Tạo ảnh có chữ rõ ràng với font kích thước đủ lớn cho OCR (24pt)
+    from PIL import ImageFont
     img = Image.new("RGB", (600, 400), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
-    draw.text((20, 30), "SIEU THI MINI MART", fill=(0, 0, 0))
-    draw.text((20, 70), "Tong thanh toan: 150.000 VND", fill=(0, 0, 0))
-    draw.text((20, 110), "MST: 0319998888", fill=(0, 0, 0))
+    try:
+        font = ImageFont.truetype("arial.ttf", 24)
+    except Exception:
+        try:
+            font = ImageFont.truetype("consola.ttf", 24)
+        except Exception:
+            font = ImageFont.load_default()
+
+    draw.text((20, 30), "SIEU THI MINI MART", fill=(0, 0, 0), font=font)
+    draw.text((20, 80), "Tong thanh toan: 150.000 VND", fill=(0, 0, 0), font=font)
+    draw.text((20, 130), "MST: 0319998888", fill=(0, 0, 0), font=font)
 
     result = engine.recognize(img)
     assert result.error_message is None

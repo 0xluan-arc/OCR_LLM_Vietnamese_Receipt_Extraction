@@ -22,9 +22,9 @@ STANDARD_WINDOWS_TESSERACT_PATHS = [
 
 def resolve_tesseract_cmd(custom_cmd: Optional[str] = None) -> Optional[Path]:
     """Tìm đường dẫn tệp thực thi tesseract.exe linh hoạt."""
-    # 1. Đường dẫn truyền trực tiếp
-    if custom_cmd and Path(custom_cmd).is_file():
-        return Path(custom_cmd)
+    # 1. Đường dẫn truyền trực tiếp (nếu truyền rõ ràng mà không tồn tại thì trả về None ngay)
+    if custom_cmd is not None:
+        return Path(custom_cmd) if Path(custom_cmd).is_file() else None
 
     # 2. Biến môi trường TESSERACT_CMD hoặc file config
     env_cmd = os.getenv("TESSERACT_CMD") or config.ocr.tesseract_cmd
@@ -119,7 +119,9 @@ class TesseractOCREngine(BaseOCREngine):
             import pytesseract
             if self.cmd_path:
                 pytesseract.pytesseract.tesseract_cmd = str(self.cmd_path)
-            config_arg = f'--tessdata-dir "{self.tessdata_dir}"' if self.tessdata_dir else ""
+            if self.tessdata_dir:
+                os.environ["TESSDATA_PREFIX"] = str(self.tessdata_dir)
+            config_arg = f"--tessdata-dir {self.tessdata_dir.as_posix()}" if self.tessdata_dir else ""
             return pytesseract.get_languages(config=config_arg)
         except Exception:
             # Fallback quét các file trong tessdata_dir nếu có
@@ -153,10 +155,12 @@ class TesseractOCREngine(BaseOCREngine):
                 else:
                     return OCRResult(engine_name=self.name, error_message="Định dạng ảnh đầu vào không hợp lệ.")
 
-            # Chuẩn bị cấu hình tesseract
+            # Chuẩn bị cấu hình tesseract (dùng TESSDATA_PREFIX và posix path tránh lỗi quote của shlex trên Windows)
+            if self.tessdata_dir:
+                os.environ["TESSDATA_PREFIX"] = str(self.tessdata_dir)
             extra_config = f"--psm {self.psm}"
             if self.tessdata_dir:
-                extra_config += f' --tessdata-dir "{self.tessdata_dir}"'
+                extra_config += f" --tessdata-dir {self.tessdata_dir.as_posix()}"
 
             # 1. Trích xuất text thô
             raw_text = pytesseract.image_to_string(img, lang=self.lang, config=extra_config)
