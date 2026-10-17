@@ -9,6 +9,20 @@ from receipt_extraction.schemas.receipt import ReceiptData, ReceiptItem
 from receipt_extraction.ocr.base import OCRResult
 
 
+import unicodedata
+
+
+def strip_accents(text: str) -> str:
+    """Loại bỏ dấu tiếng Việt để hỗ trợ so khớp từ khóa chịu lỗi OCR dấu (ví dụ: 'Tam tỉnh', 'Số HD')."""
+    if not text:
+        return ""
+    text = text.replace("đ", "d").replace("Đ", "D")
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text)
+        if unicodedata.category(c) != "Mn"
+    )
+
+
 def parse_currency(val_str: Optional[str]) -> Optional[int]:
     """Chuẩn hóa chuỗi số tiền Việt Nam thành số nguyên VND.
     
@@ -67,34 +81,39 @@ class RegexBaselineExtractor(BaseExtractor):
 
         # 1. Trích xuất Tên cửa hàng (thường là dòng 1 hoặc 2 không chứa số điện thoại / địa chỉ)
         for line in lines[:4]:
-            if not any(k in line.lower() for k in ["địa chỉ", "dia chi", "đ/c", "d/c", "tel", "sđt", "sdt", "hotline", "mst", "ngày", "ngay"]):
+            norm_line = strip_accents(line).lower()
+            if not any(k in norm_line for k in ["dia chi", "d/c", "tel", "sdt", "hotline", "mst", "ngay"]):
                 if len(line) >= 3 and not line.isdigit():
                     data.seller_name = line
                     evidence["seller_name"] = True
                     break
 
         # 2. Trích xuất Địa chỉ
-        addr_pattern = re.compile(r"(?:Địa\s*chỉ|Dia\s*chi|Đ/c|D/c|ĐC)\s*[:\.]?\s*(.+)", re.IGNORECASE)
+        addr_pattern = re.compile(r"(?:dia\s*chi|d/c|dc)\s*[:\.]?\s*(.+)", re.IGNORECASE)
         for line in lines:
-            m = addr_pattern.search(line)
+            m = addr_pattern.search(strip_accents(line))
             if m:
-                data.seller_address = m.group(1).strip()
+                # Lấy phần giá trị từ dòng gốc sau dấu ':' hoặc theo vị trí khớp
+                if ":" in line:
+                    data.seller_address = line.split(":", 1)[1].strip()
+                else:
+                    data.seller_address = line[m.start(1):].strip()
                 evidence["seller_address"] = True
                 break
 
         # 3. Trích xuất Mã số thuế (10 hoặc 13 chữ số)
-        tax_pattern = re.compile(r"(?:MST|Mã\s*số\s*thuế|Ma\s*so\s*thue|M\.S\.T)\s*[:\.]?\s*([0-9]{10}(?:-[0-9]{3})?)", re.IGNORECASE)
+        tax_pattern = re.compile(r"(?:mst|ma\s*so\s*thue|m\.s\.t)\s*[:\.]?\s*([0-9]{10}(?:-[0-9]{3})?)", re.IGNORECASE)
         for line in lines:
-            m = tax_pattern.search(line)
+            m = tax_pattern.search(strip_accents(line))
             if m:
                 data.tax_id = m.group(1).strip()
                 evidence["tax_id"] = True
                 break
 
         # 4. Trích xuất Số hóa đơn
-        inv_pattern = re.compile(r"(?:Số\s*(?:HĐ|hóa\s*đơn|phiếu)|So\s*(?:HD|hoa\s*don|phieu)|HĐ\s*số|HD\s*so|Invoice\s*No)\s*[:\.]?\s*([A-Za-z0-9\-_/]+)", re.IGNORECASE)
+        inv_pattern = re.compile(r"(?:so\s*(?:hd|hoa\s*don|phieu)|hd\s*so|invoice\s*no)\s*[:\.]?\s*([A-Za-z0-9\-_/]+)", re.IGNORECASE)
         for line in lines:
-            m = inv_pattern.search(line)
+            m = inv_pattern.search(strip_accents(line))
             if m:
                 data.invoice_number = m.group(1).strip()
                 evidence["invoice_number"] = True
@@ -116,9 +135,9 @@ class RegexBaselineExtractor(BaseExtractor):
                 break
 
         # 6. Trích xuất Tạm tính
-        subtotal_pattern = re.compile(r"(?:Tạm\s*tính|Tam\s*tinh|Cộng\s*tiền\s*hàng|Cong\s*tien\s*hang|Tiền\s*hàng|Tien\s*hang|Subtotal)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
+        subtotal_pattern = re.compile(r"(?:tam\s*tinh|cong\s*tien\s*hang|tien\s*hang|subtotal)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[dDkKvVnN])?)", re.IGNORECASE)
         for line in lines:
-            m = subtotal_pattern.search(line)
+            m = subtotal_pattern.search(strip_accents(line))
             if m:
                 val = parse_currency(m.group(1))
                 if val is not None:
@@ -127,9 +146,9 @@ class RegexBaselineExtractor(BaseExtractor):
                     break
 
         # 7. Trích xuất Giảm giá
-        discount_pattern = re.compile(r"(?:Giảm\s*giá|Giam\s*gia|Chiết\s*khấu|Chiet\s*khau|Khuyến\s*mãi|Khuyen\s*mai|Voucher|Discount)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)", re.IGNORECASE)
+        discount_pattern = re.compile(r"(?:giam\s*gia|chiet\s*khau|khuyen\s*mai|voucher|discount)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[dDkKvVnN])?)", re.IGNORECASE)
         for line in lines:
-            m = discount_pattern.search(line)
+            m = discount_pattern.search(strip_accents(line))
             if m:
                 val = parse_currency(m.group(1))
                 if val is not None:
@@ -139,11 +158,11 @@ class RegexBaselineExtractor(BaseExtractor):
 
         # 8. Trích xuất VAT
         vat_pattern = re.compile(
-            r"(?:Thuế\s*VAT|Thue\s*VAT|VAT|Thuế\s*GTGT|Thue\s*GTGT)(?:\s*\(?\s*\d+(?:[\.,]\d+)?\s*%\s*\)?)?[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)",
+            r"(?:thue\s*vat|vat|thue\s*gtgt)(?:\s*\(?\s*\d+(?:[\.,]\d+)?\s*%\s*\)?)?[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[dDkKvVnN])?)",
             re.IGNORECASE
         )
         for line in lines:
-            m = vat_pattern.search(line)
+            m = vat_pattern.search(strip_accents(line))
             if m:
                 val = parse_currency(m.group(1))
                 if val is not None:
@@ -153,11 +172,14 @@ class RegexBaselineExtractor(BaseExtractor):
 
         # 9. Trích xuất Tổng tiền thanh toán (TOTAL)
         total_pattern = re.compile(
-            r"(?:Tổng\s*thanh\s*toán|Tong\s*thanh\s*toan|Tổng\s*cộng|Tong\s*cong|Tổng\s*tiền|Tong\s*tien|Thanh\s*toán|Thanh\s*toan|Phải\s*thu|Phai\s*thu|TOTAL)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[đĐkKvVnNdD])?)",
+            r"(?:tong\s*thanh\s*toan|tong\s*cong|tong\s*tien|thanh\s*toan|phai\s*thu|total)[^:\d\n]*[:\.]?\s*([\-]?[\d\.,]+(?:\s*[dDkKvVnN])?)",
             re.IGNORECASE
         )
         for line in lines:
-            m = total_pattern.search(line)
+            norm_l = strip_accents(line)
+            if any(skip in norm_l.lower() for skip in ["hinh thuc thanh toan", "phuong thuc", "thanh toan bang"]):
+                continue
+            m = total_pattern.search(norm_l)
             if m:
                 val = parse_currency(m.group(1))
                 if val is not None and val > 0:
@@ -166,33 +188,50 @@ class RegexBaselineExtractor(BaseExtractor):
                     break
 
         # 10. Trích xuất Phương thức thanh toán
-        payment_pattern = re.compile(r"(?:Hình\s*thức\s*thanh\s*toán|Hinh\s*thuc\s*thanh\s*toan|Phương\s*thức\s*TT|Phuong\s*thuc\s*TT|Thanh\s*toán\s*bằng|Thanh\s*toan\s*bang)\s*[:\.]?\s*([A-Za-zÀ-ỹ\s]+)", re.IGNORECASE)
+        payment_pattern = re.compile(r"(?:hinh\s*thuc\s*thanh\s*toan|phuong\s*thuc\s*tt|thanh\s*toan\s*bang)\s*[:\.]?\s*(.+)", re.IGNORECASE)
         for line in lines:
-            m = payment_pattern.search(line)
+            m = payment_pattern.search(strip_accents(line))
             if m:
-                data.payment_method = m.group(1).strip()
+                if ":" in line:
+                    data.payment_method = line.split(":", 1)[1].strip()
+                else:
+                    data.payment_method = line[m.start(1):].strip()
                 evidence["payment_method"] = True
                 break
         if not data.payment_method:
-            for kw in ["tiền mặt", "tien mat", "chuyển khoản", "chuyen khoan", "thẻ visa", "the visa", "thẻ master", "the master", "momo", "vnpay", "zalopay"]:
-                if kw in raw_text.lower():
-                    data.payment_method = kw.title()
+            norm_raw = strip_accents(raw_text).lower()
+            for kw, label in [
+                ("tien mat", "Tiền mặt"),
+                ("chuyen khoan", "Chuyển khoản"),
+                ("the visa", "Thẻ Visa"),
+                ("the master", "Thẻ Master"),
+                ("momo", "MoMo"),
+                ("vnpay", "VNPay"),
+                ("zalopay", "ZaloPay"),
+            ]:
+                if kw in norm_raw:
+                    data.payment_method = label
                     evidence["payment_method"] = True
                     break
 
         # 11. Bóc tách mặt hàng cơ bản (nếu có dạng: Tên hàng ... SL ... Đơn giá ... Thành tiền)
-        # Sẽ được bổ sung và hoàn thiện thêm trong các giai đoạn sau
-        item_line_pattern = re.compile(r"^(.+?)\s+(\d+(?:[\.,]\d+)?)\s+([\d\.,]+)\s+([\d\.,]+)$")
+        # Hỗ cả trường hợp OCR nhận nhầm số '1' ở cột số lượng thành chữ 'l' hoặc 'I'
+        item_line_pattern = re.compile(r"^(.+?)\s+(\d+(?:[\.,]\d+)?|[lI])\s+([\d\.,]+)\s+([\d\.,]+)$")
         for line in lines:
             m = item_line_pattern.match(line)
             if m:
                 name, qty_str, price_str, total_str = m.groups()
+                if qty_str in ("l", "I"):
+                    qty_val = 1.0
+                else:
+                    qty_val = float(qty_str.replace(",", "."))
+                norm_name = strip_accents(name).lower()
                 # Loại trừ các dòng tiêu đề hoặc tổng
-                if not any(k in name.lower() for k in ["tổng", "tạm tính", "vat", "giảm giá", "tiền"]):
+                if not any(k in norm_name for k in ["tong", "tam tinh", "vat", "giam gia", "tien"]):
                     data.items.append(
                         ReceiptItem(
                             item_name=name.strip(),
-                            quantity=float(qty_str.replace(",", ".")),
+                            quantity=qty_val,
                             unit_price=parse_currency(price_str),
                             total_price=parse_currency(total_str)
                         )
