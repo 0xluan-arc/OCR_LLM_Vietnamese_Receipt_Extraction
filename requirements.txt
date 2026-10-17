@@ -24,6 +24,9 @@ jiwer>=3.0.0
 # HTTP & API Requests (Phục vụ adapter LLM)
 requests>=2.31.0
 
+# OCR Engine Wrapper
+pytesseract>=0.3.10
+
 # ------------------------------------------------------------------------------
 # HƯỚNG DẪN CÀI ĐẶT CÁC THƯ VIỆN NẶNG (KHI ĐẾN GIAI ĐOẠN 2 & 3):
 # 1. PyTorch (chọn phiên bản CUDA tương ứng driver):

@@ -1,10 +1,11 @@
 """Preprocessing and image validation modules."""
 
 from .image_validator import validate_image, ImageValidationResult
-from .preprocessor import preprocess_receipt_image
+from .preprocessor import preprocess_receipt_image, PreprocessOptions
 
 __all__ = [
     "validate_image",
     "ImageValidationResult",
-    "preprocess_receipt_image"
+    "preprocess_receipt_image",
+    "PreprocessOptions"
 ]

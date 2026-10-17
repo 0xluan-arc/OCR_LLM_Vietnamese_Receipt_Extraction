@@ -84,14 +84,22 @@ python -m venv .venv
 ```powershell
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install -e .
 ```
 
-### Bước 4: Chạy kiểm thử tự động (Unit Tests)
+### Bước 4: Cài đặt Tesseract OCR (Engine OCR thật)
+Để sử dụng OCR thật trên Windows, mở PowerShell (quyền Admin) và chạy:
 ```powershell
-pytest
+winget install --id UB-Mannheim.TesseractOCR --source winget --accept-package-agreements --accept-source-agreements
+```
+*Gói ngôn ngữ tiếng Việt (`vie.traineddata`) đã được tải sẵn trong thư mục `data/tessdata/` của dự án, hệ thống sẽ tự động kích hoạt nhận dạng tiếng Việt ngay sau khi cài.*
+
+### Bước 5: Chạy kiểm thử tự động (Unit Tests)
+```powershell
+pytest -v
 ```
 
-### Bước 5: Khởi động Giao diện Web MVP (Streamlit)
+### Bước 6: Khởi động Giao diện Web MVP (Streamlit)
 ```powershell
 streamlit run src\receipt_extraction\web\app.py
 ```
@@ -104,14 +112,14 @@ streamlit run src\receipt_extraction\web\app.py
 | Module / Chức năng | Trạng thái hiện tại | Ghi chú |
 | :--- | :---: | :--- |
 | **Kiểm định tệp ảnh đầu vào** | ✅ Hoàn thành | Kiểm tra định dạng, kích thước, độ mờ (Laplacian), decode |
-| **Tiền xử lý ảnh (OpenCV)** | ✅ Hoàn thành | CLAHE cân bằng tương phản, chuẩn hóa kích thước |
+| **Tiền xử lý ảnh (OpenCV)** | ✅ Hoàn thành | CLAHE cân bằng tương phản, khử nghiêng (Deskew), Grayscale, Thresholding |
 | **OCR Dummy Engine (Mock)** | ✅ Hoàn thành | Phục vụ kiểm thử offline và demo luồng MVP không phụ thuộc model nặng |
-| **Tesseract OCR Adapter** | ✅ Hoàn thành | Sẵn sàng tích hợp khi cài tesseract binary |
+| **Tesseract OCR Adapter** | ✅ Hoàn thành | Tích hợp pytesseract, tự động quét PATH/standard paths và nạp `data/tessdata/vie.traineddata` |
 | **VietOCR & PaddleOCR** | ⏳ Lên lịch Tuần 3 | Triển khai sau khi chuẩn hóa bộ nhãn 100 ảnh CER |
 | **Baseline B1 (Regex Heuristic)** | ✅ Hoàn thành | Bóc tách tên cửa hàng, MST, ngày giờ, số tiền, tạm tính, VAT |
 | **LLM Adapter Interface** | ✅ Hoàn thành | Báo lỗi minh bạch khi chưa cấu hình API key / model |
 | **Validator nghiệp vụ** | ✅ Hoàn thành | Kiểm tra `subtotal - discount + vat == total`, phát hiện Hallucination |
-| **Web Demo Streamlit** | ✅ Hoàn thành | Upload ảnh $\rightarrow$ OCR $\rightarrow$ JSON $\rightarrow$ Cảnh báo $\rightarrow$ Tải JSON |
+| **Web Demo Streamlit** | ✅ Hoàn thành | Upload ảnh $\rightarrow$ Tiền xử lý $\rightarrow$ OCR $\rightarrow$ JSON $\rightarrow$ Cảnh báo $\rightarrow$ Tải JSON |
 
 ---
 
