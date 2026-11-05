@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnamese Receipt Document AI Studio — Nested Learning (NeurIPS 2025)</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        darkBg: '#090d16',
+                        cardBg: '#0f172a',
+                        borderCol: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- KaTeX CDN for Academic Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+    <style>
+        body {
+            background-color: #090d16;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+        }
+        .num-clean {
+            font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif !important;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "zero" 0;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col custom-scroll">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="border-b border-borderCol bg-cardBg/90 backdrop-blur sticky top-0 z-50 px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/20 text-xl font-bold">
+                🧾
+            </div>
+            <div>
+                <h1 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+                    Vietnamese Receipt Document AI Studio
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20">NeurIPS 2025</span>
+                </h1>
+                <p class="text-xs text-slate-400">
+                    Trích xuất Hóa đơn Bán lẻ Việt Nam &bull; Kiến trúc <strong>Nested Learning</strong> &bull; Ma trận Delta Rule <span class="text-indigo-300 font-semibold">&#119976;<sub>t</sub> &isin; &#8477;<sup>128&times;128</sup></span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Live Status Indicators -->
+        <div class="flex items-center gap-2 text-xs flex-wrap">
+            <div id="status-ollama" class="px-2.5 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center gap-1.5 text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Ollama: <strong>qwen2.5:1.5b</strong></span>
+            </div>
+            <div id="status-ocr" class="px-2.5 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center gap-1.5 text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>OCR: <strong id="cur-ocr-label">PaddleOCR + VietOCR</strong></span>
+            </div>
+            <div id="status-cms" class="px-2.5 py-1 rounded-lg bg-indigo-950/50 border border-indigo-700/40 flex items-center gap-1.5 text-indigo-300">
+                <span>🧠 CMS: <strong id="cms-episodes-count">10</strong> episodes</span>
+                <span class="text-indigo-400">| &Vert;<b>M</b><sub>t</sub>&Vert;<sub>F</sub>: <strong id="cms-matrix-norm">1.42</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN STUDIO WORKSPACE (BENTO GRID) -->
+    <main class="flex-1 p-6 max-w-[1750px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- COLUMN 1: INTERACTIVE DOCUMENT CANVAS (5 COLS) -->
+        <section class="lg:col-span-5 flex flex-col gap-4">
+            
+            <!-- CONTROLS & SAMPLE SELECTOR -->
+            <div class="bg-cardBg border border-borderCol rounded-2xl p-4 flex flex-col gap-3 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Cấu hình Suy luận</span>
+                    <label class="text-xs flex items-center gap-1.5 text-emerald-400 cursor-pointer">
+                        <input type="checkbox" id="toggle-lss-retry" checked class="rounded bg-slate-800 border-slate-700 text-brand-500 focus:ring-0">
+                        <span>LSS Self-Correction</span>
+                    </label>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <label class="text-slate-400 mb-1 block">OCR Engine:</label>
+                        <select id="select-ocr-engine" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white focus:outline-none focus:border-brand-500">
+                            <option value="paddleocr" selected>PaddleOCR + VietOCR (VGG-Seq2Seq)</option>
+                            <option value="vietocr">VietOCR (vgg_transformer)</option>
+                            <option value="tesseract">Tesseract 5 (Tiếng Việt)</option>
+                            <option value="dummy">Dummy (Kiểm thử tức thì)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-slate-400 mb-1 block">Cấp độ KIE:</label>
+                        <select id="select-extractor-mode" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white focus:outline-none focus:border-brand-500">
+                            <option value="hybrid" selected>Hybrid (Fast-Path -> LLM)</option>
+                            <option value="few_shot_cms">LLM Few-Shot CMS</option>
+                            <option value="zero_shot">LLM Zero-Shot</option>
+                            <option value="regex_b1">Regex Baseline B1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SAMPLE SELECTOR OR DROPZONE -->
+                <div class="flex items-center gap-2 pt-1">
+                    <select id="select-sample" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none">
+                        <option value="">-- Chọn nhanh hóa đơn kiểm thử mẫu --</option>
+                    </select>
+                    <button id="btn-load-sample" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-medium border border-slate-600 transition">
+                        Nạp mẫu
+                    </button>
+                </div>
+            </div>
+
+            <!-- DOCUMENT VIEWER CARD -->
+            <div class="bg-cardBg border border-borderCol rounded-2xl p-4 flex-1 flex flex-col shadow-sm">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                        <h2 class="text-sm font-semibold text-white">Ảnh Hóa Đơn & OCR Canvas</h2>
+                        <span id="canvas-badge-res" class="text-[11px] font-mono text-slate-400 px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700/50">0x0 px</span>
+                    </div>
+                    <!-- Toggle Bounding Box -->
+                    <label class="text-xs flex items-center gap-1.5 text-slate-300 cursor-pointer">
+                        <input type="checkbox" id="toggle-bboxes" checked class="rounded bg-slate-800 border-slate-700 text-brand-500 focus:ring-0">
+                        <span>Tô sáng Bounding Boxes</span>
+                    </label>
+                </div>
+
+                <!-- DROPZONE / CANVAS CONTAINER -->
+                <div id="dropzone-area" class="relative flex-1 min-h-[460px] border-2 border-dashed border-slate-700 hover:border-brand-500 rounded-xl overflow-hidden flex flex-col items-center justify-center p-4 bg-slate-950/40 transition">
+                    <input type="file" id="file-input" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20">
+                    
+                    <div id="drop-placeholder" class="text-center p-6 flex flex-col items-center">
+                        <div class="w-14 h-14 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 mb-3 text-2xl">
+                            📷
+                        </div>
+                        <p class="text-sm font-medium text-slate-200 mb-1">Kéo & thả ảnh hóa đơn vào đây hoặc nhấp để chọn tệp</p>
+                        <p class="text-xs text-slate-400">Hỗ trợ JPG, PNG, WEBP (Tự động khử nhiễu & xoay thẳng ảnh)</p>
+                    </div>
+
+                    <!-- IMAGE PREVIEW -->
+                    <img id="image-display" src="" alt="Hóa đơn" class="hidden max-h-[600px] w-auto object-contain rounded-lg shadow-md z-10">
+
+                    <!-- LOADING SPINNER -->
+                    <div id="loading-overlay" class="hidden absolute inset-0 bg-slate-950/80 z-30 flex flex-col items-center justify-center">
+                        <div class="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin mb-3"></div>
+                        <p class="text-sm font-medium text-white" id="loading-text">Đang nhận dạng OCR & Suy luận LLM...</p>
+                        <p class="text-xs text-slate-400 mt-1">Khung thời gian phản hồi: 3 - 15 giây</p>
+                    </div>
+                </div>
+
+                <!-- OCR LINES ACCORDION -->
+                <div class="mt-3">
+                    <button id="toggle-ocr-text-btn" class="text-xs text-slate-400 hover:text-white flex items-center justify-between w-full py-1">
+                        <span>Hiển thị văn bản OCR thô (<span id="ocr-lines-count">0</span> dòng)</span>
+                        <span id="ocr-arrow">▼</span>
+                    </button>
+                    <div id="ocr-text-panel" class="hidden mt-2 p-2.5 bg-slate-950 rounded-lg text-xs font-mono text-slate-300 max-h-36 overflow-y-auto custom-scroll border border-slate-800">
+                        Chưa có dữ liệu OCR.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- COLUMN 2: DIGITAL RECEIPT & NESTED LEARNING INSPECTOR (7 COLS) -->
+        <section class="lg:col-span-7 flex flex-col gap-4">
+
+            <!-- 4 FINANCIAL KPI CARDS (VND ACCURACY) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-cardBg border border-borderCol rounded-xl p-3.5 flex flex-col justify-between">
+                    <span class="text-[11px] font-medium uppercase tracking-wider text-slate-400">7. Tạm tính</span>
+                    <div class="mt-1 flex items-baseline justify-between">
+                        <span id="kpi-subtotal" class="num-clean text-lg font-bold text-slate-100">0 ₫</span>
+                    </div>
+                </div>
+                <div class="bg-cardBg border border-borderCol rounded-xl p-3.5 flex flex-col justify-between">
+                    <span class="text-[11px] font-medium uppercase tracking-wider text-slate-400">8. Giảm giá</span>
+                    <div class="mt-1 flex items-baseline justify-between">
+                        <span id="kpi-discount" class="num-clean text-lg font-bold text-amber-400">0 ₫</span>
+                    </div>
+                </div>
+                <div class="bg-cardBg border border-borderCol rounded-xl p-3.5 flex flex-col justify-between">
+                    <span class="text-[11px] font-medium uppercase tracking-wider text-slate-400">9. Thuế GTGT (VAT)</span>
+                    <div class="mt-1 flex items-baseline justify-between">
+                        <span id="kpi-vat" class="num-clean text-lg font-bold text-indigo-400">0 ₫</span>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-950/60 to-cardBg border border-emerald-500/40 rounded-xl p-3.5 flex flex-col justify-between shadow-lg shadow-emerald-950/20">
+                    <span class="text-[11px] font-medium uppercase tracking-wider text-emerald-300">10. Tổng thanh toán</span>
+                    <div class="mt-1 flex items-baseline justify-between">
+                        <span id="kpi-total" class="num-clean text-xl font-extrabold text-emerald-400">0 ₫</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATUS BANNER (LSS ARITHMETIC / UNEXTRACTED VALIDATION) -->
+            <div id="status-alert-box" class="rounded-xl border p-3.5 flex items-start gap-3 bg-emerald-950/30 border-emerald-500/40 text-emerald-200">
+                <span class="text-xl">✅</span>
+                <div class="text-xs flex-1">
+                    <h3 class="font-semibold text-emerald-300 mb-0.5">SẴN SÀNG PHÂN TÍCH</h3>
+                    <p class="text-emerald-400/80">Chọn một hóa đơn để bắt đầu quy trình trích xuất thực thể 12 trường.</p>
+                </div>
+            </div>
+
+            <!-- 12-FIELD EDITABLE METADATA FORM -->
+            <div class="bg-cardBg border border-borderCol rounded-2xl p-4 shadow-sm">
+                <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
+                    <h2 class="text-sm font-semibold text-white flex items-center gap-2">
+                        <span>📋 Dữ liệu Cấu trúc 12 Trường</span>
+                        <span class="text-[11px] font-normal text-slate-400">(Có thể click sửa trực tiếp)</span>
+                    </h2>
+                    <span id="badge-adaptation-mode" class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                        Chưa chạy
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div>
+                        <label class="text-slate-400 block mb-1">1. Tên cửa hàng (seller_name):</label>
+                        <input type="text" id="field-seller-name" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white focus:border-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-slate-400 block mb-1">2. Địa chỉ cửa hàng (seller_address):</label>
+                        <input type="text" id="field-seller-address" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white focus:border-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-slate-400 block mb-1">3. Số điện thoại (seller_phone):</label>
+                        <input type="text" id="field-seller-phone" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono focus:border-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-slate-400 block mb-1">4. Mã số thuế (tax_id):</label>
+                        <input type="text" id="field-tax-id" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono focus:border-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-slate-400 block mb-1">5. Số hóa đơn / phiếu (invoice_number):</label>
+                        <input type="text" id="field-invoice-number" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono focus:border-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-slate-400 block mb-1">6. Ngày giờ giao dịch (timestamp):</label>
+                        <input type="text" id="field-timestamp" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono focus:border-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-slate-400 block mb-1">11. Hình thức thanh toán (payment_method):</label>
+                        <input type="text" id="field-payment-method" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white focus:border-brand-500 outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <!-- INLINE EDITABLE LINE ITEMS TABLE -->
+            <div class="bg-cardBg border border-borderCol rounded-2xl p-4 shadow-sm flex flex-col">
+                <div class="flex items-center justify-between mb-2">
+                    <h2 class="text-sm font-semibold text-white flex items-center gap-2">
+                        <span>📦 12. Danh sách Mặt hàng</span>
+                        <span id="items-badge-count" class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-500 border border-brand-500/20">0 món</span>
+                    </h2>
+                    <button id="btn-add-item" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-medium border border-slate-700 transition">
+                        + Thêm dòng
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto max-h-56 custom-scroll border border-slate-800 rounded-lg">
+                    <table class="w-full text-xs text-left">
+                        <thead class="bg-slate-900 text-slate-400 uppercase text-[10px] sticky top-0 border-b border-slate-800">
+                            <tr>
+                                <th class="p-2 w-10 text-center">STT</th>
+                                <th class="p-2">Tên mặt hàng</th>
+                                <th class="p-2 w-16 text-center">SL</th>
+                                <th class="p-2 w-28 text-right">Đơn giá</th>
+                                <th class="p-2 w-28 text-right">Thành tiền</th>
+                                <th class="p-2 w-12 text-center">Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="items-table-body" class="divide-y divide-slate-800/60 num-clean text-slate-300">
+                            <tr>
+                                <td colspan="6" class="text-center py-4 text-slate-500 font-sans">Chưa có danh sách món ăn / mặt hàng.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PIPELINE TRACE (NESTED LEARNING PROGRESS) -->
+            <div class="bg-cardBg border border-borderCol rounded-2xl p-4 shadow-sm">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    Nhật ký Đa cấp Nested Learning (Multi-scale Trace)
+                </h2>
+                <div id="pipeline-trace-container" class="space-y-1.5 text-xs">
+                    <div class="p-2 rounded bg-slate-900 border border-slate-800 text-slate-400">
+                        Chưa có lịch sử suy luận.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTION BAR -->
+            <div class="bg-cardBg border border-borderCol rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+                <div class="flex items-center gap-2">
+                    <button id="btn-export-excel" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-md shadow-emerald-600/20 transition">
+                        <span>📥</span> Xuất Excel (.xlsx)
+                    </button>
+                    <button id="btn-export-json" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-medium border border-slate-700 transition">
+                        <span>📄</span> Tải JSON
+                    </button>
+                </div>
+                
+                <button id="btn-save-cms" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-md shadow-indigo-600/20 transition">
+                    <span>🧠</span> Củng cố vào CMS &amp; Cập nhật Ma trận <b>M</b><sub>t</sub>
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2"></div>
+
+    <!-- JAVASCRIPT STUDIO CLIENT LOGIC -->
+    <script>
+        // Trạng thái ứng dụng
+        let currentExtractedData = null;
+        let currentMetadata = null;
+        let currentOcrLines = [];
+        let cleanImageSrc = null;
+        let boxedImageSrc = null;
+        let rawOcrText = "";
+
+        // Hàm tiện ích format tiền tệ VND
+        function formatVND(val) {
+            if (val === null || val === undefined || isNaN(val)) return "0 ₫";
+            return new Intl.NumberFormat('vi-VN').format(Math.round(val)) + " ₫";
+        }
+
+        function showToast(msg, type = "info") {
+            const container = document.getElementById("toast-container");
+            const toast = document.createElement("div");
+            const bg = type === "success" ? "bg-emerald-600 border-emerald-400" :
+                       type === "error" ? "bg-rose-600 border-rose-400" : "bg-slate-800 border-slate-600";
+            toast.className = `${bg} text-white px-4 py-2.5 rounded-xl border text-xs shadow-xl flex items-center gap-2 transform transition-all duration-300`;
+            toast.innerHTML = `<span>${type === 'success' ? '✓' : type === 'error' ? '⚠' : 'ℹ'}</span> <span>${msg}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add("opacity-0", "translate-y-2");
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        // Tải danh sách mẫu và trạng thái khi mở trang
+        async function initSystem() {
+            try {
+                // 1. Tải trạng thái
+                const resStatus = await fetch("/api/status");
+                if (resStatus.ok) {
+                    const st = await resStatus.json();
+                    document.getElementById("cms-episodes-count").innerText = st.cms_store.episode_count;
+                    document.getElementById("cms-matrix-norm").innerText = st.cms_store.delta_matrix_frobenius_norm;
+                }
+
+                // 2. Tải danh sách ảnh mẫu
+                const resSamples = await fetch("/api/samples");
+                if (resSamples.ok) {
+                    const samples = await resSamples.json();
+                    const sel = document.getElementById("select-sample");
+                    samples.forEach(s => {
+                        const opt = document.createElement("option");
+                        opt.value = s.filename;
+                        opt.innerText = s.title;
+                        sel.appendChild(opt);
+                    });
+                }
+            } catch (err) {
+                console.error("Lỗi khởi tạo hệ thống:", err);
+            }
+        }
+
+        // Gửi ảnh tới API trích xuất
+        async function runExtraction(fileBlob, filename = "upload.jpg") {
+            const loadingOverlay = document.getElementById("loading-overlay");
+            loadingOverlay.classList.remove("hidden");
+
+            const fd = new FormData();
+            fd.append("file", fileBlob, filename);
+            fd.append("ocr_engine", document.getElementById("select-ocr-engine").value);
+            fd.append("extractor_mode", document.getElementById("select-extractor-mode").value);
+            fd.append("enable_lss_retry", document.getElementById("toggle-lss-retry").checked);
+
+            try {
+                const resp = await fetch("/api/extract", {
+                    method: "POST",
+                    body: fd
+                });
+                if (!resp.ok) {
+                    const err = await resp.json();
+                    throw new Error(err.detail || "Trích xuất thất bại");
+                }
+                const data = await resp.json();
+                renderExtractionResults(data);
+                showToast("Trích xuất thông tin thành công!", "success");
+            } catch (err) {
+                showToast(err.message, "error");
+            } finally {
+                loadingOverlay.classList.add("hidden");
+            }
+        }
+
+        // Hiển thị kết quả lên giao diện
+        function renderExtractionResults(data) {
+            currentExtractedData = data.receipt_data;
+            currentMetadata = data.metadata;
+            currentOcrLines = data.ocr_lines;
+            boxedImageSrc = data.image_boxed_base64;
+
+            // 1. Hiển thị ảnh
+            const imgEl = document.getElementById("image-display");
+            const toggleBox = document.getElementById("toggle-bboxes").checked;
+            imgEl.src = toggleBox && boxedImageSrc ? boxedImageSrc : cleanImageSrc;
+            imgEl.classList.remove("hidden");
+            document.getElementById("drop-placeholder").classList.add("hidden");
+            document.getElementById("canvas-badge-res").innerText = `${data.image_width}x${data.image_height} px | Q=${data.blur_score}`;
+
+            // 2. Điền 4 KPI Tài chính
+            document.getElementById("kpi-subtotal").innerText = formatVND(data.receipt_data.subtotal);
+            document.getElementById("kpi-discount").innerText = formatVND(data.receipt_data.discount);
+            document.getElementById("kpi-vat").innerText = formatVND(data.receipt_data.vat_amount);
+            document.getElementById("kpi-total").innerText = formatVND(data.receipt_data.total_cost);
+
+            // 3. Trạng thái kiểm định LSS
+            const alertBox = document.getElementById("status-alert-box");
+            const actionable = data.validation_issues.filter(i => i.severity === 'WARNING' || i.severity === 'ERROR');
+
+            if (data.needs_human_review && actionable.length > 0) {
+                alertBox.className = "rounded-xl border p-3.5 flex items-start gap-3 bg-amber-950/40 border-amber-500/50 text-amber-200";
+                alertBox.innerHTML = `
+                    <span class="text-xl">⚠️</span>
+                    <div class="text-xs flex-1">
+                        <h3 class="font-semibold text-amber-300 mb-0.5">CẦN NGƯỜI KIỂM DUYỆT (LSS FLAGGED — ${actionable.length} CẢNH BÁO)</h3>
+                        <p class="text-amber-300/80">${actionable.map(i => i.message).join('; ')}</p>
+                    </div>
+                `;
+            } else if (!data.is_valid) {
+                alertBox.className = "rounded-xl border p-3.5 flex items-start gap-3 bg-rose-950/40 border-rose-500/50 text-rose-200";
+                alertBox.innerHTML = `
+                    <span class="text-xl">❌</span>
+                    <div class="text-xs flex-1">
+                        <h3 class="font-semibold text-rose-300 mb-0.5">HÓA ĐƠN KHÔNG HỢP LỆ</h3>
+                        <p class="text-rose-300/80">Thiếu các trường thông tin bắt buộc hoặc lỗi cú pháp số học.</p>
+                    </div>
+                `;
+            } else {
+                alertBox.className = "rounded-xl border p-3.5 flex items-start gap-3 bg-emerald-950/30 border-emerald-500/40 text-emerald-200";
+                alertBox.innerHTML = `
+                    <span class="text-xl">✅</span>
+                    <div class="text-xs flex-1">
+                        <h3 class="font-semibold text-emerald-300 mb-0.5">HÓA ĐƠN HỢP LỆ HOÀN TOÀN (VERIFIED)</h3>
+                        <p class="text-emerald-400/80">Khớp chuẩn xác ràng buộc số học: Tạm tính - Giảm giá + VAT = Tổng thanh toán.</p>
+                    </div>
+                `;
+            }
+
+            // 4. Điền Form 12 trường
+            document.getElementById("field-seller-name").value = data.receipt_data.seller_name || "";
+            document.getElementById("field-seller-address").value = data.receipt_data.seller_address || "";
+            document.getElementById("field-seller-phone").value = data.receipt_data.seller_phone || "";
+            document.getElementById("field-tax-id").value = data.receipt_data.tax_id || "";
+            document.getElementById("field-invoice-number").value = data.receipt_data.invoice_number || "";
+            document.getElementById("field-timestamp").value = data.receipt_data.timestamp || "";
+            document.getElementById("field-payment-method").value = data.receipt_data.payment_method || "";
+            document.getElementById("badge-adaptation-mode").innerText = `${data.metadata.method} (${data.metadata.total_elapsed_sec}s)`;
+
+            // 5. Điền bảng mặt hàng
+            renderItemsTable(data.receipt_data.items || []);
+
+            // 6. Điền văn bản OCR thô
+            document.getElementById("ocr-lines-count").innerText = data.ocr_lines.length;
+            const ocrPanel = document.getElementById("ocr-text-panel");
+            ocrPanel.innerHTML = data.ocr_lines.map((l, i) => `<div><span class="text-slate-500">#${i+1} [${Math.round(l.confidence*100)}%]</span> ${l.text}</div>`).join('');
+            rawOcrText = data.ocr_lines.map(l => l.text).join('\n');
+
+            // 7. Hiển thị Pipeline Trace
+            const traceContainer = document.getElementById("pipeline-trace-container");
+            traceContainer.innerHTML = data.pipeline_trace.map(t => `
+                <div class="p-2 rounded bg-slate-900/90 border border-slate-800 flex items-start justify-between">
+                    <div>
+                        <span class="font-semibold text-slate-200">Bước ${t.step}: ${t.name}</span>
+                        <div class="text-slate-400 mt-0.5">${t.details}</div>
+                    </div>
+                    <span class="font-mono text-slate-500">${t.duration_ms} ms</span>
+                </div>
+            `).join('');
+        }
+
+        // Bảng danh sách mặt hàng có thể sửa trực tiếp
+        function renderItemsTable(items) {
+            const tbody = document.getElementById("items-table-body");
+            document.getElementById("items-badge-count").innerText = `${items.length} món`;
+            tbody.innerHTML = "";
+
+            if (!items.length) {
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-slate-500 font-sans">Chưa có mặt hàng nào.</td></tr>`;
+                return;
+            }
+
+            items.forEach((item, idx) => {
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-slate-900/40 transition";
+                tr.innerHTML = `
+                    <td class="p-2 text-center text-slate-500">${idx + 1}</td>
+                    <td class="p-2"><input type="text" class="item-name bg-transparent border-b border-transparent hover:border-slate-700 focus:border-brand-500 text-white w-full outline-none" value="${item.item_name || ''}"></td>
+                    <td class="p-2 text-center"><input type="number" step="0.5" class="item-qty bg-transparent border-b border-transparent hover:border-slate-700 focus:border-brand-500 text-center text-white w-14 outline-none num-clean" value="${item.quantity || 1.0}"></td>
+                    <td class="p-2 text-right"><input type="number" step="1000" class="item-unit bg-transparent border-b border-transparent hover:border-slate-700 focus:border-brand-500 text-right text-white w-24 outline-none num-clean" value="${item.unit_price || 0}"></td>
+                    <td class="p-2 text-right font-bold text-slate-200 item-total num-clean">${formatVND(item.total_price)}</td>
+                    <td class="p-2 text-center"><button class="btn-del-item text-slate-500 hover:text-rose-400 transition" data-idx="${idx}">✕</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Gắn sự kiện cập nhật tự động tính tiền
+            tbody.querySelectorAll(".item-qty, .item-unit").forEach(inp => {
+                inp.addEventListener("input", recalculateFinancialTotals);
+            });
+            tbody.querySelectorAll(".btn-del-item").forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const idx = parseInt(e.target.getAttribute("data-idx"));
+                    currentExtractedData.items.splice(idx, 1);
+                    renderItemsTable(currentExtractedData.items);
+                    recalculateFinancialTotals();
+                });
+            });
+        }
+
+        // Tự động tính toán lại số tiền khi người dùng sửa món ăn
+        function recalculateFinancialTotals() {
+            const rows = document.querySelectorAll("#items-table-body tr");
+            let newSubtotal = 0;
+            const updatedItems = [];
+
+            rows.forEach((row, i) => {
+                const nameInp = row.querySelector(".item-name");
+                const qtyInp = row.querySelector(".item-qty");
+                const unitInp = row.querySelector(".item-unit");
+                const totalEl = row.querySelector(".item-total");
+
+                if (nameInp && qtyInp && unitInp) {
+                    const q = parseFloat(qtyInp.value) || 0;
+                    const u = parseInt(unitInp.value) || 0;
+                    const tot = Math.round(q * u);
+                    totalEl.innerText = formatVND(tot);
+                    newSubtotal += tot;
+
+                    updatedItems.push({
+                        item_name: nameInp.value,
+                        quantity: q,
+                        unit_price: u,
+                        total_price: tot
+                    });
+                }
+            });
+
+            if (currentExtractedData) {
+                currentExtractedData.items = updatedItems;
+                currentExtractedData.subtotal = newSubtotal;
+                const disc = currentExtractedData.discount || 0;
+                const vat = currentExtractedData.vat_amount || 0;
+                currentExtractedData.total_cost = newSubtotal - disc + vat;
+
+                document.getElementById("kpi-subtotal").innerText = formatVND(newSubtotal);
+                document.getElementById("kpi-total").innerText = formatVND(currentExtractedData.total_cost);
+            }
+        }
+
+        // Gắn sự kiện cho các controls
+        document.getElementById("btn-add-item").addEventListener("click", () => {
+            if (!currentExtractedData) currentExtractedData = { items: [] };
+            if (!currentExtractedData.items) currentExtractedData.items = [];
+            currentExtractedData.items.push({ item_name: "Món mới", quantity: 1.0, unit_price: 20000, total_price: 20000 });
+            renderItemsTable(currentExtractedData.items);
+            recalculateFinancialTotals();
+        });
+
+        document.getElementById("toggle-bboxes").addEventListener("change", (e) => {
+            const imgEl = document.getElementById("image-display");
+            if (e.target.checked && boxedImageSrc) {
+                imgEl.src = boxedImageSrc;
+            } else if (cleanImageSrc) {
+                imgEl.src = cleanImageSrc;
+            }
+        });
+
+        document.getElementById("toggle-ocr-text-btn").addEventListener("click", () => {
+            const p = document.getElementById("ocr-text-panel");
+            p.classList.toggle("hidden");
+        });
+
+        // Xử lý nạp ảnh từ file máy tính
+        document.getElementById("file-input").addEventListener("change", (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (re) => {
+                cleanImageSrc = re.target.result;
+                runExtraction(file, file.name);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Xử lý chọn mẫu hóa đơn có sẵn
+        document.getElementById("btn-load-sample").addEventListener("click", async () => {
+            const sel = document.getElementById("select-sample");
+            const fn = sel.value;
+            if (!fn) {
+                showToast("Vui lòng chọn 1 mẫu hóa đơn từ danh sách.", "info");
+                return;
+            }
+            try {
+                const resp = await fetch(`/api/samples/${fn}`);
+                if (!resp.ok) throw new Error("Không thể tải ảnh mẫu");
+                const blob = await resp.blob();
+                cleanImageSrc = URL.createObjectURL(blob);
+                runExtraction(blob, fn);
+            } catch (err) {
+                showToast(err.message, "error");
+            }
+        });
+
+        // Xuất Excel
+        document.getElementById("btn-export-excel").addEventListener("click", async () => {
+            if (!currentExtractedData) {
+                showToast("Chưa có dữ liệu để xuất Excel.", "info");
+                return;
+            }
+            try {
+                const resp = await fetch("/api/export/excel", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ receipt_data: currentExtractedData, metadata: currentMetadata })
+                });
+                if (!resp.ok) throw new Error("Lỗi khi tạo file Excel");
+                const blob = await resp.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `Hoadon_${Date.now()}.xlsx`;
+                a.click();
+                showToast("Đã tải xuống file Excel 2 sheet!", "success");
+            } catch (err) {
+                showToast(err.message, "error");
+            }
+        });
+
+        // Tải JSON
+        document.getElementById("btn-export-json").addEventListener("click", () => {
+            if (!currentExtractedData) {
+                showToast("Chưa có dữ liệu để tải JSON.", "info");
+                return;
+            }
+            const blob = new Blob([JSON.stringify(currentExtractedData, null, 2)], { type: "application/json" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `Receipt_${Date.now()}.json`;
+            a.click();
+            showToast("Đã tải xuống file JSON!", "success");
+        });
+
+        // Củng cố vào CMS & Cập nhật ma trận Delta Rule
+        document.getElementById("btn-save-cms").addEventListener("click", async () => {
+            if (!currentExtractedData) {
+                showToast("Chưa có dữ liệu hóa đơn.", "info");
+                return;
+            }
+            try {
+                const resp = await fetch("/api/cms/save", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        receipt_data: currentExtractedData,
+                        ocr_text: rawOcrText,
+                        source: "web_studio_verified"
+                    })
+                });
+                if (!resp.ok) throw new Error("Lưu vào CMS thất bại");
+                const res = await resp.json();
+                document.getElementById("cms-episodes-count").innerText = res.total_episodes;
+                document.getElementById("cms-matrix-norm").innerText = res.matrix_frobenius_norm;
+                showToast(`✓ Đã củng cố vào CMS! Frobenius Norm: ${res.matrix_frobenius_norm}`, "success");
+            } catch (err) {
+                showToast(err.message, "error");
+            }
+        });
+
+        // Khởi động khi tải xong trang
+        window.addEventListener("DOMContentLoaded", initSystem);
+    </script>
+</body>
+</html>

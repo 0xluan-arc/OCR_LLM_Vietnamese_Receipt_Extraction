@@ -1,11 +1,21 @@
-"""Extraction modules (Regex Baseline B1 and LLM Extractors)."""
+"""Extraction modules (Regex Baseline B1, LLM Extractors, and Hybrid Nested Extractor)."""
 
 from .base import BaseExtractor
+from .hybrid_extractor import HybridNestedExtractor
+from .llm_extractor import (
+    LLMExtractor,
+    LLMNotConfiguredError,
+    RECEIPT_EXTRACTION_SYSTEM_PROMPT,
+    serialize_ocr_with_layout,
+)
 from .regex_baseline import RegexBaselineExtractor
-from .llm_extractor import LLMExtractor
 
 __all__ = [
     "BaseExtractor",
     "RegexBaselineExtractor",
-    "LLMExtractor"
+    "LLMExtractor",
+    "HybridNestedExtractor",
+    "LLMNotConfiguredError",
+    "RECEIPT_EXTRACTION_SYSTEM_PROMPT",
+    "serialize_ocr_with_layout",
 ]

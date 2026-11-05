@@ -1,0 +1,521 @@
+{
+  "experiment": "MT2_OCR_Engine_and_Thermal_Preprocessing_Benchmark",
+  "num_test_samples": 20,
+  "mt2_target_cer_reduction_pct": 30.0,
+  "mt2_achieved_cer_reduction_pct": 59.34,
+  "mt2_passed": true,
+  "summary": {
+    "c1_tesseract_raw": {
+      "name": "Tesseract 5 (Raw - Không tiền xử lý)",
+      "mean_cer": 0.9399,
+      "mean_cer_pct": 93.99,
+      "mean_wer": 1.5464,
+      "mean_wer_pct": 154.64,
+      "mean_latency_sec": 1.2997
+    },
+    "c2_tesseract_preprocessed": {
+      "name": "Tesseract 5 (+ Tiền xử lý tối ưu: Illumination Compensation + CLAHE + Hough Deskew)",
+      "mean_cer": 0.5091,
+      "mean_cer_pct": 50.91,
+      "mean_wer": 0.8682,
+      "mean_wer_pct": 86.82,
+      "mean_latency_sec": 0.732,
+      "relative_cer_reduction_vs_raw_pct": 45.84
+    },
+    "c3_paddle_vietocr_preprocessed": {
+      "name": "PaddleOCR + VietOCR (+ Tiền xử lý tối ưu)",
+      "mean_cer": 0.3822,
+      "mean_cer_pct": 38.22,
+      "mean_wer": 0.5206,
+      "mean_wer_pct": 52.06,
+      "mean_latency_sec": 1.5405,
+      "relative_cer_reduction_vs_raw_pct": 59.34,
+      "relative_wer_reduction_vs_raw_pct": 66.33
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "hoadon_thucte_007",
+      "gt_char_len": 327,
+      "applied_transforms": [
+        "upscale_1.25x",
+        "deskew_1.02deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.0031,
+        "wer": 0.0172,
+        "latency_sec": 0.872
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.0031,
+        "wer": 0.0172,
+        "latency_sec": 0.5225
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.0031,
+        "wer": 0.0172,
+        "latency_sec": 7.2683
+      }
+    },
+    {
+      "sample_id": "real_receipt_0013",
+      "gt_char_len": 175,
+      "applied_transforms": [
+        "upscale_1.48x",
+        "deskew_-1.12deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.7714,
+        "wer": 0.9714,
+        "latency_sec": 0.8893
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 1.2857,
+        "wer": 2.2571,
+        "latency_sec": 1.0542
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.2171,
+        "wer": 0.2857,
+        "latency_sec": 1.5914
+      }
+    },
+    {
+      "sample_id": "real_receipt_0014",
+      "gt_char_len": 181,
+      "applied_transforms": [
+        "downscale_0.44x",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.4144,
+        "wer": 0.7576,
+        "latency_sec": 3.8942
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.3315,
+        "wer": 0.697,
+        "latency_sec": 1.1821
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.0663,
+        "wer": 0.2424,
+        "latency_sec": 1.7623
+      }
+    },
+    {
+      "sample_id": "real_receipt_0016",
+      "gt_char_len": 185,
+      "applied_transforms": [
+        "downscale_0.44x",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.2,
+        "wer": 0.6875,
+        "latency_sec": 3.9414
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.2811,
+        "wer": 0.75,
+        "latency_sec": 1.0104
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.1027,
+        "wer": 0.3438,
+        "latency_sec": 1.1651
+      }
+    },
+    {
+      "sample_id": "real_receipt_0018",
+      "gt_char_len": 138,
+      "applied_transforms": [
+        "upscale_1.48x",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.6594,
+        "wer": 0.9259,
+        "latency_sec": 0.5421
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.1739,
+        "wer": 0.2593,
+        "latency_sec": 0.6329
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.1522,
+        "wer": 0.2222,
+        "latency_sec": 1.054
+      }
+    },
+    {
+      "sample_id": "real_receipt_0019",
+      "gt_char_len": 93,
+      "applied_transforms": [
+        "deskew_1.82deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.914,
+        "wer": 1.0,
+        "latency_sec": 0.8073
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.2258,
+        "wer": 0.4706,
+        "latency_sec": 0.5427
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.2043,
+        "wer": 0.2941,
+        "latency_sec": 0.7157
+      }
+    },
+    {
+      "sample_id": "real_receipt_0021",
+      "gt_char_len": 220,
+      "applied_transforms": [
+        "downscale_0.44x",
+        "deskew_-1.05deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.2273,
+        "wer": 0.6286,
+        "latency_sec": 3.3578
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.15,
+        "wer": 0.6,
+        "latency_sec": 1.0113
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.0227,
+        "wer": 0.0857,
+        "latency_sec": 1.4872
+      }
+    },
+    {
+      "sample_id": "real_receipt_0023",
+      "gt_char_len": 82,
+      "applied_transforms": [
+        "deskew_-1.91deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.6829,
+        "wer": 0.8571,
+        "latency_sec": 0.8361
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.9024,
+        "wer": 1.4286,
+        "latency_sec": 0.7298
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.3049,
+        "wer": 0.5,
+        "latency_sec": 1.8368
+      }
+    },
+    {
+      "sample_id": "real_receipt_0026",
+      "gt_char_len": 50,
+      "applied_transforms": [
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 1.04,
+        "wer": 2.1111,
+        "latency_sec": 1.0207
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.16,
+        "wer": 0.7778,
+        "latency_sec": 0.5325
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.1,
+        "wer": 0.4444,
+        "latency_sec": 0.6391
+      }
+    },
+    {
+      "sample_id": "real_receipt_0027",
+      "gt_char_len": 120,
+      "applied_transforms": [
+        "deskew_0.98deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.45,
+        "wer": 0.9048,
+        "latency_sec": 1.1352
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.0917,
+        "wer": 0.1905,
+        "latency_sec": 0.7959
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.0,
+        "wer": 0.0,
+        "latency_sec": 0.8528
+      }
+    },
+    {
+      "sample_id": "real_receipt_0031",
+      "gt_char_len": 120,
+      "applied_transforms": [
+        "deskew_21.12deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 1.7333,
+        "wer": 3.7368,
+        "latency_sec": 1.4904
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.8667,
+        "wer": 2.1053,
+        "latency_sec": 0.9191
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 1.0,
+        "wer": 1.0,
+        "latency_sec": 1.6376
+      }
+    },
+    {
+      "sample_id": "real_receipt_0038",
+      "gt_char_len": 76,
+      "applied_transforms": [
+        "deskew_25.72deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 1.2105,
+        "wer": 2.3571,
+        "latency_sec": 1.1521
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.9737,
+        "wer": 1.0,
+        "latency_sec": 0.6905
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 1.0,
+        "wer": 1.0,
+        "latency_sec": 1.3013
+      }
+    },
+    {
+      "sample_id": "real_receipt_0040",
+      "gt_char_len": 41,
+      "applied_transforms": [
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 4.9756,
+        "wer": 8.875,
+        "latency_sec": 1.3067
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.3659,
+        "wer": 0.875,
+        "latency_sec": 0.6215
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.3659,
+        "wer": 0.875,
+        "latency_sec": 1.2035
+      }
+    },
+    {
+      "sample_id": "real_receipt_0042",
+      "gt_char_len": 85,
+      "applied_transforms": [
+        "upscale_1.48x",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.9176,
+        "wer": 1.0,
+        "latency_sec": 0.5129
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.8706,
+        "wer": 1.0,
+        "latency_sec": 0.5477
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.9765,
+        "wer": 1.0,
+        "latency_sec": 1.0917
+      }
+    },
+    {
+      "sample_id": "real_receipt_0043",
+      "gt_char_len": 107,
+      "applied_transforms": [
+        "upscale_1.48x",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.5888,
+        "wer": 0.8421,
+        "latency_sec": 0.6168
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.6449,
+        "wer": 1.0,
+        "latency_sec": 0.6231
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.4299,
+        "wer": 0.7368,
+        "latency_sec": 1.3445
+      }
+    },
+    {
+      "sample_id": "real_receipt_0054",
+      "gt_char_len": 145,
+      "applied_transforms": [
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 1.2138,
+        "wer": 1.8333,
+        "latency_sec": 1.0717
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.8069,
+        "wer": 0.9,
+        "latency_sec": 0.605
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.8483,
+        "wer": 0.9,
+        "latency_sec": 1.199
+      }
+    },
+    {
+      "sample_id": "real_receipt_0070",
+      "gt_char_len": 84,
+      "applied_transforms": [
+        "upscale_1.18x",
+        "deskew_-1.84deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.6548,
+        "wer": 0.7333,
+        "latency_sec": 0.5912
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.4048,
+        "wer": 0.5333,
+        "latency_sec": 0.6451
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.2738,
+        "wer": 0.2667,
+        "latency_sec": 0.6793
+      }
+    },
+    {
+      "sample_id": "real_receipt_0074",
+      "gt_char_len": 103,
+      "applied_transforms": [
+        "upscale_1.97x",
+        "deskew_-0.91deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 1.0,
+        "wer": 1.0,
+        "latency_sec": 0.4393
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.1262,
+        "wer": 0.6,
+        "latency_sec": 0.5805
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.233,
+        "wer": 0.4667,
+        "latency_sec": 1.3345
+      }
+    },
+    {
+      "sample_id": "real_receipt_0078",
+      "gt_char_len": 213,
+      "applied_transforms": [
+        "deskew_-1.12deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.3099,
+        "wer": 0.7317,
+        "latency_sec": 0.8941
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.5399,
+        "wer": 0.9024,
+        "latency_sec": 0.8171
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 0.3427,
+        "wer": 0.7317,
+        "latency_sec": 1.5909
+      }
+    },
+    {
+      "sample_id": "real_receipt_0080",
+      "gt_char_len": 130,
+      "applied_transforms": [
+        "upscale_1.48x",
+        "deskew_-6.96deg",
+        "illumination_compensation",
+        "clahe_contrast"
+      ],
+      "c1_tesseract_raw": {
+        "cer": 0.8308,
+        "wer": 0.9565,
+        "latency_sec": 0.6236
+      },
+      "c2_tesseract_preprocessed": {
+        "cer": 0.9769,
+        "wer": 1.0,
+        "latency_sec": 0.5765
+      },
+      "c3_paddle_vietocr_preprocessed": {
+        "cer": 1.0,
+        "wer": 1.0,
+        "latency_sec": 1.055
+      }
+    }
+  ]
+}

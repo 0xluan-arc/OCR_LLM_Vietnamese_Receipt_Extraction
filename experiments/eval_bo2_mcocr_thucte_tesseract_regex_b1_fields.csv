@@ -1,0 +1,13 @@
+﻿field_name,support,tp,fp,fn,precision,recall,f1,field_cer
+seller_name,10,9,1,1,0.9,0.9,0.9,0.003226
+seller_address,10,10,0,0,1.0,1.0,1.0,0.0
+seller_phone,10,10,0,0,1.0,1.0,1.0,0.0
+tax_id,10,10,0,0,1.0,1.0,1.0,0.0
+invoice_number,10,10,0,0,1.0,1.0,1.0,0.0
+timestamp,10,10,0,0,1.0,1.0,1.0,0.0
+subtotal,10,10,0,0,1.0,1.0,1.0,0.0
+discount,8,8,0,0,1.0,1.0,1.0,0.0
+vat_amount,10,10,0,0,1.0,1.0,1.0,0.0
+total_cost,10,10,0,0,1.0,1.0,1.0,0.0
+payment_method,10,10,0,0,1.0,1.0,1.0,0.0
+items,10,10,0,0,1.0,1.0,1.0,0.0

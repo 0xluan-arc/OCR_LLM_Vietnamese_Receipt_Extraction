@@ -1,0 +1,41 @@
+{
+  "img_id": "02_winmart_co_dau_hop_le.jpg",
+  "image_quality": 0.94,
+  "seller_name": "SIÊU THỊ WINMART+ QUẬN 7",
+  "seller_address": "458 Nguyễn Thị Thập, Tân Quy, Q7, TP.HCM",
+  "seller_phone": null,
+  "tax_id": "0104918404",
+  "invoice_number": "WM-20261017-4410",
+  "timestamp": "17/10/2026 18:15:00",
+  "items": [
+    {
+      "item_name": "Sữa tươi Vinamilk 1L",
+      "quantity": 2.0,
+      "unit_price": 34000,
+      "total_price": 68000
+    },
+    {
+      "item_name": "Trứng gà CP hộp 10",
+      "quantity": 2.0,
+      "unit_price": 32000,
+      "total_price": 64000
+    },
+    {
+      "item_name": "Dầu ăn Neptune chai",
+      "quantity": 2.0,
+      "unit_price": 55000,
+      "total_price": 110000
+    },
+    {
+      "item_name": "Mì Hảo Hảo tôm chua",
+      "quantity": 5.0,
+      "unit_price": 4500,
+      "total_price": 22500
+    }
+  ],
+  "subtotal": 264500,
+  "discount": 14500,
+  "vat_amount": 20000,
+  "total_cost": 270000,
+  "payment_method": "Chuyển khoản"
+}

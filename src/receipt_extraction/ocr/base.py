@@ -40,6 +40,11 @@ class OCRResult:
         if not self.raw_text and self.lines:
             self.raw_text = "\n".join(line.text for line in self.lines if line.text.strip())
 
+    @property
+    def is_success(self) -> bool:
+        """Trả về True nếu quá trình nhận dạng OCR không phát sinh lỗi."""
+        return self.error_message is None
+
 
 class BaseOCREngine(ABC):
     """Interface cơ sở cho mọi engine nhận dạng ký tự quang học (OCR)."""

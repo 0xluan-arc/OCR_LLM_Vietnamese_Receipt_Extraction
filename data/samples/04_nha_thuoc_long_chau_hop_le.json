@@ -1,0 +1,35 @@
+{
+  "img_id": "04_nha_thuoc_long_chau_hop_le.jpg",
+  "image_quality": 0.96,
+  "seller_name": "NHA THUOC FPT LONG CHAU 108",
+  "seller_address": "379 Hai Ba Trung, Phuong Vo Thi Sau, Q3",
+  "seller_phone": null,
+  "tax_id": "0315275368-002",
+  "invoice_number": "LC-20261017-019",
+  "timestamp": "17/10/2026 15:20:05",
+  "items": [
+    {
+      "item_name": "Panadol Extra Do",
+      "quantity": 2.0,
+      "unit_price": 25000,
+      "total_price": 50000
+    },
+    {
+      "item_name": "Vitamin C Berocca",
+      "quantity": 1.0,
+      "unit_price": 95000,
+      "total_price": 95000
+    },
+    {
+      "item_name": "Khau trang Y te 4 lop",
+      "quantity": 1.0,
+      "unit_price": 35000,
+      "total_price": 35000
+    }
+  ],
+  "subtotal": 180000,
+  "discount": 10000,
+  "vat_amount": 8500,
+  "total_cost": 178500,
+  "payment_method": "The Visa"
+}

@@ -1,0 +1,35 @@
+{
+  "img_id": "08_quan_an_viet_tat_k_khong_dau.jpg",
+  "image_quality": 0.92,
+  "seller_name": "QUAN LAU NUONG BINH DAN 79",
+  "seller_address": "15 Bo Bao Tan Thang, Tan Phu",
+  "seller_phone": "0903 889900",
+  "tax_id": null,
+  "invoice_number": "B05",
+  "timestamp": "21/10/2026 20:00",
+  "items": [
+    {
+      "item_name": "Lau Thai hai san",
+      "quantity": 1.0,
+      "unit_price": 180000,
+      "total_price": 180000
+    },
+    {
+      "item_name": "Bia Saigon Special",
+      "quantity": 4.0,
+      "unit_price": 20000,
+      "total_price": 80000
+    },
+    {
+      "item_name": "Khan lanh",
+      "quantity": 4.0,
+      "unit_price": 3000,
+      "total_price": 12000
+    }
+  ],
+  "subtotal": 272000,
+  "discount": 12000,
+  "vat_amount": null,
+  "total_cost": 260000,
+  "payment_method": "Tien mat"
+}

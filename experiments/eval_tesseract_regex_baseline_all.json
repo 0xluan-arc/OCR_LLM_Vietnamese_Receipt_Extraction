@@ -1,0 +1,1466 @@
+{
+  "verification_stamp": "✅ VERIFIED REAL MODEL EVALUATION",
+  "is_simulation": false,
+  "config": {
+    "num_receipts": 10,
+    "ocr_engine": "tesseract",
+    "extractor": "regex_baseline",
+    "adaptation_mode": "regex_b1",
+    "enable_lss_retry": true,
+    "mock_llm": false,
+    "oracle": false,
+    "bootstrap_samples": 1000,
+    "seed": 42,
+    "timestamp": "2026-10-22T10:05:49"
+  },
+  "ocr_metrics": {
+    "cer": 0.018,
+    "wer": 0.0729
+  },
+  "field_metrics_12": {
+    "mode": "12_fields",
+    "num_receipts": 10,
+    "per_field": {
+      "seller_name": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "field_cer": 0.004348,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "support": 10
+      },
+      "seller_address": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8,
+        "field_cer": 0.005662,
+        "tp": 8,
+        "fp": 2,
+        "fn": 2,
+        "support": 10
+      },
+      "seller_phone": {
+        "precision": 0.5,
+        "recall": 0.3,
+        "f1": 0.375,
+        "field_cer": 0.461364,
+        "tp": 3,
+        "fp": 3,
+        "fn": 7,
+        "support": 10
+      },
+      "tax_id": {
+        "precision": 0.6,
+        "recall": 0.3,
+        "f1": 0.4,
+        "field_cer": 0.53,
+        "tp": 3,
+        "fp": 2,
+        "fn": 7,
+        "support": 10
+      },
+      "invoice_number": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "timestamp": {
+        "precision": 0.7,
+        "recall": 0.7,
+        "f1": 0.7,
+        "field_cer": 0.026316,
+        "tp": 7,
+        "fp": 3,
+        "fn": 3,
+        "support": 10
+      },
+      "subtotal": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8,
+        "field_cer": 0.056667,
+        "tp": 8,
+        "fp": 2,
+        "fn": 2,
+        "support": 10
+      },
+      "discount": {
+        "precision": 0.625,
+        "recall": 0.625,
+        "f1": 0.625,
+        "field_cer": 0.08125,
+        "tp": 5,
+        "fp": 3,
+        "fn": 3,
+        "support": 8
+      },
+      "vat_amount": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "field_cer": 0.02,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "support": 10
+      },
+      "total_cost": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "payment_method": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "items": {
+        "precision": 0.3,
+        "recall": 0.3,
+        "f1": 0.3,
+        "field_cer": 0.028632,
+        "tp": 3,
+        "fp": 7,
+        "fn": 7,
+        "support": 10
+      }
+    },
+    "micro_precision": 0.779817,
+    "micro_recall": 0.720339,
+    "micro_f1": 0.748899,
+    "macro_precision": 0.760417,
+    "macro_recall": 0.71875,
+    "macro_f1": 0.733333,
+    "mean_field_cer": 0.101187
+  },
+  "field_metrics_mcocr_4": {
+    "mode": "mcocr_4_fields",
+    "num_receipts": 10,
+    "per_field": {
+      "SELLER": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "field_cer": 0.004348,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "support": 10
+      },
+      "SELLER_ADDRESS": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8,
+        "field_cer": 0.005662,
+        "tp": 8,
+        "fp": 2,
+        "fn": 2,
+        "support": 10
+      },
+      "TIMESTAMP": {
+        "precision": 0.7,
+        "recall": 0.7,
+        "f1": 0.7,
+        "field_cer": 0.026316,
+        "tp": 7,
+        "fp": 3,
+        "fn": 3,
+        "support": 10
+      },
+      "TOTAL_COST": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      }
+    },
+    "micro_precision": 0.85,
+    "micro_recall": 0.85,
+    "micro_f1": 0.85,
+    "macro_precision": 0.85,
+    "macro_recall": 0.85,
+    "macro_f1": 0.85,
+    "mean_field_cer": 0.009081
+  },
+  "bootstrap_ci_12_micro_f1": {
+    "mean": 0.748568,
+    "std": 0.038782,
+    "ci_lower": 0.666667,
+    "ci_upper": 0.824561,
+    "formatted": "0.7486 ± 0.0388 (95% CI: [0.6667, 0.8246])"
+  },
+  "bootstrap_ci_mcocr_4_micro_f1": {
+    "mean": 0.849725,
+    "std": 0.03911,
+    "ci_lower": 0.775,
+    "ci_upper": 0.925,
+    "formatted": "0.8497 ± 0.0391 (95% CI: [0.7750, 0.9250])"
+  },
+  "item_metrics": {
+    "line_precision": 0.52381,
+    "line_recall": 0.52381,
+    "line_f1": 0.52381,
+    "cell_precision": 0.833333,
+    "cell_recall": 0.833333,
+    "cell_f1": 0.833333,
+    "matched_lines": 11,
+    "total_pred_lines": 21,
+    "total_gt_lines": 21
+  },
+  "reliability_metrics": {
+    "hallucination_rate": 0.0,
+    "hallucinated_fields_count": 0,
+    "total_extracted_fields_count": 99,
+    "total_cost_math_error_rate": 0.3,
+    "exact_receipt_acc": 0.0,
+    "flagged_rate": 0.3
+  },
+  "cost_metrics": {
+    "mean_processing_time_sec": 1.111145,
+    "p95_processing_time_sec": 1.470446,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0,
+    "mean_input_tokens": 0.0,
+    "mean_output_tokens": 0.0
+  },
+  "error_analysis": {
+    "verification_stamp": "✅ VERIFIED REAL MODEL EVALUATION",
+    "is_simulation": false,
+    "total_samples": 10,
+    "samples_with_errors_or_warnings": 10,
+    "perfect_samples": 0,
+    "total_field_errors": 33,
+    "error_type_breakdown": {
+      "OCR_CORRUPTION_ERROR": 19,
+      "EXTRACTOR_MISS_ERROR": 3,
+      "EXTRACTOR_WRONG_VALUE": 11,
+      "HALLUCINATION_ERROR": 0
+    },
+    "error_records": [
+      {
+        "sample_id": "hoadon_thucte_001.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": true,
+        "raw_ocr_text": "CO.OPMART CONG QUYNH\n\nDia chỉ: 189C Cong Quynh, P. Nguyen Cu Trinh, Q1, TP.HCM\nSDT: 928 3925 6789\n\nMST: 0301175688\n\nSo HD: CM-20261018-0101\n\nNgay: 18/10/2026 09:15:20\n\nDau an Neptune Light 1L 1 62.000 62.000\nTrung ga ta Ba Huan H19 2 35.000 78.068\nMi Hao Hao tom chua cay 5 4.590 22.500\nTam tỉnh: 154.590\n\nGiam gia: -4.509\n\nThue VAT (8%): 12.009\n\nTong thanh toan: 162.000\n\nHinh thuc thanh toan: Tien mat",
+        "ground_truth_json": {
+          "seller_name": "CO.OPMART CONG QUYNH",
+          "seller_address": "189C Cong Quynh, P. Nguyen Cu Trinh, Q1, TP.HCM",
+          "seller_phone": "028 3925 6789",
+          "tax_id": "0301175688",
+          "invoice_number": "CM-20261018-0101",
+          "timestamp": "18/10/2026 09:15:20",
+          "items": [
+            {
+              "item_name": "Dau an Neptune Light 1L",
+              "quantity": 1.0,
+              "unit_price": 62000,
+              "total_price": 62000
+            },
+            {
+              "item_name": "Trung ga ta Ba Huan H10",
+              "quantity": 2.0,
+              "unit_price": 35000,
+              "total_price": 70000
+            },
+            {
+              "item_name": "Mi Hao Hao tom chua cay",
+              "quantity": 5.0,
+              "unit_price": 4500,
+              "total_price": 22500
+            }
+          ],
+          "subtotal": 154500,
+          "discount": 4500,
+          "vat_amount": 12000,
+          "total_cost": 162000,
+          "payment_method": "Tien mat"
+        },
+        "predicted_json": {
+          "seller_name": "CO.OPMART CONG QUYNH",
+          "seller_address": "189C Cong Quynh, P. Nguyen Cu Trinh, Q1, TP.HCM",
+          "seller_phone": "928 3925 6789",
+          "tax_id": "0301175688",
+          "invoice_number": "CM-20261018-0101",
+          "timestamp": "18/10/2026 09:15:20",
+          "items": [
+            {
+              "item_name": "Dau an Neptune Light 1L",
+              "quantity": 1.0,
+              "unit_price": 62000,
+              "total_price": 62000
+            },
+            {
+              "item_name": "Trung ga ta Ba Huan H19",
+              "quantity": 2.0,
+              "unit_price": 35000,
+              "total_price": 78068
+            },
+            {
+              "item_name": "Mi Hao Hao tom chua cay",
+              "quantity": 5.0,
+              "unit_price": 4590,
+              "total_price": 22500
+            }
+          ],
+          "subtotal": 154590,
+          "discount": 4509,
+          "vat_amount": 12009,
+          "total_cost": 162000,
+          "payment_method": "Tien mat"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_phone",
+            "gt_value": "028 3925 6789",
+            "pred_value": "928 3925 6789",
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Bộ trích xuất lấy nhầm giá trị '928 3925 6789' thay vì nhãn chuẩn '028 3925 6789'."
+          },
+          {
+            "field_name": "subtotal",
+            "gt_value": 154500,
+            "pred_value": 154590,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '154500' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "discount",
+            "gt_value": 4500,
+            "pred_value": 4509,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '4500' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "vat_amount",
+            "gt_value": 12000,
+            "pred_value": 12009,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '12000' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Dau an Neptune Light 1L",
+                "quantity": 1.0,
+                "unit_price": 62000,
+                "total_price": 62000
+              },
+              {
+                "item_name": "Trung ga ta Ba Huan H10",
+                "quantity": 2.0,
+                "unit_price": 35000,
+                "total_price": 70000
+              },
+              {
+                "item_name": "Mi Hao Hao tom chua cay",
+                "quantity": 5.0,
+                "unit_price": 4500,
+                "total_price": 22500
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Dau an Neptune Light 1L",
+                "quantity": 1.0,
+                "unit_price": 62000,
+                "total_price": 62000
+              },
+              {
+                "item_name": "Trung ga ta Ba Huan H19",
+                "quantity": 2.0,
+                "unit_price": 35000,
+                "total_price": 78068
+              },
+              {
+                "item_name": "Mi Hao Hao tom chua cay",
+                "quantity": 5.0,
+                "unit_price": 4590,
+                "total_price": 22500
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (3 dòng) không khớp hoàn toàn với nhãn chuẩn (3 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 3,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 2,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": [
+          {
+            "code": "ITEM_MATH_MISMATCH",
+            "field_name": "items[1]",
+            "message": "Mặt hàng 'Trung ga ta Ba Huan H19': SL (2.0) * Đơn giá (35,000) = 70,000 VND, khác Thành tiền ghi nhận (78,068 VND).",
+            "severity": "WARNING"
+          },
+          {
+            "code": "ITEMS_SUM_SUBTOTAL_MISMATCH",
+            "field_name": "subtotal",
+            "message": "Tổng thành tiền các mặt hàng (162,568 VND) không khớp với Tạm tính (154,590 VND).",
+            "severity": "WARNING"
+          }
+        ]
+      },
+      {
+        "sample_id": "hoadon_thucte_002.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "BACH HOA XANH QUAN TAN BINH\n\nDia chi: 312 Cong Hoa, P.13, Q. Tan Binh, TP.HCM\nSDT: 1900 1908\n\nMST: @313049871\n\nSo HD: BHX-882104\n\nNgay: 18/10/2026 10:42:11\n\nThit ba roi heo CP 599g 1 89.000 89.000\nCai ngot VietGAP 500g 2 14.000 28.000\nTam tinh: 117.000\n\nGiam gia: -7.000\n\nThue VAT (8%): 8.800\n\nTong thanh toan: 118.800\n\nHinh thuc thanh toan: MoMo",
+        "ground_truth_json": {
+          "seller_name": "BACH HOA XANH QUAN TAN BINH",
+          "seller_address": "312 Cong Hoa, P.13, Q. Tan Binh, TP.HCM",
+          "seller_phone": "1900 1908",
+          "tax_id": "0313049871",
+          "invoice_number": "BHX-882104",
+          "timestamp": "18/10/2026 10:42:11",
+          "items": [
+            {
+              "item_name": "Thit ba roi heo CP 500g",
+              "quantity": 1.0,
+              "unit_price": 89000,
+              "total_price": 89000
+            },
+            {
+              "item_name": "Cai ngot VietGAP 500g",
+              "quantity": 2.0,
+              "unit_price": 14000,
+              "total_price": 28000
+            }
+          ],
+          "subtotal": 117000,
+          "discount": 7000,
+          "vat_amount": 8800,
+          "total_cost": 118800,
+          "payment_method": "MoMo"
+        },
+        "predicted_json": {
+          "seller_name": "BACH HOA XANH QUAN TAN BINH",
+          "seller_address": "312 Cong Hoa, P.13, Q. Tan Binh, TP.HCM",
+          "seller_phone": "1900 1908",
+          "tax_id": null,
+          "invoice_number": "BHX-882104",
+          "timestamp": "18/10/2026 10:42:11",
+          "items": [
+            {
+              "item_name": "Thit ba roi heo CP 599g",
+              "quantity": 1.0,
+              "unit_price": 89000,
+              "total_price": 89000
+            },
+            {
+              "item_name": "Cai ngot VietGAP 500g",
+              "quantity": 2.0,
+              "unit_price": 14000,
+              "total_price": 28000
+            }
+          ],
+          "subtotal": 117000,
+          "discount": 7000,
+          "vat_amount": 8800,
+          "total_cost": 118800,
+          "payment_method": "MoMo"
+        },
+        "field_errors": [
+          {
+            "field_name": "tax_id",
+            "gt_value": "0313049871",
+            "pred_value": null,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0313049871' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Thit ba roi heo CP 500g",
+                "quantity": 1.0,
+                "unit_price": 89000,
+                "total_price": 89000
+              },
+              {
+                "item_name": "Cai ngot VietGAP 500g",
+                "quantity": 2.0,
+                "unit_price": 14000,
+                "total_price": 28000
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Thit ba roi heo CP 599g",
+                "quantity": 1.0,
+                "unit_price": 89000,
+                "total_price": 89000
+              },
+              {
+                "item_name": "Cai ngot VietGAP 500g",
+                "quantity": 2.0,
+                "unit_price": 14000,
+                "total_price": 28000
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (2 dòng) không khớp hoàn toàn với nhãn chuẩn (2 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 1,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      },
+      {
+        "sample_id": "hoadon_thucte_003.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "PHUC LONG COFFEE & TEA EXPRESS\n\nDia chi: 42 Ngo Duc Ke, P. Ben Nghe, Q1, TP.HCM\nSDT: @28 6263 0377\n\nMST: @312567890\n\nSo HD: PL-2026-0451\n\nNgay: 18/19/2926 13:20:05\n\nTra Dao Cam Sa Size L 2 65.000 130.000\nBanh Croissant Bo Phap 1 38.099 38.000\nTam tinh: 168.000\n\nGiam gia: -18.900\n\nThue VAT (8%): 12.000\n\nTong thanh toan: 162.000\n\nHinh thuc thanh toan: VNPay",
+        "ground_truth_json": {
+          "seller_name": "PHUC LONG COFFEE & TEA EXPRESS",
+          "seller_address": "42 Ngo Duc Ke, P. Ben Nghe, Q1, TP.HCM",
+          "seller_phone": "028 6263 0377",
+          "tax_id": "0312567890",
+          "invoice_number": "PL-2026-0451",
+          "timestamp": "18/10/2026 13:20:05",
+          "items": [
+            {
+              "item_name": "Tra Dao Cam Sa Size L",
+              "quantity": 2.0,
+              "unit_price": 65000,
+              "total_price": 130000
+            },
+            {
+              "item_name": "Banh Croissant Bo Phap",
+              "quantity": 1.0,
+              "unit_price": 38000,
+              "total_price": 38000
+            }
+          ],
+          "subtotal": 168000,
+          "discount": 18000,
+          "vat_amount": 12000,
+          "total_cost": 162000,
+          "payment_method": "VNPay"
+        },
+        "predicted_json": {
+          "seller_name": "PHUC LONG COFFEE & TEA EXPRESS",
+          "seller_address": "42 Ngo Duc Ke, P. Ben Nghe, Q1, TP.HCM",
+          "seller_phone": null,
+          "tax_id": null,
+          "invoice_number": "PL-2026-0451",
+          "timestamp": "18/19/2926 13:20:05",
+          "items": [
+            {
+              "item_name": "Tra Dao Cam Sa Size L",
+              "quantity": 2.0,
+              "unit_price": 65000,
+              "total_price": 130000
+            },
+            {
+              "item_name": "Banh Croissant Bo Phap",
+              "quantity": 1.0,
+              "unit_price": 38099,
+              "total_price": 38000
+            }
+          ],
+          "subtotal": 168000,
+          "discount": 18900,
+          "vat_amount": 12000,
+          "total_cost": 162000,
+          "payment_method": "VNPay"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_phone",
+            "gt_value": "028 6263 0377",
+            "pred_value": null,
+            "error_type": "EXTRACTOR_MISS_ERROR",
+            "explanation": "Nhãn chuẩn '028 6263 0377' có xuất hiện trong văn bản OCR nhưng bộ trích xuất trả về null (Bỏ sót)."
+          },
+          {
+            "field_name": "tax_id",
+            "gt_value": "0312567890",
+            "pred_value": null,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0312567890' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "timestamp",
+            "gt_value": "18/10/2026 13:20:05",
+            "pred_value": "18/19/2926 13:20:05",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '18/10/2026 13:20:05' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "discount",
+            "gt_value": 18000,
+            "pred_value": 18900,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '18000' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Tra Dao Cam Sa Size L",
+                "quantity": 2.0,
+                "unit_price": 65000,
+                "total_price": 130000
+              },
+              {
+                "item_name": "Banh Croissant Bo Phap",
+                "quantity": 1.0,
+                "unit_price": 38000,
+                "total_price": 38000
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Tra Dao Cam Sa Size L",
+                "quantity": 2.0,
+                "unit_price": 65000,
+                "total_price": 130000
+              },
+              {
+                "item_name": "Banh Croissant Bo Phap",
+                "quantity": 1.0,
+                "unit_price": 38099,
+                "total_price": 38000
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (2 dòng) không khớp hoàn toàn với nhãn chuẩn (2 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 3,
+          "EXTRACTOR_MISS_ERROR": 1,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": [
+          {
+            "code": "SUSPICIOUS_TIMESTAMP_FORMAT",
+            "field_name": "timestamp",
+            "message": "Ngày giờ '18/19/2926 13:20:05' có định dạng bất thường hoặc năm không hợp lý.",
+            "severity": "INFO"
+          }
+        ]
+      },
+      {
+        "sample_id": "hoadon_thucte_004.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "NHA THUOC AN KHANG QUAN 10\n\nDia chi: 245 Su Van Hanh, P.9, Q19, TP.HCM\nSDT: 1900 1572\n\nMST: 0314889922\n\nSo HD: AK-20261018-09\n\nNgay: 18/10/2026 16:05:40\n\nVien sui Berocca Performance 1 98.000 98.000\nNuoc muoi sinh ly Natri Clorid 3 10.000 30.000\nTam tinh: 128.000\n\nThue VAT (8%): 6.400\n\nTong thanh toan: 134.400\n\nHinh thuc thanh toan: Tien mat",
+        "ground_truth_json": {
+          "seller_name": "NHA THUOC AN KHANG QUAN 10",
+          "seller_address": "245 Su Van Hanh, P.9, Q10, TP.HCM",
+          "seller_phone": "1900 1572",
+          "tax_id": "0314889922",
+          "invoice_number": "AK-20261018-09",
+          "timestamp": "18/10/2026 16:05:40",
+          "items": [
+            {
+              "item_name": "Vien sui Berocca Performance",
+              "quantity": 1.0,
+              "unit_price": 98000,
+              "total_price": 98000
+            },
+            {
+              "item_name": "Nuoc muoi sinh ly Natri Clorid",
+              "quantity": 3.0,
+              "unit_price": 10000,
+              "total_price": 30000
+            }
+          ],
+          "subtotal": 128000,
+          "discount": null,
+          "vat_amount": 6400,
+          "total_cost": 134400,
+          "payment_method": "Tien mat"
+        },
+        "predicted_json": {
+          "seller_name": "NHA THUOC AN KHANG QUAN 10",
+          "seller_address": "245 Su Van Hanh, P.9, Q19, TP.HCM",
+          "seller_phone": "1900 1572",
+          "tax_id": "0314889922",
+          "invoice_number": "AK-20261018-09",
+          "timestamp": "18/10/2026 16:05:40",
+          "items": [
+            {
+              "item_name": "Vien sui Berocca Performance",
+              "quantity": 1.0,
+              "unit_price": 98000,
+              "total_price": 98000
+            },
+            {
+              "item_name": "Nuoc muoi sinh ly Natri Clorid",
+              "quantity": 3.0,
+              "unit_price": 10000,
+              "total_price": 30000
+            }
+          ],
+          "subtotal": 128000,
+          "discount": null,
+          "vat_amount": 6400,
+          "total_cost": 134400,
+          "payment_method": "Tien mat"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_address",
+            "gt_value": "245 Su Van Hanh, P.9, Q10, TP.HCM",
+            "pred_value": "245 Su Van Hanh, P.9, Q19, TP.HCM",
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Bộ trích xuất lấy nhầm giá trị '245 Su Van Hanh, P.9, Q19, TP.HCM' thay vì nhãn chuẩn '245 Su Van Hanh, P.9, Q10, TP.HCM'."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 0,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      },
+      {
+        "sample_id": "hoadon_thucte_005.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": true,
+        "raw_ocr_text": "FAMILYMART NGUYEN DINH CHIEU\n\nDia chi: 18@ Nguyen Dinh Chieu, P.6, Q3, TP.HCM\nSDT: @28 3939 5566\n\nMST: @311998877\n\nSo HD: FM-2026-7712\n\nNgay: 19/10/2026 07:50:12\n\nCom nam ca hoi Mayo 2 22.099 44.000\nSua dau nanh Fami 20@m1 2 8.099 16.000\nTam tinh: 69.009\n\nThue VAT (8%): 4.800\n\nTong thanh toan: 64.800\n\nHinh thuc thanh toan: Tien mat",
+        "ground_truth_json": {
+          "seller_name": "FAMILYMART NGUYEN DINH CHIEU",
+          "seller_address": "180 Nguyen Dinh Chieu, P.6, Q3, TP.HCM",
+          "seller_phone": "028 3930 5566",
+          "tax_id": "0311998877",
+          "invoice_number": "FM-2026-7712",
+          "timestamp": "19/10/2026 07:50:12",
+          "items": [
+            {
+              "item_name": "Com nam ca hoi Mayo",
+              "quantity": 2.0,
+              "unit_price": 22000,
+              "total_price": 44000
+            },
+            {
+              "item_name": "Sua dau nanh Fami 200ml",
+              "quantity": 2.0,
+              "unit_price": 8000,
+              "total_price": 16000
+            }
+          ],
+          "subtotal": 60000,
+          "discount": null,
+          "vat_amount": 4800,
+          "total_cost": 64800,
+          "payment_method": "Tien mat"
+        },
+        "predicted_json": {
+          "seller_name": "FAMILYMART NGUYEN DINH CHIEU",
+          "seller_address": "18@ Nguyen Dinh Chieu, P.6, Q3, TP.HCM",
+          "seller_phone": null,
+          "tax_id": null,
+          "invoice_number": "FM-2026-7712",
+          "timestamp": "19/10/2026 07:50:12",
+          "items": [
+            {
+              "item_name": "Com nam ca hoi Mayo",
+              "quantity": 2.0,
+              "unit_price": 22099,
+              "total_price": 44000
+            },
+            {
+              "item_name": "Sua dau nanh Fami 20@m1",
+              "quantity": 2.0,
+              "unit_price": 8099,
+              "total_price": 16000
+            }
+          ],
+          "subtotal": 69009,
+          "discount": null,
+          "vat_amount": 4800,
+          "total_cost": 64800,
+          "payment_method": "Tien mat"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_address",
+            "gt_value": "180 Nguyen Dinh Chieu, P.6, Q3, TP.HCM",
+            "pred_value": "18@ Nguyen Dinh Chieu, P.6, Q3, TP.HCM",
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Bộ trích xuất lấy nhầm giá trị '18@ Nguyen Dinh Chieu, P.6, Q3, TP.HCM' thay vì nhãn chuẩn '180 Nguyen Dinh Chieu, P.6, Q3, TP.HCM'."
+          },
+          {
+            "field_name": "seller_phone",
+            "gt_value": "028 3930 5566",
+            "pred_value": null,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '028 3930 5566' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "tax_id",
+            "gt_value": "0311998877",
+            "pred_value": null,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0311998877' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "subtotal",
+            "gt_value": 60000,
+            "pred_value": 69009,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '60000' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Com nam ca hoi Mayo",
+                "quantity": 2.0,
+                "unit_price": 22000,
+                "total_price": 44000
+              },
+              {
+                "item_name": "Sua dau nanh Fami 200ml",
+                "quantity": 2.0,
+                "unit_price": 8000,
+                "total_price": 16000
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Com nam ca hoi Mayo",
+                "quantity": 2.0,
+                "unit_price": 22099,
+                "total_price": 44000
+              },
+              {
+                "item_name": "Sua dau nanh Fami 20@m1",
+                "quantity": 2.0,
+                "unit_price": 8099,
+                "total_price": 16000
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (2 dòng) không khớp hoàn toàn với nhãn chuẩn (2 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 3,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 2,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": [
+          {
+            "code": "ITEMS_SUM_SUBTOTAL_MISMATCH",
+            "field_name": "subtotal",
+            "message": "Tổng thành tiền các mặt hàng (60,000 VND) không khớp với Tạm tính (69,009 VND).",
+            "severity": "WARNING"
+          },
+          {
+            "code": "ARITHMETIC_MISMATCH_TOTAL",
+            "field_name": "total_cost",
+            "message": "Sai lệch số học tổng thể: Tạm tính (69,009) - Giảm giá (0) + VAT (4,800) = 73,809 VND, nhưng Tổng thanh toán thực tế ghi là 64,800 VND (Chênh lệch: 9,009 VND).",
+            "severity": "WARNING"
+          }
+        ]
+      },
+      {
+        "sample_id": "hoadon_thucte_006.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": true,
+        "raw_ocr_text": "SIEU THI LOTTE MART NAM SAI GON\n\nDia chi: 469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM\nSDT: @28 3775 3232\n\nMST: @305678123\n\nSo HD: LM-20261019-33\n\nNgay: 19/19/2926 11:30:00\n\nNuoc giat OMO Matic 3.6kg 1 195.000 195.000\nGiay ve sinh Pulppy 19 cuon 1 85.999 85.000\nTam tỉnh: 280.000\n\nGiam gia: -20.000\n\nThue VAT (8%): 20.800\n\nTong thanh toan: 280.800\n\nHinh thuc thanh toan: The tin dung",
+        "ground_truth_json": {
+          "seller_name": "SIEU THI LOTTE MART NAM SAI GON",
+          "seller_address": "469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM",
+          "seller_phone": "028 3775 3232",
+          "tax_id": "0305678123",
+          "invoice_number": "LM-20261019-33",
+          "timestamp": "19/10/2026 11:30:00",
+          "items": [
+            {
+              "item_name": "Nuoc giat OMO Matic 3.6kg",
+              "quantity": 1.0,
+              "unit_price": 195000,
+              "total_price": 195000
+            },
+            {
+              "item_name": "Giay ve sinh Pulppy 10 cuon",
+              "quantity": 1.0,
+              "unit_price": 85000,
+              "total_price": 85000
+            }
+          ],
+          "subtotal": 280000,
+          "discount": 20000,
+          "vat_amount": 20800,
+          "total_cost": 280800,
+          "payment_method": "The tin dung"
+        },
+        "predicted_json": {
+          "seller_name": "SIEU THI LOTTE MART NAM SAI GON",
+          "seller_address": "469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM",
+          "seller_phone": null,
+          "tax_id": null,
+          "invoice_number": "LM-20261019-33",
+          "timestamp": "19/19/2926 11:30:00",
+          "items": [
+            {
+              "item_name": "Nuoc giat OMO Matic 3.6kg",
+              "quantity": 1.0,
+              "unit_price": 195000,
+              "total_price": 195000
+            },
+            {
+              "item_name": "Giay ve sinh Pulppy 19 cuon",
+              "quantity": 1.0,
+              "unit_price": 85999,
+              "total_price": 85000
+            }
+          ],
+          "subtotal": 280000,
+          "discount": 20000,
+          "vat_amount": 20800,
+          "total_cost": 280800,
+          "payment_method": "The tin dung"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_phone",
+            "gt_value": "028 3775 3232",
+            "pred_value": null,
+            "error_type": "EXTRACTOR_MISS_ERROR",
+            "explanation": "Nhãn chuẩn '028 3775 3232' có xuất hiện trong văn bản OCR nhưng bộ trích xuất trả về null (Bỏ sót)."
+          },
+          {
+            "field_name": "tax_id",
+            "gt_value": "0305678123",
+            "pred_value": null,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0305678123' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "timestamp",
+            "gt_value": "19/10/2026 11:30:00",
+            "pred_value": "19/19/2926 11:30:00",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '19/10/2026 11:30:00' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Nuoc giat OMO Matic 3.6kg",
+                "quantity": 1.0,
+                "unit_price": 195000,
+                "total_price": 195000
+              },
+              {
+                "item_name": "Giay ve sinh Pulppy 10 cuon",
+                "quantity": 1.0,
+                "unit_price": 85000,
+                "total_price": 85000
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Nuoc giat OMO Matic 3.6kg",
+                "quantity": 1.0,
+                "unit_price": 195000,
+                "total_price": 195000
+              },
+              {
+                "item_name": "Giay ve sinh Pulppy 19 cuon",
+                "quantity": 1.0,
+                "unit_price": 85999,
+                "total_price": 85000
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (2 dòng) không khớp hoàn toàn với nhãn chuẩn (2 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 2,
+          "EXTRACTOR_MISS_ERROR": 1,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": [
+          {
+            "code": "SUSPICIOUS_TIMESTAMP_FORMAT",
+            "field_name": "timestamp",
+            "message": "Ngày giờ '19/19/2926 11:30:00' có định dạng bất thường hoặc năm không hợp lý.",
+            "severity": "INFO"
+          },
+          {
+            "code": "ITEM_MATH_MISMATCH",
+            "field_name": "items[1]",
+            "message": "Mặt hàng 'Giay ve sinh Pulppy 19 cuon': SL (1.0) * Đơn giá (85,999) = 85,999 VND, khác Thành tiền ghi nhận (85,000 VND).",
+            "severity": "WARNING"
+          }
+        ]
+      },
+      {
+        "sample_id": "hoadon_thucte_007.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "THE COFFEE HOUSE CAO THANG\n\nDia chỉ: 86 Cao Thang, P.4, Q3, TP.HCM\nSDT: 1800 6936\n\nMST: 0312890123\n\nSo HD: TCH-2026-5501\n\nNgay: 19/10/2026 15:12:45\n\nHi-Tea Vai Size M 2 49.009 98.000\nBanh Mi Que Pate Nong 2 19.099 38.009\nTam tinh: 136.000\n\nGiam gia: -16.900\n\nThue VAT (8%): 9.600\n\nTong thanh toan: 129.600\n\nHinh thuc thanh toan: ZaloPay",
+        "ground_truth_json": {
+          "seller_name": "THE COFFEE HOUSE CAO THANG",
+          "seller_address": "86 Cao Thang, P.4, Q3, TP.HCM",
+          "seller_phone": "1800 6936",
+          "tax_id": "0312890123",
+          "invoice_number": "TCH-2026-5501",
+          "timestamp": "19/10/2026 15:12:45",
+          "items": [
+            {
+              "item_name": "Hi-Tea Vai Size M",
+              "quantity": 2.0,
+              "unit_price": 49000,
+              "total_price": 98000
+            },
+            {
+              "item_name": "Banh Mi Que Pate Nong",
+              "quantity": 2.0,
+              "unit_price": 19000,
+              "total_price": 38000
+            }
+          ],
+          "subtotal": 136000,
+          "discount": 16000,
+          "vat_amount": 9600,
+          "total_cost": 129600,
+          "payment_method": "ZaloPay"
+        },
+        "predicted_json": {
+          "seller_name": "THE COFFEE HOUSE CAO THANG",
+          "seller_address": "86 Cao Thang, P.4, Q3, TP.HCM",
+          "seller_phone": "1800 6936",
+          "tax_id": "0312890123",
+          "invoice_number": "TCH-2026-5501",
+          "timestamp": "19/10/2026 15:12:45",
+          "items": [
+            {
+              "item_name": "Hi-Tea Vai Size M",
+              "quantity": 2.0,
+              "unit_price": 49009,
+              "total_price": 98000
+            },
+            {
+              "item_name": "Banh Mi Que Pate Nong",
+              "quantity": 2.0,
+              "unit_price": 19099,
+              "total_price": 38009
+            }
+          ],
+          "subtotal": 136000,
+          "discount": 16900,
+          "vat_amount": 9600,
+          "total_cost": 129600,
+          "payment_method": "ZaloPay"
+        },
+        "field_errors": [
+          {
+            "field_name": "discount",
+            "gt_value": 16000,
+            "pred_value": 16900,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '16000' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Hi-Tea Vai Size M",
+                "quantity": 2.0,
+                "unit_price": 49000,
+                "total_price": 98000
+              },
+              {
+                "item_name": "Banh Mi Que Pate Nong",
+                "quantity": 2.0,
+                "unit_price": 19000,
+                "total_price": 38000
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Hi-Tea Vai Size M",
+                "quantity": 2.0,
+                "unit_price": 49009,
+                "total_price": 98000
+              },
+              {
+                "item_name": "Banh Mi Que Pate Nong",
+                "quantity": 2.0,
+                "unit_price": 19099,
+                "total_price": 38009
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (2 dòng) không khớp hoàn toàn với nhãn chuẩn (2 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 1,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      },
+      {
+        "sample_id": "hoadon_thucte_008.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "GS25 CONG HOA TAN BINH\n\nDia chi: 19A Cong Hoa, P.12, Q. Tan Binh, TP.HCM\nSDT: @28 3811 2525\n\nMST: @314556677\n\nSo HD: GS-20261020-18\n\nNgay: 20/10/2026 08:25:30\n\nMi tron Indomie trung op la 1 32.000 32.000\nTra xanh Khong Do 455ml 2 12.000 24.000\nTam tinh: 56.000\n\nGiam gia: -6.000\n\nThue VAT (8%): 4.000\n\nTong thanh toan: 54.000\n\nHinh thuc thanh toan: Tien mat",
+        "ground_truth_json": {
+          "seller_name": "GS25 CONG HOA TAN BINH",
+          "seller_address": "19A Cong Hoa, P.12, Q. Tan Binh, TP.HCM",
+          "seller_phone": "028 3811 2525",
+          "tax_id": "0314556677",
+          "invoice_number": "GS-20261020-18",
+          "timestamp": "20/10/2026 08:25:30",
+          "items": [
+            {
+              "item_name": "Mi tron Indomie trung op la",
+              "quantity": 1.0,
+              "unit_price": 32000,
+              "total_price": 32000
+            },
+            {
+              "item_name": "Tra xanh Khong Do 455ml",
+              "quantity": 2.0,
+              "unit_price": 12000,
+              "total_price": 24000
+            }
+          ],
+          "subtotal": 56000,
+          "discount": 6000,
+          "vat_amount": 4000,
+          "total_cost": 54000,
+          "payment_method": "Tien mat"
+        },
+        "predicted_json": {
+          "seller_name": "GS25 CONG HOA TAN BINH",
+          "seller_address": "19A Cong Hoa, P.12, Q. Tan Binh, TP.HCM",
+          "seller_phone": null,
+          "tax_id": null,
+          "invoice_number": "GS-20261020-18",
+          "timestamp": "20/10/2026 08:25:30",
+          "items": [
+            {
+              "item_name": "Mi tron Indomie trung op la",
+              "quantity": 1.0,
+              "unit_price": 32000,
+              "total_price": 32000
+            },
+            {
+              "item_name": "Tra xanh Khong Do 455ml",
+              "quantity": 2.0,
+              "unit_price": 12000,
+              "total_price": 24000
+            }
+          ],
+          "subtotal": 56000,
+          "discount": 6000,
+          "vat_amount": 4000,
+          "total_cost": 54000,
+          "payment_method": "Tien mat"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_phone",
+            "gt_value": "028 3811 2525",
+            "pred_value": null,
+            "error_type": "EXTRACTOR_MISS_ERROR",
+            "explanation": "Nhãn chuẩn '028 3811 2525' có xuất hiện trong văn bản OCR nhưng bộ trích xuất trả về null (Bỏ sót)."
+          },
+          {
+            "field_name": "tax_id",
+            "gt_value": "0314556677",
+            "pred_value": null,
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0314556677' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 1,
+          "EXTRACTOR_MISS_ERROR": 1,
+          "EXTRACTOR_WRONG_VALUE": 0,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      },
+      {
+        "sample_id": "hoadon_thucte_009.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "GUARDIAN HEALTH & BEAUTY Q1\n\nDia chi: 116 Nguyen Hue, P. Ben Nghe, Q1, TP.HCM\nSDT: 1999 4449\n\nMST: 9319987654\n\nSo HD: GD-2026-9012\n\nNgay: 20/10/2026 18:49:00\n\nSua rua mat Cerave 236ml 1 310.000 310.000\nBong tay trang Silcot 82M 2 42.099 84.000\nTam tinh: 394.000\n\nGiam gia: -34.000\n\nThue VAT (8%): 28.800\n\nTong thanh toan: 388.800\n\nHinh thuc thanh toan: Chuyen khoan",
+        "ground_truth_json": {
+          "seller_name": "GUARDIAN HEALTH & BEAUTY Q1",
+          "seller_address": "116 Nguyen Hue, P. Ben Nghe, Q1, TP.HCM",
+          "seller_phone": "1900 4449",
+          "tax_id": "0310987654",
+          "invoice_number": "GD-2026-9012",
+          "timestamp": "20/10/2026 18:40:00",
+          "items": [
+            {
+              "item_name": "Sua rua mat Cerave 236ml",
+              "quantity": 1.0,
+              "unit_price": 310000,
+              "total_price": 310000
+            },
+            {
+              "item_name": "Bong tay trang Silcot 82M",
+              "quantity": 2.0,
+              "unit_price": 42000,
+              "total_price": 84000
+            }
+          ],
+          "subtotal": 394000,
+          "discount": 34000,
+          "vat_amount": 28800,
+          "total_cost": 388800,
+          "payment_method": "Chuyen khoan"
+        },
+        "predicted_json": {
+          "seller_name": "GUARDIAN HEALTH & BEAUTY Q1",
+          "seller_address": "116 Nguyen Hue, P. Ben Nghe, Q1, TP.HCM",
+          "seller_phone": "1999 4449",
+          "tax_id": "9319987654",
+          "invoice_number": "GD-2026-9012",
+          "timestamp": "20/10/2026 18:49:00",
+          "items": [
+            {
+              "item_name": "Sua rua mat Cerave 236ml",
+              "quantity": 1.0,
+              "unit_price": 310000,
+              "total_price": 310000
+            },
+            {
+              "item_name": "Bong tay trang Silcot 82M",
+              "quantity": 2.0,
+              "unit_price": 42099,
+              "total_price": 84000
+            }
+          ],
+          "subtotal": 394000,
+          "discount": 34000,
+          "vat_amount": 28800,
+          "total_cost": 388800,
+          "payment_method": "Chuyen khoan"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_phone",
+            "gt_value": "1900 4449",
+            "pred_value": "1999 4449",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '1900 4449' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "tax_id",
+            "gt_value": "0310987654",
+            "pred_value": "9319987654",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0310987654' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "timestamp",
+            "gt_value": "20/10/2026 18:40:00",
+            "pred_value": "20/10/2026 18:49:00",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '20/10/2026 18:40:00' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "items",
+            "gt_value": [
+              {
+                "item_name": "Sua rua mat Cerave 236ml",
+                "quantity": 1.0,
+                "unit_price": 310000,
+                "total_price": 310000
+              },
+              {
+                "item_name": "Bong tay trang Silcot 82M",
+                "quantity": 2.0,
+                "unit_price": 42000,
+                "total_price": 84000
+              }
+            ],
+            "pred_value": [
+              {
+                "item_name": "Sua rua mat Cerave 236ml",
+                "quantity": 1.0,
+                "unit_price": 310000,
+                "total_price": 310000
+              },
+              {
+                "item_name": "Bong tay trang Silcot 82M",
+                "quantity": 2.0,
+                "unit_price": 42099,
+                "total_price": 84000
+              }
+            ],
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Danh sách mặt hàng trích xuất (2 dòng) không khớp hoàn toàn với nhãn chuẩn (2 dòng)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 3,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      },
+      {
+        "sample_id": "hoadon_thucte_010.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "MINISTOP NGUYEN GIA TRT\n\nDia chi: 120 Nguyen Gia Tri, P.25, Q. Binh Thanh, TP.HCM\nSDT: 928 3512 9999\n\nMST: 6311234987\n\nSo HD: MS-20261021-77\n\nNgay: 21/10/2026 21:05:10\n\nGa ran Karage xau 3 vien 2 25.000 50.000\nNuoc ngot Pepsi Zero 320ml 2 11.000 22.000\nTam tinh: 72.000\n\nGiam gia: -2.000\n\nThue VAT (8%): 5.600\n\nTong thanh toan: 75.600\n\nHinh thuc thanh toan: Tien mat",
+        "ground_truth_json": {
+          "seller_name": "MINISTOP NGUYEN GIA TRI",
+          "seller_address": "120 Nguyen Gia Tri, P.25, Q. Binh Thanh, TP.HCM",
+          "seller_phone": "028 3512 9090",
+          "tax_id": "0311234987",
+          "invoice_number": "MS-20261021-77",
+          "timestamp": "21/10/2026 21:05:10",
+          "items": [
+            {
+              "item_name": "Ga ran Karage xau 3 vien",
+              "quantity": 2.0,
+              "unit_price": 25000,
+              "total_price": 50000
+            },
+            {
+              "item_name": "Nuoc ngot Pepsi Zero 320ml",
+              "quantity": 2.0,
+              "unit_price": 11000,
+              "total_price": 22000
+            }
+          ],
+          "subtotal": 72000,
+          "discount": 2000,
+          "vat_amount": 5600,
+          "total_cost": 75600,
+          "payment_method": "Tien mat"
+        },
+        "predicted_json": {
+          "seller_name": "MINISTOP NGUYEN GIA TRT",
+          "seller_address": "120 Nguyen Gia Tri, P.25, Q. Binh Thanh, TP.HCM",
+          "seller_phone": "928 3512 9999",
+          "tax_id": "6311234987",
+          "invoice_number": "MS-20261021-77",
+          "timestamp": "21/10/2026 21:05:10",
+          "items": [
+            {
+              "item_name": "Ga ran Karage xau 3 vien",
+              "quantity": 2.0,
+              "unit_price": 25000,
+              "total_price": 50000
+            },
+            {
+              "item_name": "Nuoc ngot Pepsi Zero 320ml",
+              "quantity": 2.0,
+              "unit_price": 11000,
+              "total_price": 22000
+            }
+          ],
+          "subtotal": 72000,
+          "discount": 2000,
+          "vat_amount": 5600,
+          "total_cost": 75600,
+          "payment_method": "Tien mat"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_name",
+            "gt_value": "MINISTOP NGUYEN GIA TRI",
+            "pred_value": "MINISTOP NGUYEN GIA TRT",
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Bộ trích xuất lấy nhầm giá trị 'MINISTOP NGUYEN GIA TRT' thay vì nhãn chuẩn 'MINISTOP NGUYEN GIA TRI'."
+          },
+          {
+            "field_name": "seller_phone",
+            "gt_value": "028 3512 9090",
+            "pred_value": "928 3512 9999",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '028 3512 9090' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          },
+          {
+            "field_name": "tax_id",
+            "gt_value": "0311234987",
+            "pred_value": "6311234987",
+            "error_type": "OCR_CORRUPTION_ERROR",
+            "explanation": "Nhãn chuẩn '0311234987' không xuất hiện trong văn bản OCR thô (Lỗi đọc sai/mất chữ từ tầng OCR)."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 2,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      }
+    ]
+  }
+}

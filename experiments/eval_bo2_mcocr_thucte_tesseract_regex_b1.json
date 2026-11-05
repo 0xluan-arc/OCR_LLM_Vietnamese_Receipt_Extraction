@@ -1,0 +1,342 @@
+{
+  "verification_stamp": "✅ VERIFIED REAL MODEL EVALUATION",
+  "is_simulation": false,
+  "config": {
+    "num_receipts": 10,
+    "ocr_engine": "tesseract",
+    "extractor": "regex_baseline",
+    "adaptation_mode": "regex_b1",
+    "enable_lss_retry": true,
+    "mock_llm": false,
+    "oracle": false,
+    "bootstrap_samples": 1000,
+    "seed": 42,
+    "timestamp": "2026-10-22T13:30:47"
+  },
+  "ocr_metrics": {
+    "cer": 0.002286,
+    "wer": 0.012678
+  },
+  "field_metrics_12": {
+    "mode": "12_fields",
+    "num_receipts": 10,
+    "per_field": {
+      "seller_name": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "field_cer": 0.003226,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "support": 10
+      },
+      "seller_address": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "seller_phone": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "tax_id": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "invoice_number": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "timestamp": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "subtotal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "discount": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "support": 8
+      },
+      "vat_amount": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "total_cost": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "payment_method": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "items": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      }
+    },
+    "micro_precision": 0.991525,
+    "micro_recall": 0.991525,
+    "micro_f1": 0.991525,
+    "macro_precision": 0.991667,
+    "macro_recall": 0.991667,
+    "macro_f1": 0.991667,
+    "mean_field_cer": 0.000269
+  },
+  "field_metrics_mcocr_4": {
+    "mode": "mcocr_4_fields",
+    "num_receipts": 10,
+    "per_field": {
+      "SELLER": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "field_cer": 0.003226,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "support": 10
+      },
+      "SELLER_ADDRESS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "TIMESTAMP": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "TOTAL_COST": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      }
+    },
+    "micro_precision": 0.975,
+    "micro_recall": 0.975,
+    "micro_f1": 0.975,
+    "macro_precision": 0.975,
+    "macro_recall": 0.975,
+    "macro_f1": 0.975,
+    "mean_field_cer": 0.000806
+  },
+  "bootstrap_ci_12_micro_f1": {
+    "mean": 0.991274,
+    "std": 0.007915,
+    "ci_lower": 0.974576,
+    "ci_upper": 1.0,
+    "formatted": "0.9913 ± 0.0079 (95% CI: [0.9746, 1.0000])"
+  },
+  "bootstrap_ci_mcocr_4_micro_f1": {
+    "mean": 0.974225,
+    "std": 0.023411,
+    "ci_lower": 0.925,
+    "ci_upper": 1.0,
+    "formatted": "0.9742 ± 0.0234 (95% CI: [0.9250, 1.0000])"
+  },
+  "item_metrics": {
+    "line_precision": 1.0,
+    "line_recall": 1.0,
+    "line_f1": 1.0,
+    "cell_precision": 1.0,
+    "cell_recall": 1.0,
+    "cell_f1": 1.0,
+    "matched_lines": 21,
+    "total_pred_lines": 21,
+    "total_gt_lines": 21
+  },
+  "reliability_metrics": {
+    "hallucination_rate": 0.0,
+    "hallucinated_fields_count": 0,
+    "total_extracted_fields_count": 108,
+    "total_cost_math_error_rate": 0.0,
+    "exact_receipt_acc": 0.9,
+    "flagged_rate": 0.0
+  },
+  "cost_metrics": {
+    "mean_processing_time_sec": 0.968459,
+    "p95_processing_time_sec": 1.21793,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0,
+    "mean_input_tokens": 0.0,
+    "mean_output_tokens": 0.0
+  },
+  "error_analysis": {
+    "verification_stamp": "✅ VERIFIED REAL MODEL EVALUATION",
+    "is_simulation": false,
+    "total_samples": 10,
+    "samples_with_errors_or_warnings": 1,
+    "perfect_samples": 9,
+    "total_field_errors": 1,
+    "error_type_breakdown": {
+      "OCR_CORRUPTION_ERROR": 0,
+      "EXTRACTOR_MISS_ERROR": 0,
+      "EXTRACTOR_WRONG_VALUE": 1,
+      "HALLUCINATION_ERROR": 0
+    },
+    "error_records": [
+      {
+        "sample_id": "hoadon_thucte_006.jpg",
+        "ocr_engine": "tesseract",
+        "extractor_method": "regex_baseline",
+        "adaptation_mode": "regex_b1",
+        "retry_count": 0,
+        "needs_human_review": false,
+        "raw_ocr_text": "SIEU THỊ LOTTE MART NAM SAI GON\n\nDia chỉ: 469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM\nSDT: 028 3775 3232\n\nMST: 0305678123\n\nSo HD: LM-20261019-33\n\nNgay: 19/10/2026 11:30:00\n\nNuoc giat OMO Matic 3.6kg 1 195.000 195.000\nGiay ve sinh Pulppy 10 cuon 1 85.000 85.000\nTam tinh: 280.000\n\nGiam gia: -20.000\n\nThue VAT (8%): 20.800\n\nTong thanh toan: 280.800\n\nHinh thuc thanh toan: The tin dung",
+        "ground_truth_json": {
+          "seller_name": "SIEU THI LOTTE MART NAM SAI GON",
+          "seller_address": "469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM",
+          "seller_phone": "028 3775 3232",
+          "tax_id": "0305678123",
+          "invoice_number": "LM-20261019-33",
+          "timestamp": "19/10/2026 11:30:00",
+          "items": [
+            {
+              "item_name": "Nuoc giat OMO Matic 3.6kg",
+              "quantity": 1.0,
+              "unit_price": 195000,
+              "total_price": 195000
+            },
+            {
+              "item_name": "Giay ve sinh Pulppy 10 cuon",
+              "quantity": 1.0,
+              "unit_price": 85000,
+              "total_price": 85000
+            }
+          ],
+          "subtotal": 280000,
+          "discount": 20000,
+          "vat_amount": 20800,
+          "total_cost": 280800,
+          "payment_method": "The tin dung"
+        },
+        "predicted_json": {
+          "seller_name": "SIEU THỊ LOTTE MART NAM SAI GON",
+          "seller_address": "469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM",
+          "seller_phone": "028 3775 3232",
+          "tax_id": "0305678123",
+          "invoice_number": "LM-20261019-33",
+          "timestamp": "19/10/2026 11:30:00",
+          "items": [
+            {
+              "item_name": "Nuoc giat OMO Matic 3.6kg",
+              "quantity": 1.0,
+              "unit_price": 195000,
+              "total_price": 195000
+            },
+            {
+              "item_name": "Giay ve sinh Pulppy 10 cuon",
+              "quantity": 1.0,
+              "unit_price": 85000,
+              "total_price": 85000
+            }
+          ],
+          "subtotal": 280000,
+          "discount": 20000,
+          "vat_amount": 20800,
+          "total_cost": 280800,
+          "payment_method": "The tin dung"
+        },
+        "field_errors": [
+          {
+            "field_name": "seller_name",
+            "gt_value": "SIEU THI LOTTE MART NAM SAI GON",
+            "pred_value": "SIEU THỊ LOTTE MART NAM SAI GON",
+            "error_type": "EXTRACTOR_WRONG_VALUE",
+            "explanation": "Bộ trích xuất lấy nhầm giá trị 'SIEU THỊ LOTTE MART NAM SAI GON' thay vì nhãn chuẩn 'SIEU THI LOTTE MART NAM SAI GON'."
+          }
+        ],
+        "error_type_counts": {
+          "OCR_CORRUPTION_ERROR": 0,
+          "EXTRACTOR_MISS_ERROR": 0,
+          "EXTRACTOR_WRONG_VALUE": 1,
+          "HALLUCINATION_ERROR": 0
+        },
+        "validation_issues": []
+      }
+    ]
+  }
+}

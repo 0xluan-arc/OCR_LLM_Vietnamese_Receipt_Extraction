@@ -1,0 +1,73 @@
+<View>
+  <Header value="Gán nhãn Hóa đơn Bán lẻ Việt Nam (12 Trường Chuẩn + Văn bản OCR)" />
+  <Style>
+    .main-container { display: flex; gap: 20px; }
+    .left-panel { flex: 1.2; }
+    .right-panel { flex: 1; max-height: 85vh; overflow-y: auto; padding-right: 10px; }
+  </Style>
+
+  <View className="main-container">
+    <!-- Cột trái: Ảnh hóa đơn và khoanh vùng Polygon OCR -->
+    <View className="left-panel">
+      <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="true" />
+      <Header value="Nhãn vùng văn bản (MC-OCR 2021 Polygons)" size="4" />
+      <PolygonLabels name="ocr_polygons" toName="image" strokeWidth="2" pointSize="small" opacity="0.25">
+        <Label value="SELLER" background="#1f77b4" />
+        <Label value="SELLER_ADDRESS" background="#ff7f0e" />
+        <Label value="SELLER_PHONE" background="#2ca02c" />
+        <Label value="TAX_ID" background="#9467bd" />
+        <Label value="INVOICE_NUMBER" background="#8c564b" />
+        <Label value="TIMESTAMP" background="#e377c2" />
+        <Label value="ITEM_LINE" background="#17becf" />
+        <Label value="SUBTOTAL" background="#bcbd22" />
+        <Label value="DISCOUNT" background="#7f7f7f" />
+        <Label value="VAT_AMOUNT" background="#aec7e8" />
+        <Label value="TOTAL_COST" background="#d62728" />
+        <Label value="PAYMENT_METHOD" background="#98df8a" />
+        <Label value="OTHER" background="#c7c7c7" />
+      </PolygonLabels>
+
+      <TextArea name="region_transcription" toName="image" perRegion="true"
+                editable="true" displayMode="tag" rows="1"
+                placeholder="Nhập văn bản OCR của vùng đang chọn..." />
+    </View>
+
+    <!-- Cột phải: 12 Trường Thông tin Cấu trúc (ReceiptData Schema) -->
+    <View className="right-panel">
+      <Header value="1. Thông tin Đơn vị Bán hàng &amp; Hóa đơn" size="4" />
+      <TextArea name="seller_name" toName="image" rows="1" maxSubmissions="1"
+                placeholder="1. Tên cửa hàng (seller_name) - VD: SIÊU THỊ WINMART+ QUẬN 7" />
+      <TextArea name="seller_address" toName="image" rows="2" maxSubmissions="1"
+                placeholder="2. Địa chỉ cửa hàng (seller_address)" />
+      <TextArea name="seller_phone" toName="image" rows="1" maxSubmissions="1"
+                placeholder="3. Số điện thoại cửa hàng (seller_phone) - VD: 028 3822 8899" />
+      <TextArea name="tax_id" toName="image" rows="1" maxSubmissions="1"
+                placeholder="4. Mã số thuế (tax_id) - 10 hoặc 13 số" />
+      <TextArea name="invoice_number" toName="image" rows="1" maxSubmissions="1"
+                placeholder="5. Số hóa đơn / Số phiếu (invoice_number)" />
+      <TextArea name="timestamp" toName="image" rows="1" maxSubmissions="1"
+                placeholder="6. Ngày giờ (timestamp) - DD/MM/YYYY HH:MM:SS" />
+
+      <Header value="2. Danh sách Mặt hàng (Items JSON)" size="4" />
+      <TextArea name="items_json" toName="image" rows="5" maxSubmissions="1"
+                placeholder='7. Danh sách mặt hàng dạng JSON: [{"item_name": "...", "quantity": 1.0, "unit_price": 25000, "total_price": 25000}]' />
+
+      <Header value="3. Thông tin Thanh toán (Số nguyên VND)" size="4" />
+      <Number name="subtotal" toName="image" min="0" step="1"
+              placeholder="8. Tạm tính (subtotal - VND)" />
+      <Number name="discount" toName="image" min="0" step="1"
+              placeholder="9. Giảm giá / Chiết khấu (discount - số nguyên dương VND)" />
+      <Number name="vat_amount" toName="image" min="0" step="1"
+              placeholder="10. Tiền thuế VAT (vat_amount - VND)" />
+      <Number name="total_cost" toName="image" min="0" step="1" required="true"
+              placeholder="11. Tổng tiền thanh toán cuối cùng (total_cost - Bắt buộc)" />
+      <TextArea name="payment_method" toName="image" rows="1" maxSubmissions="1"
+                placeholder="12. Hình thức thanh toán (payment_method) - Tiền mặt / Chuyển khoản / MoMo..." />
+
+      <Header value="4. Văn bản OCR Chuẩn Toàn cục &amp; Chất lượng Ảnh" size="4" />
+      <TextArea name="gt_ocr_text" toName="image" rows="6" maxSubmissions="1"
+                placeholder="Toàn bộ văn bản OCR chuẩn (gt_ocr_text) phục vụ thực nghiệm Oracle..." />
+      <Rating name="image_quality_stars" toName="image" maxRating="5" icon="star" size="medium" />
+    </View>
+  </View>
+</View>

@@ -162,10 +162,7 @@ class TesseractOCREngine(BaseOCREngine):
             if self.tessdata_dir:
                 extra_config += f" --tessdata-dir {self.tessdata_dir.as_posix()}"
 
-            # 1. Trích xuất text thô
-            raw_text = pytesseract.image_to_string(img, lang=self.lang, config=extra_config)
-            
-            # 2. Trích xuất thông tin từng box dòng/từ
+            # Trích xuất thông tin từng box dòng/từ và ghép thành raw_text trong 1 lượt gọi duy nhất (tối ưu 50% latency)
             data = pytesseract.image_to_data(img, lang=self.lang, config=extra_config, output_type=pytesseract.Output.DICT)
             lines: List[OCRLine] = []
 
@@ -176,7 +173,7 @@ class TesseractOCREngine(BaseOCREngine):
                 text = (data["text"][i] or "").strip()
                 if not text:
                     continue
-                conf = float(data["conf"][i]) if data["conf"][i] != "-1" else 0.0
+                conf = float(data["conf"][i]) if str(data["conf"][i]) != "-1" else 0.0
                 key = (data.get("block_num", [0])[i], data.get("par_num", [0])[i], data.get("line_num", [0])[i])
                 
                 word_info = {
@@ -210,6 +207,7 @@ class TesseractOCREngine(BaseOCREngine):
                     )
                 )
 
+            raw_text = "\n".join(line.text for line in lines)
             elapsed = time.time() - start_time
             return OCRResult(
                 engine_name=self.name,

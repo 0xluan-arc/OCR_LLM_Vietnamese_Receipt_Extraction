@@ -1,0 +1,35 @@
+{
+  "img_id": "09_sieu_thi_khuyen_mai_vat_layout.jpg",
+  "image_quality": 0.92,
+  "seller_name": "SIEU THI CO.OPMART NGUYEN DINH CHIEU",
+  "seller_address": "168 Nguyen Dinh Chieu, Phuong 6, Quan 3",
+  "seller_phone": null,
+  "tax_id": "0300624009",
+  "invoice_number": "COOP-2026-9011",
+  "timestamp": "21/10/2026 10:45:10",
+  "items": [
+    {
+      "item_name": "Gao thom ST25 5kg",
+      "quantity": 1.0,
+      "unit_price": 150000,
+      "total_price": 150000
+    },
+    {
+      "item_name": "Dau dau nanh Simply",
+      "quantity": 2.0,
+      "unit_price": 65000,
+      "total_price": 130000
+    },
+    {
+      "item_name": "Nuoc ngot Coca Cola",
+      "quantity": 6.0,
+      "unit_price": 9000,
+      "total_price": 54000
+    }
+  ],
+  "subtotal": 334000,
+  "discount": 16000,
+  "vat_amount": 25440,
+  "total_cost": 343440,
+  "payment_method": "Chuyen khoan"
+}

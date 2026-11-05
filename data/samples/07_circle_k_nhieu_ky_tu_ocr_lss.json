@@ -1,0 +1,35 @@
+{
+  "img_id": "07_circle_k_nhieu_ky_tu_ocr_lss.jpg",
+  "image_quality": 0.92,
+  "seller_name": "SIEU THI TIEN LOI CIRCLE K",
+  "seller_address": "208 Nguyen Huu Canh, Binh Thanh, TP.HCM",
+  "seller_phone": "1900 6368",
+  "tax_id": "0312456789",
+  "invoice_number": "CK-20261021-07",
+  "timestamp": "21/10/2026 09:15:00",
+  "items": [
+    {
+      "item_name": "Banh mi sandwich ga xe",
+      "quantity": 1.0,
+      "unit_price": 28000,
+      "total_price": 28000
+    },
+    {
+      "item_name": "Sua Milo hop 180ml",
+      "quantity": 2.0,
+      "unit_price": 11000,
+      "total_price": 22000
+    },
+    {
+      "item_name": "Snack khoai tay Lays",
+      "quantity": 2.0,
+      "unit_price": 15000,
+      "total_price": 30000
+    }
+  ],
+  "subtotal": 80000,
+  "discount": 5000,
+  "vat_amount": 6000,
+  "total_cost": 81000,
+  "payment_method": "MoMo"
+}

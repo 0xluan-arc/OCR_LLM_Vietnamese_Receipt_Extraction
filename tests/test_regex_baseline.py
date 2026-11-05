@@ -46,3 +46,34 @@ def test_regex_baseline_extraction_on_sample():
     # 3. Kiểm tra bằng chứng đối sánh (Evidence)
     assert evidence.get("total_cost") is True
     assert evidence.get("tax_id") is True
+
+
+@pytest.mark.parametrize(
+    "phone_line,expected_phone",
+    [
+        ("SDT: 0909123456", "0909123456"),
+        ("ĐT: 028 3822 8899", "028 3822 8899"),
+        ("Tel: 038.765.4321", "038.765.4321"),
+        ("Hotline: 1800 6928", "1800 6928"),
+        ("Hotline CSKH: 19001888", "19001888"),
+        ("0912 345 678", "0912 345 678"),
+    ],
+)
+def test_regex_baseline_seller_phone_extraction(phone_line: str, expected_phone: str):
+    """Kiểm tra trích xuất trường thứ 12 (seller_phone) với nhiều định dạng SĐT Việt Nam."""
+    receipt_text = "\n".join(
+        [
+            "CUA HANG TIEN LOI ABC",
+            "Dia chi: 100 Le Loi, Q1, TP.HCM",
+            phone_line,
+            "MST: 0312456789",
+            "Tong thanh toan: 50.000",
+        ]
+    )
+    ocr_result = DummyOCREngine(mock_text=receipt_text).recognize(b"fake")
+    extractor = RegexBaselineExtractor()
+    data, evidence = extractor.extract(ocr_result)
+
+    assert data.seller_phone == expected_phone
+    assert evidence.get("seller_phone") is True
+    assert data.tax_id == "0312456789"

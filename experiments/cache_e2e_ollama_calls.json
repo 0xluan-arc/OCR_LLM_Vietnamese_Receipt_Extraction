@@ -1,0 +1,338 @@
+{
+  "6ac5f1a15fbc0019e25c65213a582b1688b5bdf6f7ecc74e3fa77a53e41cfa81": {
+    "content": "{\n  \"seller_name\": \"CO.OPMART CONG QUYNH\",\n  \"seller_address\": \"189C Cong Quynh, P. Nguyen Cu Trinh, Q1, TP.HCM\",\n  \"seller_phone\": \"028 3925 6789\",\n  \"tax_id\": \"0301175688\",\n  \"invoice_number\": \"CM-20261018-0101\",\n  \"timestamp\": \"18/10/2026 09:15:20\",\n  \"items\": [\n    {\n      \"item_name\": \"Dau an Neptune Light 1L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 62000,\n      \"total_price\": 62000\n    },\n    {\n      \"item_name\": \"Trung ga ta Ba Huan H10\",\n      \"quantity\": 2.0,\n      \"unit_price\": 35000,\n      \"total_price\": 70000\n    },\n    {\n      \"item_name\": \"Mi Hao Hao tom chua cay\",\n      \"quantity\": 5.0,\n      \"unit_price\": 4500,\n      \"total_price\": 22500\n    }\n  ],\n  \"subtotal\": 162000,\n  \"discount\": -4500,\n  \"vat_amount\": 12000,\n  \"total_cost\": 162000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 668,
+    "out_tokens": 353,
+    "latency_sec": 7.2632
+  },
+  "5c1bceaa5dbb4de8276c95b36bd4e98b6e50a441a37c25a77b88ae1adefa1ffb": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"312 Cong Hoa, P.13, Q. Tan Binh, TP.HCM\",\n  \"seller_phone\": \"1900 1908\",\n  \"tax_id\": \"0313049871\",\n  \"invoice_number\": \"BHX-882104\",\n  \"timestamp\": \"18/10/2026 10:42:11\",\n  \"items\": [\n    {\n      \"item_name\": \"Văn bản OCR hóa đơn\",\n      \"quantity\": 1.0,\n      \"unit_price\": 89.000,\n      \"total_price\": 89.000\n    },\n    {\n      \"item_name\": \"Cai ngot VietGAP\",\n      \"quantity\": 2.0,\n      \"unit_price\": 14.000,\n      \"total_price\": 28.000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 117.000,\n      \"total_price\": 117.000\n    }\n  ],\n  \"subtotal\": 118.800,\n  \"discount\": -7.000,\n  \"vat_amount\": 8.800,\n  \"total_cost\": 118.800,\n  \"payment_method\": \"MoMo.\"\n}",
+    "in_tokens": 641,
+    "out_tokens": 334,
+    "latency_sec": 5.2789
+  },
+  "e6ec1e0eee92418a4bff46cac88937a9faed7b3d882117a1abe8a7b50665a00e": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"42 Ngo Duc Ke, P. Ben Nghe, Q1, TP.HCM\",\n  \"seller_phone\": \"028 6263 0377\",\n  \"tax_id\": \"0312567890\",\n  \"invoice_number\": \"PL-2026-0451\",\n  \"timestamp\": \"18/10/2026 13:20:05\",\n  \"items\": [\n    {\n      \"item_name\": \"Tra Dao Cam Sa Size L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 130000,\n      \"total_price\": 130000\n    },\n    {\n      \"item_name\": \"Banh Croissant Bo Phap\",\n      \"quantity\": 1.0,\n      \"unit_price\": 38000,\n      \"total_price\": 38000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 168000,\n      \"total_price\": 168000\n    }\n  ],\n  \"subtotal\": 168000,\n  \"discount\": -18000,\n  \"vat_amount\": 12000,\n  \"total_cost\": 162000,\n  \"payment_method\": \"VNPay\"\n}",
+    "in_tokens": 633,
+    "out_tokens": 331,
+    "latency_sec": 5.1079
+  },
+  "f838da1ec64914a7d84e750c8abbf9f6a99dadc850c4200461480abb070b4dbd": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"Dia chỉ: 245 Su Van Hanh, P.9, Q10, TP.HCM\",\n  \"seller_phone\": \"SDT: 1900 1572\",\n  \"tax_id\": \"MST: 0314889922\",\n  \"invoice_number\": \"So HD: AK-20261018-09\",\n  \"timestamp\": \"18/10/2026 16:05:40\",\n  \"items\": [\n    {\n      \"item_name\": \"Vien sui Berocca Performance\",\n      \"quantity\": 1.0,\n      \"unit_price\": 98000,\n      \"total_price\": 98000\n    },\n    {\n      \"item_name\": \"Nuoc muoi sinh ly Natri Clorid\",\n      \"quantity\": 1.0,\n      \"unit_price\": 10000,\n      \"total_price\": 30000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 128000,\n      \"total_price\": 128000\n    }\n  ],\n  \"subtotal\": 134400,\n  \"discount\": null,\n  \"vat_amount\": 6400,\n  \"total_cost\": 134400,\n  \"payment_method\": \"Hinh thuc thanh toan: Tien mat\"\n}",
+    "in_tokens": 626,
+    "out_tokens": 351,
+    "latency_sec": 5.2256
+  },
+  "961264f3c4402140e1e0f26b901ff71499e9c8da3369259a490e1a55e84b4cad": {
+    "content": "{\n  \"seller_name\": \"FAMILYMART NGUYEN DINH CHIEU\",\n  \"seller_address\": \"180 Nguyen Dinh Chieu, P.6, Q3, TP.HCM\",\n  \"seller_phone\": \"028 3930 5566\",\n  \"tax_id\": \"0311998877\",\n  \"invoice_number\": \"FM-2026-7712\",\n  \"timestamp\": \"19/10/2026 07:50:12\",\n  \"items\": [\n    {\n      \"item_name\": \"Com nam ca hoi Mayo 2\",\n      \"quantity\": 1.0,\n      \"unit_price\": 22000,\n      \"total_price\": 22000\n    },\n    {\n      \"item_name\": \"Sua dau nanh Fami 200ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 8000,\n      \"total_price\": 8000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 60000,\n      \"total_price\": 60000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": null,\n  \"vat_amount\": 4800,\n  \"total_cost\": 104800,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 625,
+    "out_tokens": 340,
+    "latency_sec": 5.1364
+  },
+  "1e07b3245467ab385f785384c8610298bdd13eda8932263f1128f3abea221e42": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM\",\n  \"seller_phone\": \"028 3775 3232\",\n  \"tax_id\": \"0305678123\",\n  \"invoice_number\": \"LM-20261019-33\",\n  \"timestamp\": \"19/10/2026 11:30:00\",\n  \"items\": [\n    {\n      \"item_name\": \"OMO Matic 3.6kg\",\n      \"quantity\": 1.0,\n      \"unit_price\": 195000,\n      \"total_price\": 195000\n    },\n    {\n      \"item_name\": \"Pulppy 10 cuon\",\n      \"quantity\": 1.0,\n      \"unit_price\": 85000,\n      \"total_price\": 85000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 280000,\n      \"total_price\": 280000\n    }\n  ],\n  \"subtotal\": 1000000,\n  \"discount\": -20000,\n  \"vat_amount\": 20800,\n  \"total_cost\": 1000000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 654,
+    "out_tokens": 342,
+    "latency_sec": 5.2796
+  },
+  "de70fb8aefd5afb100db7760b44a810ed3afc6c725ec7c5e6f35199fbb554f1a": {
+    "content": "{\n  \"seller_name\": \"THE COFFEE HOUSE CAO THANG\",\n  \"seller_address\": \"86 Cao Thang, P.4, Q3, TP.HCM\",\n  \"seller_phone\": \"1800 6936\",\n  \"tax_id\": \"0312890123\",\n  \"invoice_number\": \"TCH-2026-5501\",\n  \"timestamp\": \"19/10/2026 15:12:45\",\n  \"items\": [\n    {\n      \"item_name\": \"Vai Size M 2\",\n      \"quantity\": 1.0,\n      \"unit_price\": 24.000,\n      \"total_price\": 24.000\n    },\n    {\n      \"item_name\": \"Banh Mi Que Pate Nong 2\",\n      \"quantity\": 1.0,\n      \"unit_price\": 19.000,\n      \"total_price\": 19.000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 136.000,\n      \"total_price\": 136.000\n    }\n  ],\n  \"subtotal\": 139.000,\n  \"discount\": -16.000,\n  \"vat_amount\": 9.600,\n  \"total_cost\": 129.600,\n  \"payment_method\": \"ZaloPay\"\n}",
+    "in_tokens": 630,
+    "out_tokens": 347,
+    "latency_sec": 5.2567
+  },
+  "6dc650a0b84ad8df26d7b0b2d358d8cf5a395e45b38209d9a7cc82b89859c548": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"19A Cong Hoa, P.12, Q. Tan Binh, TP.HCM\",\n  \"seller_phone\": \"028 3811 2525\",\n  \"tax_id\": \"0314556677\",\n  \"invoice_number\": \"GS-20261020-18\",\n  \"timestamp\": \"20/10/2026 08:25:30\",\n  \"items\": [\n    {\n      \"item_name\": \"Mi tron Indomie trung op\",\n      \"quantity\": 1.0,\n      \"unit_price\": 32000,\n      \"total_price\": 32000\n    },\n    {\n      \"item_name\": \"Tra xanh Khong Do\",\n      \"quantity\": 1.0,\n      \"unit_price\": 24000,\n      \"total_price\": 24000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 56000,\n      \"total_price\": 56000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -6000,\n  \"vat_amount\": 4000,\n  \"total_cost\": 54000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 643,
+    "out_tokens": 332,
+    "latency_sec": 5.0385
+  },
+  "ab81f160569199dbbb5e4b8aef50a912d883be11d82d6289a5d81db719afae66": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"116 Nguyen Hue, P. Ben Nghe, Q1, TP.HCM\",\n  \"seller_phone\": \"1900 4449\",\n  \"tax_id\": \"0310987654\",\n  \"invoice_number\": \"GD-2026-9012\",\n  \"timestamp\": \"20/10/2026 18:40:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Cerave 236ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 310000,\n      \"total_price\": 310000\n    },\n    {\n      \"item_name\": \"Silcot 82M\",\n      \"quantity\": 1.0,\n      \"unit_price\": 42000,\n      \"total_price\": 42000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 394000,\n      \"total_price\": 394000\n    },\n    {\n      \"item_name\": \"Giam gia\",\n      \"quantity\": 1.0,\n      \"unit_price\": -34000,\n      \"total_price\": -34000\n    },\n    {\n      \"item_name\": \"Thue VAT (8%)\",\n      \"quantity\": 1.0,\n      \"unit_price\": 28800,\n      \"total_price\": 28800\n    }\n  ],\n  \"subtotal\": 1000000,\n  \"discount\": -",
+    "in_tokens": 642,
+    "out_tokens": 384,
+    "latency_sec": 5.8565
+  },
+  "46bb0c85cb92ffa5ffa090d00809b725ff27e565a1f08e13121d658e8a468b1d": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"120 Nguyen Gia Tri, P.25, Q. Binh Thanh, TP.HCM\",\n  \"seller_phone\": \"028 3512 9090\",\n  \"tax_id\": \"0311234987\",\n  \"invoice_number\": \"MS-20261021-77\",\n  \"timestamp\": \"21/10/2026 21:05:10\",\n  \"items\": [\n    {\n      \"item_name\": \"Ga ran Karage xau 3 vien\",\n      \"quantity\": 1.0,\n      \"unit_price\": 25000,\n      \"total_price\": 25000\n    },\n    {\n      \"item_name\": \"Nuoc ngot Pepsi Zero 320ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 11000,\n      \"total_price\": 11000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 72000,\n      \"total_price\": 72000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -2000,\n  \"vat_amount\": 5600,\n  \"total_cost\": 75600,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 643,
+    "out_tokens": 340,
+    "latency_sec": 5.1927
+  },
+  "984d1ed6c33e04eee445136146a62423056a1ddb423017edb3db0a65c9b97ecb": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"123 Nguyen Thi Minh Khai, Ql, TP.HCM\",\n  \"seller_phone\": null,\n  \"tax_id\": null,\n  \"invoice_number\": \"CK-20261017-0892\",\n  \"timestamp\": \"17/10/2026 08:30:15\",\n  \"items\": [\n    {\n      \"item_name\": \"Ca phe sua da 330ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 25000,\n      \"total_price\": 25000\n    },\n    {\n      \"item_name\": \"Banh mi que pate\",\n      \"quantity\": 1.0,\n      \"unit_price\": 15000,\n      \"total_price\": 15000\n    },\n    {\n      \"item_name\": \"Nuoc khoang Lavie\",\n      \"quantity\": 1.0,\n      \"unit_price\": 10000,\n      \"total_price\": 10000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -5000,\n  \"vat_amount\": 7600,\n  \"total_cost\": 102600,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 641,
+    "out_tokens": 310,
+    "latency_sec": 5.1592
+  },
+  "a3f2e50f816d7f3036f73bafd94cc496b641aafe733e43a93031f6ad8947d4b6": {
+    "content": "{\n  \"seller_name\": \"null\",\n  \"seller_address\": \"458 Nguyễn Thị Thập, Tân Quy, Q7, TP.HCM\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0104918404\",\n  \"invoice_number\": \"WM-20261017-4410\",\n  \"timestamp\": \"17/10/2026 18:15:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Sữa tươi Vinamilk 1L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 23.000,\n      \"total_price\": 23.000\n    },\n    {\n      \"item_name\": \"Trứng gà CP hộp\",\n      \"quantity\": 1.0,\n      \"unit_price\": 2.000,\n      \"total_price\": 2.000\n    },\n    {\n      \"item_name\": \"Dầu ăn Neptune chai\",\n      \"quantity\": 1.0,\n      \"unit_price\": 55.000,\n      \"total_price\": 55.000\n    },\n    {\n      \"item_name\": \"Mì Hảo Hảo tôm chua\",\n      \"quantity\": 1.0,\n      \"unit_price\": 4.500,\n      \"total_price\": 4.500\n    }\n  ],\n  \"subtotal\": 264.500,\n  \"discount\": -14.500,\n  \"vat_amount\": 20.000,\n  \"total_cost\": 270.000,\n  \"payment_method\": \"Chuyển khoản\"\n}",
+    "in_tokens": 677,
+    "out_tokens": 384,
+    "latency_sec": 5.875
+  },
+  "88b9cbc0ad74483545b7ea1c8a4b098f90f97649868973c27d18ac71a1d4511f": {
+    "content": "{\n  \"seller_name\": \"NHA HANG AM THUC VIET\",\n  \"seller_address\": \"72 Vo Van Tan, Phuong Vo Thi Sau, Q3, TP.HCM\",\n  \"seller_phone\": \"028 3930 2233\",\n  \"tax_id\": \"0311223344\",\n  \"invoice_number\": \"HD-20261021-06\",\n  \"timestamp\": \"21/10/2026 19:30:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Lau ca keo la giang dac biet\",\n      \"quantity\": 1.0,\n      \"unit_price\": 180000,\n      \"total_price\": 180000\n    },\n    {\n      \"item_name\": \"Bo xao bong thien ly mien Tay\",\n      \"quantity\": 1.0,\n      \"unit_price\": 95000,\n      \"total_price\": 190000\n    },\n    {\n      \"item_name\": \"Tra da hoa cuc duong phen\",\n      \"quantity\": 1.0,\n      \"unit_price\": 15000,\n      \"total_price\": 45000\n    }\n  ],\n  \"subtotal\": 415000,\n  \"discount\": -15000,\n  \"vat_amount\": 32000,\n  \"total_cost\": 432000,\n  \"payment_method\": \"The Visa\"\n}",
+    "in_tokens": 668,
+    "out_tokens": 355,
+    "latency_sec": 5.3706
+  },
+  "e9be877c5092033f05be091d5443e95ad812a9ae547b5a925d0dab054e076c7c": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"208 Nguyen Huu Canh, Binh Thanh, TP.HCM\",\n  \"seller_phone\": \"1900 6368\",\n  \"tax_id\": \"0312456789\",\n  \"invoice_number\": \"CK-20261021-07\",\n  \"timestamp\": \"21/10/2026 09:15:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Banh mi sandwich ga xe\",\n      \"quantity\": 1.0,\n      \"unit_price\": 28000,\n      \"total_price\": 28000\n    },\n    {\n      \"item_name\": \"Sua Milo hop 180ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 22000,\n      \"total_price\": 22000\n    },\n    {\n      \"item_name\": \"Snack khoai tay Lays\",\n      \"quantity\": 2.0,\n      \"unit_price\": 15000,\n      \"total_price\": 30000\n    }\n  ],\n  \"subtotal\": 81000,\n  \"discount\": -5000,\n  \"vat_amount\": 6000,\n  \"total_cost\": 81000,\n  \"payment_method\": \"MoMo\"\n}",
+    "in_tokens": 653,
+    "out_tokens": 327,
+    "latency_sec": 5.0818
+  },
+  "ba481aec01ea4a92c251080f39d9cc4ffd67b465e5cd5371a9c2a984094404bf": {
+    "content": "{\n  \"seller_name\": null,\n  \"seller_address\": \"15 Bo Bao Tan Thang, Tan Phu\",\n  \"seller_phone\": \"0903 889900\",\n  \"tax_id\": null,\n  \"invoice_number\": \"BOS\",\n  \"timestamp\": \"21/10/2026 20:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Lau Thai hai san\",\n      \"quantity\": 1.0,\n      \"unit_price\": 180000,\n      \"total_price\": 180000\n    },\n    {\n      \"item_name\": \"Bia Saigon Special\",\n      \"quantity\": 4.0,\n      \"unit_price\": 20000,\n      \"total_price\": 80000\n    },\n    {\n      \"item_name\": \"Khan lanh\",\n      \"quantity\": 4.0,\n      \"unit_price\": 3000,\n      \"total_price\": 12000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 272000,\n      \"total_price\": 272000\n    },\n    {\n      \"item_name\": \"Giam gia\",\n      \"quantity\": 1.0,\n      \"unit_price\": 12000,\n      \"total_price\": 12000\n    },\n    {\n      \"item_name\": \"TE\",\n      \"quantity\": 1.0,\n      \"unit_price\": 260000,\n      \"total_price\": 260000\n    }\n  ],\n  \"subtotal\":",
+    "in_tokens": 572,
+    "out_tokens": 384,
+    "latency_sec": 5.4354
+  },
+  "981e16aed8654add530dda33a6e03810cadb1b5164c5b96cbcec9803ae5b8d1d": {
+    "content": "{\n  \"seller_name\": \"COOPMART NGUYEN DINH CHIEU\",\n  \"seller_address\": \"168 Nguyen Dinh Chieu, Phuong 6, Quan 3\",\n  \"seller_phone\": null,\n  \"tax_id\": null,\n  \"invoice_number\": \"COOP-2026-9011\",\n  \"timestamp\": \"21/10/2026 10:45:10\",\n  \"items\": [\n    {\n      \"item_name\": \"5kg 1 150.000 150.000\",\n      \"quantity\": 1.0,\n      \"unit_price\": 150000,\n      \"total_price\": 150000\n    },\n    {\n      \"item_name\": \"Dau dau nanh Simply 2 65.000 130.000\",\n      \"quantity\": 1.0,\n      \"unit_price\": 130000,\n      \"total_price\": 130000\n    },\n    {\n      \"item_name\": \"Nuoc ngot Coca Cola 6 9.000 54.000\",\n      \"quantity\": 1.0,\n      \"unit_price\": 54000,\n      \"total_price\": 54000\n    },\n    {\n      \"item_name\": \"Tam tinh: 334.000\",\n      \"quantity\": null,\n      \"unit_price\": null,\n      \"total_price\": 334000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": null,\n  \"vat_amount\": null",
+    "in_tokens": 656,
+    "out_tokens": 384,
+    "latency_sec": 5.5647
+  },
+  "dcfdea81dfb4868bd82d8187b35520882be7e4e5270c7b4a2bddc34a026906da": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY CO PHAN KINH DOANH NHÀ HÀNG VA KHÁCH SAN HOÀN MỸ\",\n  \"seller_address\": \"Số 110, Vũ Phạm Hàm, Phường Yên Hoà, Quận Cầu Giấy, Thành phó Hà Nội, Việt Nam\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0109716899 4\",\n  \"invoice_number\": \"00000295\",\n  \"timestamp\": \"10/11/2024\",\n  \"items\": [\n    {\n      \"item_name\": \"Lac Rang\",\n      \"quantity\": 1.0,\n      \"unit_price\": 75000,\n      \"total_price\": 75000\n    },\n    {\n      \"item_name\": \"Chim Câu Xúc Phong Tôm Íca\",\n      \"quantity\": 1.0,\n      \"unit_price\": 1620000,\n      \"total_price\": 1620000\n    },\n    {\n      \"item_name\": \"Gỏi Cá Trich Ep Tring\",\n      \"quantity\": 1.0,\n      \"unit_price\": 2400000,\n      \"total_price\": 2400000\n    },\n    {\n      \"item_name\": \"Bào Ngư Nướng\",\n      \"quantity\": 1.0,\n      \"unit_price\": 1500000,\n      \"total_price\": 1500000\n    },\n    {\n      \"item_name\": \"Cá Bơn\",\n      \"quantity\": 1.0,\n      \"unit_price\": 12",
+    "in_tokens": 1281,
+    "out_tokens": 384,
+    "latency_sec": 5.9845
+  },
+  "e7cbadb5a532834287301e0d411fadb676e1d758ac09d3075c2f0c3fafe0e5b6": {
+    "content": "{\n  \"seller_name\": \"CONG TY TNHH AEON VIET NAM\",\n  \"seller_address\": \"số 30, đường Tân Thắng, Phường Sơn Kỳ, Quận Tân Phú, TP. Hồ Chí Minh, Việt Nam\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0311241512\",\n  \"invoice_number\": \"367790\",\n  \"timestamp\": \"24/02/2024\",\n  \"items\": [\n    {\n      \"item_name\": \"Taran BACH TUNE CON Cai 1\",\n      \"quantity\": 1.0,\n      \"unit_price\": 15880,\n      \"total_price\": 15880\n    },\n    {\n      \"item_name\": \"SÚP TÔM BAP LỚN Cai 2\",\n      \"quantity\": 1.0,\n      \"unit_price\": 23148,\n      \"total_price\": 23148\n    },\n    {\n      \"item_name\": \"MÌ/NUI XÀO BO OPLA. Cai 1\",\n      \"quantity\": 1.0,\n      \"unit_price\": 15880,\n      \"total_price\": 15880\n    },\n    {\n      \"item_name\": \"CƠM CÀ RI ĐẶC BIỆT Cai 1\",\n      \"quantity\": 1.0,\n      \"unit_price\": 22685.19,\n      \"total_price\": 22685.19\n    },\n    {\n      \"item_name\": \"BENTO ĐÙI GÀ SÓT TERIYAKI\",\n      \"quantity\": 1.",
+    "in_tokens": 1484,
+    "out_tokens": 384,
+    "latency_sec": 6.1399
+  },
+  "340bcc4fe8d552f17665cebe3da32f2bf3a8981465cf90d3a40ec9b3863438e1": {
+    "content": "{\n  \"seller_name\": \"CHI NHÁNH CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ NGÂN VIÊN\",\n  \"seller_address\": \"79 Sương Nguyệt Ánh, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh, Việt Nam\",\n  \"seller_phone\": \"028.38225579\",\n  \"tax_id\": \"0311236382-001\",\n  \"invoice_number\": \"1C24TAA\",\n  \"timestamp\": \"26/09/2024 08:25:97\",\n  \"items\": [\n    {\n      \"item_name\": \"Nước Suối Chai\",\n      \"quantity\": 1.0,\n      \"unit_price\": 24000,\n      \"total_price\": 24000\n    },\n    {\n      \"item_name\": \"Heineken Bac Lon Lon\",\n      \"quantity\": 1.0,\n      \"unit_price\": 39000,\n      \"total_price\": 39000\n    },\n    {\n      \"item_name\": \"Khăn Lạnh CHỮA\",\n      \"quantity\": 1.0,\n      \"unit_price\": 6500,\n      \"total_price\": 6500\n    },\n    {\n      \"item_name\": \"Cơm Trắng Phần\",\n      \"quantity\": 1.0,\n      \"unit_price\": 5000,\n      \"total_price\": 5000\n    },\n    {\n      \"item_name\": \"Bò sốt tiêu xanh Phần\",\n      \"quantity\": 1.0,\n      \"unit_price\": 490",
+    "in_tokens": 1301,
+    "out_tokens": 384,
+    "latency_sec": 6.0085
+  },
+  "fe0f7edcef604e6899eb26524f9a7fca0945340036002144c0d5e502621577d6": {
+    "content": "{\n  \"seller_name\": \"Công ty Công nghiệp Sữa Sài Gòn\",\n  \"seller_address\": \"4 Lô C24-24B/II, C25/I1, Đường 2F, Khu công nghiệp Vĩnh Lộc, Xã Vinh Lộc A, Huyện Bình Chánh, Tp.HCM, Việt Nam\",\n  \"seller_phone\": \"028. 3765 2061; 3765 2062; 3765 2063\",\n  \"tax_id\": \"0 3 02 994301\",\n  \"invoice_number\": \"00ADDEE8A4CC#742DABSC529720BAD3F98\",\n  \"timestamp\": \"10/10/2024 15:42:17\",\n  \"items\": [\n    {\n      \"item_name\": \"Cơm chiên hải sản ngũ sắc 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Com chiên Dương Châu 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Cơm chiên kim chi 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"My Y sốt",
+    "in_tokens": 1297,
+    "out_tokens": 384,
+    "latency_sec": 6.0677
+  },
+  "11eda4d1be3e0f784b394803512d9234480f0168db78648c24b6e759f379ba5e": {
+    "content": "{\n  \"seller_name\": \"CO.OPMART CONG QUYNH\",\n  \"seller_address\": \"189C Cong Quynh, P. Nguyen Cu Trinh, Q1, TP.HCM\",\n  \"seller_phone\": \"028 3925 6789\",\n  \"tax_id\": \"0301175688\",\n  \"invoice_number\": \"CM-20261018-0101\",\n  \"timestamp\": \"18/10/2026 09:15:20\",\n  \"items\": [\n    {\n      \"item_name\": \"Dau an Neptune Light 1L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 62000,\n      \"total_price\": 62000\n    },\n    {\n      \"item_name\": \"Trung ga ta Ba Huan H10\",\n      \"quantity\": 1.0,\n      \"unit_price\": 35000,\n      \"total_price\": 35000\n    },\n    {\n      \"item_name\": \"Mi Hao Hao tom chua cay\",\n      \"quantity\": 1.0,\n      \"unit_price\": 4500,\n      \"total_price\": 4500\n    }\n  ],\n  \"subtotal\": 154500,\n  \"discount\": -4500,\n  \"vat_amount\": 12000,\n  \"total_cost\": 162000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 1823,
+    "out_tokens": 352,
+    "latency_sec": 5.8814
+  },
+  "bd3551dba7ee36048c6e87145cddaaed7d86bf78e71a9b15ef1ba3417d887fdc": {
+    "content": "{\n  \"seller_name\": \"BACH HOA XANH QUAN TAN BINH\",\n  \"seller_address\": \"312 Cong Hoa, P.13, Q. Tan Binh, TP.HCM\",\n  \"seller_phone\": \"1900 1908\",\n  \"tax_id\": \"0313049871\",\n  \"invoice_number\": \"BHX-882104\",\n  \"timestamp\": \"18/10/2026 10:42:11\",\n  \"items\": [\n    {\n      \"item_name\": \"500g 1\",\n      \"quantity\": 1.0,\n      \"unit_price\": 89000,\n      \"total_price\": 89000\n    },\n    {\n      \"item_name\": \"500g 2\",\n      \"quantity\": 2.0,\n      \"unit_price\": 14000,\n      \"total_price\": 28000\n    }\n  ],\n  \"subtotal\": 117000,\n  \"discount\": -7000,\n  \"vat_amount\": 8800,\n  \"total_cost\": 118800,\n  \"payment_method\": \"MoMo\"\n}",
+    "in_tokens": 1591,
+    "out_tokens": 287,
+    "latency_sec": 4.8303
+  },
+  "4f76f8af775bb2eec6fc15379e8af6e36fdb67c4d69466479db6c11f181007aa": {
+    "content": "{\n  \"seller_name\": \"PHUC LONG COFFEE & TEA EXPRESS\",\n  \"seller_address\": \"42 Ngo Duc Ke, P. Ben Nghe, Q1, TP.HCM\",\n  \"seller_phone\": \"028 6263 0377\",\n  \"tax_id\": \"0312567890\",\n  \"invoice_number\": \"PL-2026-0451\",\n  \"timestamp\": \"18/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Tra Dao Cam Sa Size L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 265000,\n      \"total_price\": 265000\n    },\n    {\n      \"item_name\": \"Banh Croissant Bo Phap\",\n      \"quantity\": 1.0,\n      \"unit_price\": 38000,\n      \"total_price\": 38000\n    }\n  ],\n  \"subtotal\": 168000,\n  \"discount\": -18000,\n  \"vat_amount\": 12000,\n  \"total_cost\": 162000,\n  \"payment_method\": \"VNPay\"\n}",
+    "in_tokens": 1788,
+    "out_tokens": 283,
+    "latency_sec": 4.6938
+  },
+  "86c67344e468e78b174dffa4fba4610be7581002bee277ceff545b307ae114b0": {
+    "content": "{\n  \"seller_name\": \"NHA THUOC AN KHANG QUAN 10\",\n  \"seller_address\": \"245 Su Van Hanh, P.9, Q10, TP.HCM\",\n  \"seller_phone\": \"1900 1572\",\n  \"tax_id\": \"0314889922\",\n  \"invoice_number\": \"AK-20261018-09\",\n  \"timestamp\": \"18/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Vien sui Berocca Performance\",\n      \"quantity\": 1.0,\n      \"unit_price\": 98000,\n      \"total_price\": 98000\n    },\n    {\n      \"item_name\": \"Nuoc muoi sinh ly Natri Clorid\",\n      \"quantity\": 3.0,\n      \"unit_price\": 10000,\n      \"total_price\": 30000\n    }\n  ],\n  \"subtotal\": 128000,\n  \"discount\": null,\n  \"vat_amount\": 6400,\n  \"total_cost\": 134400,\n  \"payment_method\": \"Tien mat\"\n}",
+    "in_tokens": 1781,
+    "out_tokens": 282,
+    "latency_sec": 4.998
+  },
+  "4a75d1ae20fafc35f693fcabcc920ec718547626470c8efc15d260ddf84fec9f": {
+    "content": "{\n  \"seller_name\": \"FAMILYMART NGUYEN DINH CHIEU\",\n  \"seller_address\": \"180 Nguyen Dinh Chieu, P.6, Q3, TP.HCM\",\n  \"seller_phone\": \"028 3930 5566\",\n  \"tax_id\": \"0311998877\",\n  \"invoice_number\": \"FM-2026-7712\",\n  \"timestamp\": \"19/10/2026 07:50:12\",\n  \"items\": [\n    {\n      \"item_name\": \"Mayo 2 22.000 44.000\",\n      \"quantity\": 2.0,\n      \"unit_price\": 22000,\n      \"total_price\": 44000\n    },\n    {\n      \"item_name\": \"Fami 200ml 2 8.000 16.000\",\n      \"quantity\": 2.0,\n      \"unit_price\": 8000,\n      \"total_price\": 16000\n    }\n  ],\n  \"subtotal\": 60000,\n  \"discount\": null,\n  \"vat_amount\": 4800,\n  \"total_cost\": 64800,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 1780,
+    "out_tokens": 312,
+    "latency_sec": 4.956
+  },
+  "8a73d5b8971b926935e321a6c231679b274f18ed35e61a77c615f7aad5ca2b5a": {
+    "content": "{\n  \"seller_name\": \"SIEU THỊ LOTTE MART NAM SAI GON\",\n  \"seller_address\": \"469 Nguyen Huu Tho, P. Tan Hung, Q7, TP.HCM\",\n  \"seller_phone\": \"028 3775 3232\",\n  \"tax_id\": \"0305678123\",\n  \"invoice_number\": \"LM-20261019-33\",\n  \"timestamp\": \"19/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Nuoc giat OMO Matic 3.6kg\",\n      \"quantity\": 1.0,\n      \"unit_price\": 195000,\n      \"total_price\": 195000\n    },\n    {\n      \"item_name\": \"Giay ve sinh Pulppy 10 cuon\",\n      \"quantity\": 1.0,\n      \"unit_price\": 85000,\n      \"total_price\": 85000\n    }\n  ],\n  \"subtotal\": 280000,\n  \"discount\": 20000,\n  \"vat_amount\": 20800,\n  \"total_cost\": 280800,\n  \"payment_method\": \"The tin dung\"\n}",
+    "in_tokens": 1809,
+    "out_tokens": 303,
+    "latency_sec": 4.8998
+  },
+  "dcca2e400e453169ff34a30ea8798beb7fed592e5d118ade071985928132bfa8": {
+    "content": "{\n  \"seller_name\": \"THE COFFEE HOUSE CAO THANG\",\n  \"seller_address\": \"86 Cao Thang, P.4, Q3, TP.HCM\",\n  \"seller_phone\": \"1800 6936\",\n  \"tax_id\": \"0312890123\",\n  \"invoice_number\": \"TCH-2026-5501\",\n  \"timestamp\": \"19/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Hi-Tea Vai Size M\",\n      \"quantity\": 2.0,\n      \"unit_price\": 49000,\n      \"total_price\": 98000\n    },\n    {\n      \"item_name\": \"Banh Mi Que Pate Nong\",\n      \"quantity\": 2.0,\n      \"unit_price\": 19000,\n      \"total_price\": 38000\n    }\n  ],\n  \"subtotal\": 136000,\n  \"discount\": 16000,\n  \"vat_amount\": 9600,\n  \"total_cost\": 129600,\n  \"payment_method\": \"ZaloPay\"\n}",
+    "in_tokens": 1785,
+    "out_tokens": 279,
+    "latency_sec": 4.6707
+  },
+  "658715cbf1bb76fdab958eea03c53e7337df073c3c414e395e038cb4a4947f55": {
+    "content": "{\n  \"seller_name\": \"GS25\",\n  \"seller_address\": \"19A Cong Hoa, P.12, Q. Tan Binh, TP.HCM\",\n  \"seller_phone\": \"028 3811 2525\",\n  \"tax_id\": \"0314556677\",\n  \"invoice_number\": \"GS-20261020-18\",\n  \"timestamp\": \"20/10/2026 08:25:30\",\n  \"items\": [\n    {\n      \"item_name\": \"Indomie trung op\",\n      \"quantity\": 1,\n      \"unit_price\": 32000,\n      \"total_price\": 32000\n    },\n    {\n      \"item_name\": \"Tra xanh Khong Do\",\n      \"quantity\": 1,\n      \"unit_price\": 24000,\n      \"total_price\": 24000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1,\n      \"unit_price\": 56000,\n      \"total_price\": 56000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -6000,\n  \"vat_amount\": 4000,\n  \"total_cost\": 54000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 1593,
+    "out_tokens": 326,
+    "latency_sec": 5.0583
+  },
+  "c899c70990b5004c6c4df6cd37a56d81259a5df6904fa67cfb3880896dea3130": {
+    "content": "{\n  \"seller_name\": \"GUARDIAN HEALTH & BEAUTY Q1\",\n  \"seller_address\": \"116 Nguyen Hue, P. Ben Nghe, Q1, TP.HCM\",\n  \"seller_phone\": \"1900 4449\",\n  \"tax_id\": \"0310987654\",\n  \"invoice_number\": \"GD-2026-9012\",\n  \"timestamp\": \"20/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Sua rua mat Cerave 236ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 310000,\n      \"total_price\": 310000\n    },\n    {\n      \"item_name\": \"Bong tay trang Silcot 82M\",\n      \"quantity\": 2.0,\n      \"unit_price\": 42000,\n      \"total_price\": 84000\n    }\n  ],\n  \"subtotal\": 310000,\n  \"discount\": -34000,\n  \"vat_amount\": 28800,\n  \"total_cost\": 388800,\n  \"payment_method\": \"Chuyen khoan\"\n}",
+    "in_tokens": 1797,
+    "out_tokens": 291,
+    "latency_sec": 4.8709
+  },
+  "6c903b66bfbe2121ba5bf621703bf952b6fc1e3829beda50f55d1aef846e2a49": {
+    "content": "{\n  \"seller_name\": \"MINISTOP NGUYEN GIA TRI\",\n  \"seller_address\": \"120 Nguyen Gia Tri, P.25, Q. Binh Thanh, TP.HCM\",\n  \"seller_phone\": \"028 3512 9090\",\n  \"tax_id\": \"0311234987\",\n  \"invoice_number\": \"MS-20261021-77\",\n  \"timestamp\": \"21/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Ga ran Karage xau 3 vien\",\n      \"quantity\": 3.0,\n      \"unit_price\": 25000,\n      \"total_price\": 75000\n    },\n    {\n      \"item_name\": \"Nuoc ngot Pepsi Zero 320ml\",\n      \"quantity\": 320.0,\n      \"unit_price\": 11000,\n      \"total_price\": 352000\n    }\n  ],\n  \"subtotal\": 352000,\n  \"discount\": -2000,\n  \"vat_amount\": 5600,\n  \"total_cost\": 352000,\n  \"payment_method\": \"Tien mat\"\n}",
+    "in_tokens": 1798,
+    "out_tokens": 297,
+    "latency_sec": 4.9068
+  },
+  "62e8a2f95f7f38e50402a7c6dbf971a6d63d9fad46fc16fc9e12005ac0d6336c": {
+    "content": "{\n  \"seller_name\": \"STEU THI TIEN LOI CIRCLE K\",\n  \"seller_address\": \"123 Nguyen Thi Minh Khai, Ql, TP.HCM\",\n  \"seller_phone\": \"0312456789\",\n  \"tax_id\": \"0312456789\",\n  \"invoice_number\": \"CK-20261017-0892\",\n  \"timestamp\": \"17/10/2026 08:30:15\",\n  \"items\": [\n    {\n      \"item_name\": \"Ca phe sua da 330ml\",\n      \"quantity\": 2.0,\n      \"unit_price\": 25000,\n      \"total_price\": 50000\n    },\n    {\n      \"item_name\": \"Banh mi que pate\",\n      \"quantity\": 2.0,\n      \"unit_price\": 15000,\n      \"total_price\": 30000\n    },\n    {\n      \"item_name\": \"Nuoc khoang Lavie\",\n      \"quantity\": 2.0,\n      \"unit_price\": 10000,\n      \"total_price\": 20000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -5000,\n  \"vat_amount\": 7600,\n  \"total_cost\": 102600,\n  \"payment_method\": \"Tien mat\"\n}",
+    "in_tokens": 1796,
+    "out_tokens": 341,
+    "latency_sec": 5.2632
+  },
+  "5b429d077fc5a7a7a9ef347fe673bd938498d077ea5296ad2179457cef41e8f9": {
+    "content": "{\n  \"seller_name\": \"SIÊU THỊ WINMART+ QUẬN 7\",\n  \"seller_address\": \"458 Nguyễn Thị Thập, Tân Quy, Q7, TP.HCM\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0104918404\",\n  \"invoice_number\": \"WM-20261017-4410\",\n  \"timestamp\": \"17/10/2026 18:15:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Sữa tươi Vinamilk 1L\",\n      \"quantity\": 2.0,\n      \"unit_price\": 34000,\n      \"total_price\": 68000\n    },\n    {\n      \"item_name\": \"Trứng gà CP hộp\",\n      \"quantity\": 10.0,\n      \"unit_price\": 24000,\n      \"total_price\": 240000\n    },\n    {\n      \"item_name\": \"Dầu ăn Neptune chai\",\n      \"quantity\": 2.0,\n      \"unit_price\": 55000,\n      \"total_price\": 110000\n    },\n    {\n      \"item_name\": \"Mì Hảo Hảo tôm chua\",\n      \"quantity\": 5.0,\n      \"unit_price\": 4500,\n      \"total_price\": 22500\n    }\n  ],\n  \"subtotal\": 264500,\n  \"discount\": -14500,\n  \"vat_amount\": 20000,\n  \"total_cost\": 270000,\n  \"payment_method",
+    "in_tokens": 1832,
+    "out_tokens": 384,
+    "latency_sec": 5.7937
+  },
+  "1003c3c0d9eeda87c78e51bb18ab88796fee3bbe5c005d1fbe50f4a475ee56e3": {
+    "content": "{\n  \"seller_name\": \"NHA HANG AM THUC VIET\",\n  \"seller_address\": \"72 Vo Van Tan, Phuong Vo Thi Sau, Q3, TP.HCM\",\n  \"seller_phone\": \"028 3930 2233\",\n  \"tax_id\": \"0311223344\",\n  \"invoice_number\": \"HD-20261021-06\",\n  \"timestamp\": \"21/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Lau ca keo la giang dac biet\",\n      \"quantity\": 1.0,\n      \"unit_price\": 180000,\n      \"total_price\": 180000\n    },\n    {\n      \"item_name\": \"Bo xao bong thien ly mien Tay\",\n      \"quantity\": 1.0,\n      \"unit_price\": 95000,\n      \"total_price\": 190000\n    },\n    {\n      \"item_name\": \"Tra da hoa cuc duong phen\",\n      \"quantity\": 1.0,\n      \"unit_price\": 15000,\n      \"total_price\": 45000\n    }\n  ],\n  \"subtotal\": 425000,\n  \"discount\": 15000,\n  \"vat_amount\": 32000,\n  \"total_cost\": 432000,\n  \"payment_method\": \"The Visa\"\n}",
+    "in_tokens": 1823,
+    "out_tokens": 346,
+    "latency_sec": 5.4275
+  },
+  "8b247e7073d8b63d120104fb82142e8cff5ceda91d39fe860988ed841092ce4e": {
+    "content": "{\n  \"seller_name\": \"SIEU THI TIEN LOI CIRCLE K\",\n  \"seller_address\": \"208 Nguyen Huu Canh, Binh Thanh, TP.HCM\",\n  \"seller_phone\": \"1900 6368\",\n  \"tax_id\": \"0312456789\",\n  \"invoice_number\": \"CK-20261021-07\",\n  \"timestamp\": \"21/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Banh mi sandwich ga xe\",\n      \"quantity\": 1.0,\n      \"unit_price\": 28000,\n      \"total_price\": 28000\n    },\n    {\n      \"item_name\": \"Sua Milo hop\",\n      \"quantity\": 1.0,\n      \"unit_price\": 11000,\n      \"total_price\": 22000\n    },\n    {\n      \"item_name\": \"Snack khoai tay Lays\",\n      \"quantity\": 2.0,\n      \"unit_price\": 15000,\n      \"total_price\": 30000\n    }\n  ],\n  \"subtotal\": 80000,\n  \"discount\": 5000,\n  \"vat_amount\": 6000,\n  \"total_cost\": 81000,\n  \"payment_method\": \"MoMo\"\n}",
+    "in_tokens": 1808,
+    "out_tokens": 325,
+    "latency_sec": 5.3206
+  },
+  "6aa46afd77f074d5a073788195b978a2985f29f3c513d70c43cd69b719cf6853": {
+    "content": "{\n  \"seller_name\": \"QUAN LAU NUONG BINH DAN\",\n  \"seller_address\": \"15 Bo Bao Tan Thang, Tan Phu\",\n  \"seller_phone\": \"0903 889900\",\n  \"tax_id\": \"BOS\",\n  \"invoice_number\": \"79\",\n  \"timestamp\": \"21/10/2026 20:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Lau Thai hai san\",\n      \"quantity\": 1.0,\n      \"unit_price\": 180000,\n      \"total_price\": 180000\n    },\n    {\n      \"item_name\": \"Bia Saigon Special\",\n      \"quantity\": 4.0,\n      \"unit_price\": 20000,\n      \"total_price\": 80000\n    },\n    {\n      \"item_name\": \"Khan lanh\",\n      \"quantity\": 4.0,\n      \"unit_price\": 3000,\n      \"total_price\": 12000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 272000,\n      \"total_price\": 272000\n    },\n    {\n      \"item_name\": \"Giam gia\",\n      \"quantity\": 1.0,\n      \"unit_price\": 12000,\n      \"total_price\": 12000\n    },\n    {\n      \"item_name\": \"TE\",\n      \"quantity\": 1.0,\n      \"unit_price\": 260000,\n      \"total_price\": 2600",
+    "in_tokens": 1522,
+    "out_tokens": 384,
+    "latency_sec": 5.6137
+  },
+  "c058d5f5417d5d521458d8c205c202a79ea5ae498df21811502c2d930b443771": {
+    "content": "{\n  \"seller_name\": \"SIEU THI CO.OPMART NGUYEN DINH CHIEU\",\n  \"seller_address\": \"168 Nguyen Dinh Chieu, Phuong 6, Quan 3\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0300624009\",\n  \"invoice_number\": \"COOP-2026-9011\",\n  \"timestamp\": \"21/10/2026 10:45:10\",\n  \"items\": [\n    {\n      \"item_name\": \"Gao thom ST25 5kg\",\n      \"quantity\": 1.0,\n      \"unit_price\": 150000,\n      \"total_price\": 150000\n    },\n    {\n      \"item_name\": \"Dau dau nanh Simply\",\n      \"quantity\": 1.0,\n      \"unit_price\": 130000,\n      \"total_price\": 130000\n    },\n    {\n      \"item_name\": \"Nuoc ngot Coca Cola\",\n      \"quantity\": 6.0,\n      \"unit_price\": 9000,\n      \"total_price\": 54000\n    }\n  ],\n  \"subtotal\": 334000,\n  \"discount\": -16000,\n  \"vat_amount\": 25440,\n  \"total_cost\": 343440,\n  \"payment_method\": \"Chuyen khoan\"\n}",
+    "in_tokens": 1811,
+    "out_tokens": 344,
+    "latency_sec": 5.2512
+  },
+  "43a6e95adbc429ba6b910a95eff609264698e814e9c5a9b74076ec348f8a011f": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY CO PHAN KINH DOANH NHÀ HÀNG VA KHÁCH SAN HOÀN MỸ\",\n  \"seller_address\": \"Số 110, Vũ Phạm Hàm, Phường Yên Hoà, Quận Cầu Giấy, Thành phó Hà Nội, Việt Nam\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0109716899 4\",\n  \"invoice_number\": \"00000295\",\n  \"timestamp\": \"11/10/2024\",\n  \"items\": [\n    {\n      \"item_name\": \"Lac Rang\",\n      \"quantity\": 1.0,\n      \"unit_price\": 75000,\n      \"total_price\": 75000\n    },\n    {\n      \"item_name\": \"Chim Câu Xúc Phong Tôm Íca\",\n      \"quantity\": 1.0,\n      \"unit_price\": 1620000,\n      \"total_price\": 1620000\n    },\n    {\n      \"item_name\": \"Gỏi Cá Trich Ep Tring\",\n      \"quantity\": 1.0,\n      \"unit_price\": 2400000,\n      \"total_price\": 2400000\n    },\n    {\n      \"item_name\": \"Bào Ngư Nướng\",\n      \"quantity\": 1.0,\n      \"unit_price\": 1500000,\n      \"total_price\": 1500000\n    },\n    {\n      \"item_name\": \"Cá Bơn\",\n      \"quantity\": 1.0,\n      \"unit_price\": 12",
+    "in_tokens": 1748,
+    "out_tokens": 384,
+    "latency_sec": 5.7126
+  },
+  "d5db61d77fe76961c466b253553f2c2da94f042f6f35ab595524dc58b36c2a21": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY TNHH AEON VIỆT NAM\",\n  \"seller_address\": \"Số 30, đường Tân Thắng, Phường Son Ky, Quận Tan Phú, TP.Hồ Chí Minh, VN\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0311241512\",\n  \"invoice_number\": \"367790\",\n  \"timestamp\": \"24/02/2024\",\n  \"items\": [],\n  \"subtotal\": 0,\n  \"discount\": null,\n  \"vat_amount\": null,\n  \"total_cost\": 0,\n  \"payment_method\": null\n}",
+    "in_tokens": 1951,
+    "out_tokens": 150,
+    "latency_sec": 3.7955
+  },
+  "237fd73df94776db84d967602ca21f42d53afd26f56b4dad1c7b07b5f0703002": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ NGÂN VIÊN\",\n  \"seller_address\": \"05 PHẠM NGỌC THẠCH, PHƯỜNG QUAN THÁNH, QUẬN BA ĐÌNH, THÀNH PHỐ HÀ NỘI, VIỆT NAM\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0311236382-001\",\n  \"invoice_number\": \"001\",\n  \"timestamp\": \"26/09/2024\",\n  \"items\": [],\n  \"subtotal\": 0,\n  \"discount\": null,\n  \"vat_amount\": null,\n  \"total_cost\": 0,\n  \"payment_method\": null\n}",
+    "in_tokens": 1768,
+    "out_tokens": 179,
+    "latency_sec": 4.1857
+  },
+  "36d6dbc7592bb4a9bd6f0b30db0a7275965fde0ad558e2b873b359c8225bf806": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY CÔ PHAN SAI\",\n  \"seller_address\": \"4 Lô C24-24B/II, C25/I1, Đường 2F, Khu công nghiệp Vĩnh Lộc, Xã Vinh Lộc A, Huyện Bình Chánh, Thành phố Hồ Chí Minh, Việt Nam\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0302994301\",\n  \"invoice_number\": \"00027568\",\n  \"timestamp\": \"10/15/2024\",\n  \"items\": [\n    {\n      \"item_name\": \"Cơm chiên hải sản ngũ sắc 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Com chiên Dương Châu 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Cơm chiên kim chi 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Mỹ Y sốt bò bim 250g(gói)\",\n      \"quantity\": 1,\n      \"unit_price\": 28.576,\n      \"total_price\": 28.576\n    },\n    {\n      \"item_name\": \"My Y xúc xích kiêu Nhật ",
+    "in_tokens": 1764,
+    "out_tokens": 384,
+    "latency_sec": 5.9201
+  },
+  "7a724b3910a58f338ecb66e2e48d846b3c3e1fa40e0d8b46cab571a03ff8e33f": {
+    "content": "{\n  \"seller_name\": \"CO.OPMART CONG QUYNH\",\n  \"seller_address\": \"189C Cong Quynh, P. Nguyen Cu Trinh, Q1, TP.HCM\",\n  \"seller_phone\": \"028 3925 6789\",\n  \"tax_id\": \"0301175688\",\n  \"invoice_number\": \"CM-20261018-0101\",\n  \"timestamp\": \"18/10/2026 09:15:20\",\n  \"items\": [\n    {\n      \"item_name\": \"Dau an Neptune Light 1L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 62000,\n      \"total_price\": 62000\n    },\n    {\n      \"item_name\": \"Trung ga ta Ba Huan H10\",\n      \"quantity\": 1.0,\n      \"unit_price\": 35000,\n      \"total_price\": 35000\n    },\n    {\n      \"item_name\": \"Mi Hao Hao tom chua cay\",\n      \"quantity\": 1.0,\n      \"unit_price\": 4500,\n      \"total_price\": 4500\n    }\n  ],\n  \"subtotal\": 154500,\n  \"discount\": -4500,\n  \"vat_amount\": 12000,\n  \"total_cost\": 162000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 2558,
+    "out_tokens": 352,
+    "latency_sec": 5.8721
+  },
+  "127b79e9a3da02bc35b933c7043b813fc095bae141b401f7a6eb4d831be7febc": {
+    "content": "{\n  \"seller_name\": \"BACH HOA XANH QUAN TAN BINH\",\n  \"seller_address\": \"312 Cong Hoa, P.13, Q. Tan Binh, TP.HCM\",\n  \"seller_phone\": \"1900 1908\",\n  \"tax_id\": \"0313049871\",\n  \"invoice_number\": \"BHX-882104\",\n  \"timestamp\": \"18/10/2026 10:42:11\",\n  \"items\": [\n    {\n      \"item_name\": \"500g 1\",\n      \"quantity\": 1.0,\n      \"unit_price\": 89000,\n      \"total_price\": 89000\n    },\n    {\n      \"item_name\": \"500g 2\",\n      \"quantity\": 2.0,\n      \"unit_price\": 14000,\n      \"total_price\": 28000\n    }\n  ],\n  \"subtotal\": 117000,\n  \"discount\": -7000,\n  \"vat_amount\": 8800,\n  \"total_cost\": 118800,\n  \"payment_method\": \"MoMo\"\n}",
+    "in_tokens": 2213,
+    "out_tokens": 287,
+    "latency_sec": 4.9556
+  },
+  "613859500d1bb8602a0e8a30ae8b1fcf5d2d1ee574dd4d8ded6c436d370a7574": {
+    "content": "{\n  \"seller_name\": \"PHUC LONG COFFEE & TEA EXPRESS\",\n  \"seller_address\": \"42 Ngo Duc Ke, P. Ben Nghe, Q1, TP.HCM\",\n  \"seller_phone\": \"028 6263 0377\",\n  \"tax_id\": \"0312567890\",\n  \"invoice_number\": \"PL-2026-0451\",\n  \"timestamp\": \"18/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Tra Dao Cam Sa Size L\",\n      \"quantity\": 1.0,\n      \"unit_price\": 265000,\n      \"total_price\": 265000\n    },\n    {\n      \"item_name\": \"Banh Croissant Bo Phap\",\n      \"quantity\": 1.0,\n      \"unit_price\": 38000,\n      \"total_price\": 38000\n    }\n  ],\n  \"subtotal\": 168000,\n  \"discount\": -18000,\n  \"vat_amount\": 12000,\n  \"total_cost\": 162000,\n  \"payment_method\": \"VNPay\"\n}",
+    "in_tokens": 2458,
+    "out_tokens": 283,
+    "latency_sec": 4.9097
+  },
+  "240d280fedcc6ed6b20474e89a97c9f97581e2d67ed07beb0e7d0ee0cd2cfca3": {
+    "content": "{\n  \"seller_name\": \"GS25\",\n  \"seller_address\": \"19A Cong Hoa, P.12, Q. Tan Binh, TP.HCM\",\n  \"seller_phone\": \"028 3811 2525\",\n  \"tax_id\": \"0314556677\",\n  \"invoice_number\": \"GS-20261020-18\",\n  \"timestamp\": \"20/10/2026 08:25:30\",\n  \"items\": [\n    {\n      \"item_name\": \"Indomie trung op\",\n      \"quantity\": 1,\n      \"unit_price\": 32000,\n      \"total_price\": 32000\n    },\n    {\n      \"item_name\": \"Tra xanh Khong Do\",\n      \"quantity\": 1,\n      \"unit_price\": 24000,\n      \"total_price\": 24000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1,\n      \"unit_price\": 56000,\n      \"total_price\": 56000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -6000,\n  \"vat_amount\": 4000,\n  \"total_cost\": 54000,\n  \"payment_method\": \"Tiền mặt\"\n}",
+    "in_tokens": 2300,
+    "out_tokens": 326,
+    "latency_sec": 5.3661
+  },
+  "79412d04d96ca3bb9becbc3c6d0c6bb0e99f77fcaa394f59e71a95fd966f7e79": {
+    "content": "{\n  \"seller_name\": \"GUARDIAN HEALTH & BEAUTY Q1\",\n  \"seller_address\": \"116 Nguyen Hue, P. Ben Nghe, Q1, TP.HCM\",\n  \"seller_phone\": \"1900 4449\",\n  \"tax_id\": \"0310987654\",\n  \"invoice_number\": \"GD-2026-9012\",\n  \"timestamp\": \"20/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Sua rua mat Cerave 236ml\",\n      \"quantity\": 1.0,\n      \"unit_price\": 310000,\n      \"total_price\": 310000\n    },\n    {\n      \"item_name\": \"Bong tay trang Silcot 82M\",\n      \"quantity\": 2.0,\n      \"unit_price\": 42000,\n      \"total_price\": 84000\n    }\n  ],\n  \"subtotal\": 310000,\n  \"discount\": -34000,\n  \"vat_amount\": 28800,\n  \"total_cost\": 372800,\n  \"payment_method\": \"Chuyen khoan\"\n}",
+    "in_tokens": 2475,
+    "out_tokens": 291,
+    "latency_sec": 5.1444
+  },
+  "4aebf47baf7650238c2f87da6ff74fb781ce3490a1608151830c794527bf8bea": {
+    "content": "{\n  \"seller_name\": \"MINISTOP NGUYEN GIA TRI\",\n  \"seller_address\": \"120 Nguyen Gia Tri, P.25, Q. Binh Thanh, TP.HCM\",\n  \"seller_phone\": \"028 3512 9090\",\n  \"tax_id\": \"0311234987\",\n  \"invoice_number\": \"MS-20261021-77\",\n  \"timestamp\": \"21/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Ga ran Karage xau 3 vien\",\n      \"quantity\": 3.0,\n      \"unit_price\": 25000,\n      \"total_price\": 75000\n    },\n    {\n      \"item_name\": \"Nuoc ngot Pepsi Zero 320ml\",\n      \"quantity\": 320.0,\n      \"unit_price\": 11000,\n      \"total_price\": 352000\n    }\n  ],\n  \"subtotal\": 352000,\n  \"discount\": -2000,\n  \"vat_amount\": 5600,\n  \"total_cost\": 352000,\n  \"payment_method\": \"Tien mat\"\n}",
+    "in_tokens": 2601,
+    "out_tokens": 297,
+    "latency_sec": 5.3063
+  },
+  "bc2a26d83d441aa5bf8546e9ad3b13732133e16d33d166d9f5b0563f8f583d2e": {
+    "content": "{\n  \"seller_name\": \"STEU THI TIEN LOI CIRCLE K\",\n  \"seller_address\": \"123 Nguyen Thi Minh Khai, Ql, TP.HCM\",\n  \"seller_phone\": \"0312456789\",\n  \"tax_id\": \"0312456789\",\n  \"invoice_number\": \"CK-20261017-0892\",\n  \"timestamp\": \"17/10/2026 08:30:15\",\n  \"items\": [\n    {\n      \"item_name\": \"Ca phe sua da 330ml\",\n      \"quantity\": 2.0,\n      \"unit_price\": 25000,\n      \"total_price\": 50000\n    },\n    {\n      \"item_name\": \"Banh mi que pate\",\n      \"quantity\": 2.0,\n      \"unit_price\": 15000,\n      \"total_price\": 30000\n    },\n    {\n      \"item_name\": \"Nuoc khoang Lavie\",\n      \"quantity\": 2.0,\n      \"unit_price\": 10000,\n      \"total_price\": 20000\n    }\n  ],\n  \"subtotal\": 100000,\n  \"discount\": -5000,\n  \"vat_amount\": 7600,\n  \"total_cost\": 102600,\n  \"payment_method\": \"Tien mat\"\n}",
+    "in_tokens": 2519,
+    "out_tokens": 341,
+    "latency_sec": 5.5795
+  },
+  "b0f4db8e5ce181a23f4daf9ee8db22208d90a171d19160dcceb0962d1159ea55": {
+    "content": "{\n  \"seller_name\": \"SIÊU THỊ WINMART+ QUẬN 7\",\n  \"seller_address\": \"458 Nguyễn Thị Thập, Tân Quy, Q7, TP.HCM\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0104918404\",\n  \"invoice_number\": \"WM-20261017-4410\",\n  \"timestamp\": \"17/10/2026 18:15:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Sữa tươi Vinamilk 1L\",\n      \"quantity\": 2.0,\n      \"unit_price\": 34000,\n      \"total_price\": 68000\n    },\n    {\n      \"item_name\": \"Trứng gà CP hộp\",\n      \"quantity\": 10.0,\n      \"unit_price\": 24000,\n      \"total_price\": 240000\n    },\n    {\n      \"item_name\": \"Dầu ăn Neptune chai\",\n      \"quantity\": 2.0,\n      \"unit_price\": 55000,\n      \"total_price\": 110000\n    },\n    {\n      \"item_name\": \"Mì Hảo Hảo tôm chua\",\n      \"quantity\": 5.0,\n      \"unit_price\": 4500,\n      \"total_price\": 22500\n    }\n  ],\n  \"subtotal\": 264500,\n  \"discount\": -14500,\n  \"vat_amount\": 20000,\n  \"total_cost\": 270000,\n  \"payment_method",
+    "in_tokens": 2458,
+    "out_tokens": 384,
+    "latency_sec": 6.1561
+  },
+  "87d5617b1533cadefae5ae7db1c1da380faec0f8e8fc5015d1fcbc691ab39065": {
+    "content": "{\n  \"seller_name\": \"NHA HANG AM THUC VIET\",\n  \"seller_address\": \"72 Vo Van Tan, Phuong Vo Thi Sau, Q3, TP.HCM\",\n  \"seller_phone\": \"028 3930 2233\",\n  \"tax_id\": \"0311223344\",\n  \"invoice_number\": \"HD-20261021-06\",\n  \"timestamp\": \"21/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Lau ca keo la giang dac biet\",\n      \"quantity\": 1.0,\n      \"unit_price\": 180000,\n      \"total_price\": 180000\n    },\n    {\n      \"item_name\": \"Bo xao bong thien ly mien Tay\",\n      \"quantity\": 1.0,\n      \"unit_price\": 95000,\n      \"total_price\": 190000\n    },\n    {\n      \"item_name\": \"Tra da hoa cuc duong phen\",\n      \"quantity\": 1.0,\n      \"unit_price\": 15000,\n      \"total_price\": 45000\n    }\n  ],\n  \"subtotal\": 425000,\n  \"discount\": 15000,\n  \"vat_amount\": 32000,\n  \"total_cost\": 432000,\n  \"payment_method\": \"The Visa\"\n}",
+    "in_tokens": 2702,
+    "out_tokens": 346,
+    "latency_sec": 5.8397
+  },
+  "c7f1a21f33e214fb87d174612370d8b1f44690b5fe30a521afef8f996970258d": {
+    "content": "{\n  \"seller_name\": \"SIEU THI TIEN LOI CIRCLE K\",\n  \"seller_address\": \"208 Nguyen Huu Canh, Binh Thanh, TP.HCM\",\n  \"seller_phone\": \"1900 6368\",\n  \"tax_id\": \"0312456789\",\n  \"invoice_number\": \"CK-20261021-07\",\n  \"timestamp\": \"21/10/2026\",\n  \"items\": [\n    {\n      \"item_name\": \"Banh mi sandwich ga xe\",\n      \"quantity\": 1.0,\n      \"unit_price\": 28000,\n      \"total_price\": 28000\n    },\n    {\n      \"item_name\": \"Sua Milo hop\",\n      \"quantity\": 1.0,\n      \"unit_price\": 11000,\n      \"total_price\": 22000\n    },\n    {\n      \"item_name\": \"Snack khoai tay Lays\",\n      \"quantity\": 2.0,\n      \"unit_price\": 15000,\n      \"total_price\": 30000\n    }\n  ],\n  \"subtotal\": 80000,\n  \"discount\": 5000,\n  \"vat_amount\": 6000,\n  \"total_cost\": 81000,\n  \"payment_method\": \"MoMo\"\n}",
+    "in_tokens": 2422,
+    "out_tokens": 325,
+    "latency_sec": 5.3221
+  },
+  "749d409229af371b97ee9c008baca0d550400140ab664d3b0f0fcb784252bbaf": {
+    "content": "{\n  \"seller_name\": \"QUAN LAU NUONG BINH DAN\",\n  \"seller_address\": \"15 Bo Bao Tan Thang, Tan Phu\",\n  \"seller_phone\": \"0903 889900\",\n  \"tax_id\": \"BOS\",\n  \"invoice_number\": \"79\",\n  \"timestamp\": \"21/10/2026 20:00\",\n  \"items\": [\n    {\n      \"item_name\": \"Lau Thai hai san\",\n      \"quantity\": 1.0,\n      \"unit_price\": 180000,\n      \"total_price\": 180000\n    },\n    {\n      \"item_name\": \"Bia Saigon Special\",\n      \"quantity\": 4.0,\n      \"unit_price\": 20000,\n      \"total_price\": 80000\n    },\n    {\n      \"item_name\": \"Khan lanh\",\n      \"quantity\": 4.0,\n      \"unit_price\": 3000,\n      \"total_price\": 12000\n    },\n    {\n      \"item_name\": \"Tam tinh\",\n      \"quantity\": 1.0,\n      \"unit_price\": 272000,\n      \"total_price\": 272000\n    },\n    {\n      \"item_name\": \"Giam gia\",\n      \"quantity\": 1.0,\n      \"unit_price\": 12000,\n      \"total_price\": 12000\n    },\n    {\n      \"item_name\": \"TE\",\n      \"quantity\": 1.0,\n      \"unit_price\": 260000,\n      \"total_price\": 2600",
+    "in_tokens": 2148,
+    "out_tokens": 384,
+    "latency_sec": 6.0703
+  },
+  "9dc9382e9a4ec697726e92f9e64cf205fe044da0b513a2cc14395afd208a6f3b": {
+    "content": "{\n  \"seller_name\": \"SIEU THI CO.OPMART NGUYEN DINH CHIEU\",\n  \"seller_address\": \"168 Nguyen Dinh Chieu, Phuong 6, Quan 3\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0300624009\",\n  \"invoice_number\": \"COOP-2026-9011\",\n  \"timestamp\": \"21/10/2026 10:45:10\",\n  \"items\": [\n    {\n      \"item_name\": \"Gao thom ST25 5kg\",\n      \"quantity\": 1.0,\n      \"unit_price\": 150000,\n      \"total_price\": 150000\n    },\n    {\n      \"item_name\": \"Dau dau nanh Simply\",\n      \"quantity\": 1.0,\n      \"unit_price\": 130000,\n      \"total_price\": 130000\n    },\n    {\n      \"item_name\": \"Nuoc ngot Coca Cola\",\n      \"quantity\": 6.0,\n      \"unit_price\": 9000,\n      \"total_price\": 54000\n    }\n  ],\n  \"subtotal\": 334000,\n  \"discount\": -16000,\n  \"vat_amount\": 25440,\n  \"total_cost\": 343440,\n  \"payment_method\": \"Chuyen khoan\"\n}",
+    "in_tokens": 2494,
+    "out_tokens": 344,
+    "latency_sec": 5.868
+  },
+  "6f9699253939fea6aba7fd0f77c4da2e03d02ad5aea9447635c183806cb0df0b": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY CO PHAN KINH DOANH NHÀ HÀNG VA KHÁCH SAN HOÀN MỸ\",\n  \"seller_address\": \"Số 110, Vũ Phạm Hàm, Phường Yên Hoà, Quận Cầu Giấy, Thành phó Hà Nội, Việt Nam\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0109716899 4\",\n  \"invoice_number\": \"00000295\",\n  \"timestamp\": \"11/10/2024\",\n  \"items\": [\n    {\n      \"item_name\": \"Lac Rang\",\n      \"quantity\": 1.0,\n      \"unit_price\": 75000,\n      \"total_price\": 75000\n    },\n    {\n      \"item_name\": \"Chim Câu Xúc Phong Tôm Íca\",\n      \"quantity\": 1.0,\n      \"unit_price\": 1620000,\n      \"total_price\": 1620000\n    },\n    {\n      \"item_name\": \"Gỏi Cá Trich Ep Tring\",\n      \"quantity\": 1.0,\n      \"unit_price\": 2400000,\n      \"total_price\": 2400000\n    },\n    {\n      \"item_name\": \"Bào Ngư Nướng\",\n      \"quantity\": 1.0,\n      \"unit_price\": 1500000,\n      \"total_price\": 1500000\n    },\n    {\n      \"item_name\": \"Cá Bơn\",\n      \"quantity\": 1.0,\n      \"unit_price\": 12",
+    "in_tokens": 2374,
+    "out_tokens": 384,
+    "latency_sec": 5.8829
+  },
+  "802ca3e6a9f6486a6838b6aac3e6ba3956f4b050a4ac1338453a9e8a10d66035": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY TNHH AEON VIỆT NAM\",\n  \"seller_address\": \"Số 30, đường Tân Thắng, Phường Son Ky, Quận Tan Phú, TP.Hồ Chí Minh, VN\",\n  \"seller_phone\": \"1800.888.886\",\n  \"tax_id\": \"0311241512\",\n  \"invoice_number\": \"367790\",\n  \"timestamp\": \"24/02/2024\",\n  \"items\": [],\n  \"subtotal\": 0,\n  \"discount\": null,\n  \"vat_amount\": null,\n  \"total_cost\": 0,\n  \"payment_method\": null\n}",
+    "in_tokens": 2377,
+    "out_tokens": 162,
+    "latency_sec": 3.7695
+  },
+  "1ac84d7d8ec8820366a2e83214cde322a51fd4b5590d1d5ab02f65f57022196b": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ NGÂN VIÊN\",\n  \"seller_address\": \"05 PHẠM NGỌC THẠCH, PHƯỜNG QUAN THÁNH, QUẬN BA ĐÌNH, THÀNH PHỐ HÀ NỘI, VIỆT NAM\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0311236382-001\",\n  \"invoice_number\": \"001\",\n  \"timestamp\": \"26/09/2024\",\n  \"items\": [],\n  \"subtotal\": 0,\n  \"discount\": null,\n  \"vat_amount\": null,\n  \"total_cost\": 0,\n  \"payment_method\": null\n}",
+    "in_tokens": 2223,
+    "out_tokens": 179,
+    "latency_sec": 3.8753
+  },
+  "900131a554005c4a713cc180e60ca71ae55fbde89234e98df02d085fd1ed87a5": {
+    "content": "{\n  \"seller_name\": \"CÔNG TY CÔ PHAN SAI\",\n  \"seller_address\": \"4 Lô C24-24B/II, C25/I1, Đường 2F, Khu công nghiệp Vĩnh Lộc, Xã Vinh Lộc A, Huyện Bình Chánh, Thành phố Hồ Chí Minh, Việt Nam\",\n  \"seller_phone\": null,\n  \"tax_id\": \"0302994301\",\n  \"invoice_number\": \"00027568\",\n  \"timestamp\": \"10/15/2024\",\n  \"items\": [\n    {\n      \"item_name\": \"Cơm chiên hải sản ngũ sắc 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Com chiên Dương Châu 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Cơm chiên kim chi 200g\",\n      \"quantity\": 1,\n      \"unit_price\": 19.530,\n      \"total_price\": 19.530\n    },\n    {\n      \"item_name\": \"Mỹ Y sốt bò bim 250g(gói)\",\n      \"quantity\": 1,\n      \"unit_price\": 28.576,\n      \"total_price\": 28.576\n    },\n    {\n      \"item_name\": \"My Y xúc xích kiêu Nhật\",\n",
+    "in_tokens": 2391,
+    "out_tokens": 384,
+    "latency_sec": 5.6025
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "img_id": "05_hoa_don_sai_so_hoc_test_validator.jpg",
+  "image_quality": 0.90,
+  "seller_name": "CUA HANG BACH HOA TONG HOP MINH TAM",
+  "seller_address": "99 Le Van Viet, TP. Thu Duc, TP.HCM",
+  "seller_phone": null,
+  "tax_id": "0316677889",
+  "invoice_number": "MT-2026-9999",
+  "timestamp": "17/10/2026 19:05:00",
+  "items": [
+    {
+      "item_name": "Gao ST25 tui 5kg",
+      "quantity": 1.0,
+      "unit_price": 145000,
+      "total_price": 145000
+    },
+    {
+      "item_name": "Nuoc mam Nam Ngu",
+      "quantity": 1.0,
+      "unit_price": 45000,
+      "total_price": 45000
+    }
+  ],
+  "subtotal": 190000,
+  "discount": 10000,
+  "vat_amount": 14400,
+  "total_cost": 250000,
+  "payment_method": "Tien mat"
+}

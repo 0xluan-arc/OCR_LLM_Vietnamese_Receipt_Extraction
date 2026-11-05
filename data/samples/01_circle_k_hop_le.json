@@ -1,0 +1,35 @@
+{
+  "img_id": "01_circle_k_hop_le.jpg",
+  "image_quality": 0.95,
+  "seller_name": "SIEU THI TIEN LOI CIRCLE K",
+  "seller_address": "123 Nguyen Thi Minh Khai, Q1, TP.HCM",
+  "seller_phone": null,
+  "tax_id": "0312456789",
+  "invoice_number": "CK-20261017-0892",
+  "timestamp": "17/10/2026 08:30:15",
+  "items": [
+    {
+      "item_name": "Ca phe sua da 330ml",
+      "quantity": 2.0,
+      "unit_price": 25000,
+      "total_price": 50000
+    },
+    {
+      "item_name": "Banh mi que pate",
+      "quantity": 2.0,
+      "unit_price": 15000,
+      "total_price": 30000
+    },
+    {
+      "item_name": "Nuoc khoang Lavie",
+      "quantity": 2.0,
+      "unit_price": 10000,
+      "total_price": 20000
+    }
+  ],
+  "subtotal": 100000,
+  "discount": 5000,
+  "vat_amount": 7600,
+  "total_cost": 102600,
+  "payment_method": "Tien mat"
+}

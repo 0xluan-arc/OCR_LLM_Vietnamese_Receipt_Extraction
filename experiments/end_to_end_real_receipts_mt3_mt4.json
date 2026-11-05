@@ -1,0 +1,1404 @@
+{
+  "experiment_metadata": {
+    "stage": "Stage 9 - End-to-End Real Vietnamese Receipts Evaluation (MT3 & MT4)",
+    "timestamp": "2026-10-25 23:12:31",
+    "num_test_receipts": 20,
+    "dataset_root": "D:\\NCKH\\Data_HoaDon_NCKH\\01_MC_OCR_2021_Chuan_CuocThi\\images",
+    "ocr_engine": "PaddleVietOCREngine (DBNet + VietOCR / Hybrid 2-Stage)",
+    "llm_model": "qwen2.5:1.5b-instruct",
+    "llm_endpoint": "http://localhost:11434/v1",
+    "mean_ocr_latency_sec": 1.6721,
+    "ocr_quality_vs_gt": {
+      "cer": 0.8047,
+      "wer": 0.901225
+    }
+  },
+  "configurations": {
+    "config_1_regex_b1": {
+      "title": "Cấu hình 1: Baseline B1 (RegexBaselineExtractor)",
+      "config_key": "config_1_regex_b1",
+      "mcocr_4_fields": {
+        "mode": "mcocr_4_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "SELLER": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.048919,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "SELLER_ADDRESS": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.037856,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "TIMESTAMP": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.947368,
+            "field_cer": 0.1,
+            "tp": 18,
+            "fp": 0,
+            "fn": 2,
+            "support": 20
+          },
+          "TOTAL_COST": {
+            "precision": 0.941176,
+            "recall": 0.8,
+            "f1": 0.864865,
+            "field_cer": 0.1875,
+            "tp": 16,
+            "fp": 1,
+            "fn": 4,
+            "support": 20
+          }
+        },
+        "micro_precision": 0.88,
+        "micro_recall": 0.825,
+        "micro_f1": 0.851613,
+        "macro_precision": 0.885294,
+        "macro_recall": 0.825,
+        "macro_f1": 0.853058,
+        "mean_field_cer": 0.093569
+      },
+      "extended_12_fields": {
+        "mode": "12_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "seller_name": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.048919,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "seller_address": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.037856,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "seller_phone": {
+            "precision": 0.882353,
+            "recall": 1.0,
+            "f1": 0.9375,
+            "field_cer": 0.117647,
+            "tp": 15,
+            "fp": 2,
+            "fn": 0,
+            "support": 15
+          },
+          "tax_id": {
+            "precision": 1.0,
+            "recall": 0.947368,
+            "f1": 0.972973,
+            "field_cer": 0.052632,
+            "tp": 18,
+            "fp": 0,
+            "fn": 1,
+            "support": 19
+          },
+          "invoice_number": {
+            "precision": 0.888889,
+            "recall": 0.8,
+            "f1": 0.842105,
+            "field_cer": 0.183333,
+            "tp": 16,
+            "fp": 2,
+            "fn": 4,
+            "support": 20
+          },
+          "timestamp": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.947368,
+            "field_cer": 0.1,
+            "tp": 18,
+            "fp": 0,
+            "fn": 2,
+            "support": 20
+          },
+          "subtotal": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888889,
+            "field_cer": 0.2,
+            "tp": 16,
+            "fp": 0,
+            "fn": 4,
+            "support": 20
+          },
+          "discount": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "support": 14
+          },
+          "vat_amount": {
+            "precision": 0.9375,
+            "recall": 0.789474,
+            "f1": 0.857143,
+            "field_cer": 0.203008,
+            "tp": 15,
+            "fp": 1,
+            "fn": 4,
+            "support": 19
+          },
+          "total_cost": {
+            "precision": 0.941176,
+            "recall": 0.8,
+            "f1": 0.864865,
+            "field_cer": 0.1875,
+            "tp": 16,
+            "fp": 1,
+            "fn": 4,
+            "support": 20
+          },
+          "payment_method": {
+            "precision": 0.842105,
+            "recall": 0.888889,
+            "f1": 0.864865,
+            "field_cer": 0.505764,
+            "tp": 16,
+            "fp": 3,
+            "fn": 2,
+            "support": 18
+          },
+          "items": {
+            "precision": 0.789474,
+            "recall": 0.789474,
+            "f1": 0.789474,
+            "field_cer": 0.221974,
+            "tp": 15,
+            "fp": 4,
+            "fn": 4,
+            "support": 19
+          }
+        },
+        "micro_precision": 0.900943,
+        "micro_recall": 0.852679,
+        "micro_f1": 0.876147,
+        "macro_precision": 0.906791,
+        "macro_recall": 0.8596,
+        "macro_f1": 0.880432,
+        "mean_field_cer": 0.154886
+      },
+      "item_metrics": {
+        "line_precision": 0.902439,
+        "line_recall": 0.755102,
+        "line_f1": 0.822222,
+        "cell_precision": 0.902439,
+        "cell_recall": 0.755102,
+        "cell_f1": 0.822222,
+        "matched_lines": 37,
+        "total_pred_lines": 41,
+        "total_gt_lines": 49
+      },
+      "reliability_metrics": {
+        "hallucination_rate": 0.0,
+        "hallucinated_fields_count": 0,
+        "total_extracted_fields_count": 193,
+        "total_cost_math_error_rate": 0.25,
+        "exact_receipt_acc": 0.6,
+        "flagged_rate": 0.25
+      },
+      "cost_metrics": {
+        "mean_processing_time_sec": 1.67328,
+        "p95_processing_time_sec": 3.77682,
+        "total_input_tokens": 0,
+        "total_output_tokens": 0,
+        "mean_input_tokens": 0.0,
+        "mean_output_tokens": 0.0
+      },
+      "mean_kie_latency_sec": 0.0012,
+      "mean_e2e_latency_sec": 1.6733
+    },
+    "config_2_llm_zeroshot": {
+      "title": "Cấu hình 2: LLM Zero-shot (qwen2.5:1.5b, LSS Off)",
+      "config_key": "config_2_llm_zeroshot",
+      "mcocr_4_fields": {
+        "mode": "mcocr_4_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "SELLER": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.333333,
+            "field_cer": 0.617662,
+            "tp": 5,
+            "fp": 5,
+            "fn": 15,
+            "support": 20
+          },
+          "SELLER_ADDRESS": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.023304,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "TIMESTAMP": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.057632,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "TOTAL_COST": {
+            "precision": 0.846154,
+            "recall": 0.55,
+            "f1": 0.666667,
+            "field_cer": 0.403333,
+            "tp": 11,
+            "fp": 2,
+            "fn": 9,
+            "support": 20
+          }
+        },
+        "micro_precision": 0.777778,
+        "micro_recall": 0.6125,
+        "micro_f1": 0.685315,
+        "macro_precision": 0.749038,
+        "macro_recall": 0.6125,
+        "macro_f1": 0.6625,
+        "mean_field_cer": 0.275483
+      },
+      "extended_12_fields": {
+        "mode": "12_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "seller_name": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.333333,
+            "field_cer": 0.617662,
+            "tp": 5,
+            "fp": 5,
+            "fn": 15,
+            "support": 20
+          },
+          "seller_address": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.023304,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "seller_phone": {
+            "precision": 0.933333,
+            "recall": 0.933333,
+            "f1": 0.933333,
+            "field_cer": 0.109091,
+            "tp": 14,
+            "fp": 1,
+            "fn": 1,
+            "support": 15
+          },
+          "tax_id": {
+            "precision": 0.882353,
+            "recall": 0.789474,
+            "f1": 0.833333,
+            "field_cer": 0.131579,
+            "tp": 15,
+            "fp": 2,
+            "fn": 4,
+            "support": 19
+          },
+          "invoice_number": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.264583,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "timestamp": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.057632,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "subtotal": {
+            "precision": 0.266667,
+            "recall": 0.2,
+            "f1": 0.228571,
+            "field_cer": 0.498333,
+            "tp": 4,
+            "fp": 11,
+            "fn": 16,
+            "support": 20
+          },
+          "discount": {
+            "precision": 1.0,
+            "recall": 0.785714,
+            "f1": 0.88,
+            "field_cer": 0.214286,
+            "tp": 11,
+            "fp": 0,
+            "fn": 3,
+            "support": 14
+          },
+          "vat_amount": {
+            "precision": 1.0,
+            "recall": 0.684211,
+            "f1": 0.8125,
+            "field_cer": 0.315789,
+            "tp": 13,
+            "fp": 0,
+            "fn": 6,
+            "support": 19
+          },
+          "total_cost": {
+            "precision": 0.846154,
+            "recall": 0.55,
+            "f1": 0.666667,
+            "field_cer": 0.403333,
+            "tp": 11,
+            "fp": 2,
+            "fn": 9,
+            "support": 20
+          },
+          "payment_method": {
+            "precision": 0.538462,
+            "recall": 0.388889,
+            "f1": 0.451613,
+            "field_cer": 0.388889,
+            "tp": 7,
+            "fp": 6,
+            "fn": 11,
+            "support": 18
+          },
+          "items": {
+            "precision": 0.05,
+            "recall": 0.052632,
+            "f1": 0.051282,
+            "field_cer": 0.523765,
+            "tp": 1,
+            "fp": 19,
+            "fn": 18,
+            "support": 19
+          }
+        },
+        "micro_precision": 0.700535,
+        "micro_recall": 0.584821,
+        "micro_f1": 0.63747,
+        "macro_precision": 0.709747,
+        "macro_recall": 0.594521,
+        "macro_f1": 0.640886,
+        "mean_field_cer": 0.295687
+      },
+      "item_metrics": {
+        "line_precision": 0.150685,
+        "line_recall": 0.22449,
+        "line_f1": 0.180328,
+        "cell_precision": 0.386986,
+        "cell_recall": 0.576531,
+        "cell_f1": 0.463115,
+        "matched_lines": 11,
+        "total_pred_lines": 73,
+        "total_gt_lines": 49
+      },
+      "reliability_metrics": {
+        "hallucination_rate": 0.11976,
+        "hallucinated_fields_count": 20,
+        "total_extracted_fields_count": 167,
+        "total_cost_math_error_rate": 0.8,
+        "exact_receipt_acc": 0.0,
+        "flagged_rate": 1.0
+      },
+      "cost_metrics": {
+        "mean_processing_time_sec": 7.23829,
+        "p95_processing_time_sec": 9.822415,
+        "total_input_tokens": 15635,
+        "total_output_tokens": 7134,
+        "mean_input_tokens": 781.75,
+        "mean_output_tokens": 356.7
+      },
+      "mean_kie_latency_sec": 5.5662,
+      "mean_e2e_latency_sec": 7.2383
+    },
+    "config_3_llm_fewshot_no_lss": {
+      "title": "Cấu hình 3: LLM Delta-Rule Few-Shot (CMS M_t, LSS Off)",
+      "config_key": "config_3_llm_fewshot_no_lss",
+      "mcocr_4_fields": {
+        "mode": "mcocr_4_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "SELLER": {
+            "precision": 0.7,
+            "recall": 0.7,
+            "f1": 0.7,
+            "field_cer": 0.079613,
+            "tp": 14,
+            "fp": 6,
+            "fn": 6,
+            "support": 20
+          },
+          "SELLER_ADDRESS": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.03991,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "TIMESTAMP": {
+            "precision": 0.55,
+            "recall": 0.55,
+            "f1": 0.55,
+            "field_cer": 0.218421,
+            "tp": 11,
+            "fp": 9,
+            "fn": 9,
+            "support": 20
+          },
+          "TOTAL_COST": {
+            "precision": 0.823529,
+            "recall": 0.7,
+            "f1": 0.756757,
+            "field_cer": 0.263333,
+            "tp": 14,
+            "fp": 3,
+            "fn": 6,
+            "support": 20
+          }
+        },
+        "micro_precision": 0.714286,
+        "micro_recall": 0.6875,
+        "micro_f1": 0.700637,
+        "macro_precision": 0.718382,
+        "macro_recall": 0.6875,
+        "macro_f1": 0.701689,
+        "mean_field_cer": 0.150319
+      },
+      "extended_12_fields": {
+        "mode": "12_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "seller_name": {
+            "precision": 0.7,
+            "recall": 0.7,
+            "f1": 0.7,
+            "field_cer": 0.079613,
+            "tp": 14,
+            "fp": 6,
+            "fn": 6,
+            "support": 20
+          },
+          "seller_address": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "field_cer": 0.03991,
+            "tp": 16,
+            "fp": 4,
+            "fn": 4,
+            "support": 20
+          },
+          "seller_phone": {
+            "precision": 0.928571,
+            "recall": 0.866667,
+            "f1": 0.896552,
+            "field_cer": 0.1875,
+            "tp": 13,
+            "fp": 1,
+            "fn": 2,
+            "support": 15
+          },
+          "tax_id": {
+            "precision": 0.842105,
+            "recall": 0.842105,
+            "f1": 0.842105,
+            "field_cer": 0.125,
+            "tp": 16,
+            "fp": 3,
+            "fn": 3,
+            "support": 19
+          },
+          "invoice_number": {
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1": 0.9,
+            "field_cer": 0.0875,
+            "tp": 18,
+            "fp": 2,
+            "fn": 2,
+            "support": 20
+          },
+          "timestamp": {
+            "precision": 0.55,
+            "recall": 0.55,
+            "f1": 0.55,
+            "field_cer": 0.218421,
+            "tp": 11,
+            "fp": 9,
+            "fn": 9,
+            "support": 20
+          },
+          "subtotal": {
+            "precision": 0.647059,
+            "recall": 0.55,
+            "f1": 0.594595,
+            "field_cer": 0.308333,
+            "tp": 11,
+            "fp": 6,
+            "fn": 9,
+            "support": 20
+          },
+          "discount": {
+            "precision": 1.0,
+            "recall": 0.928571,
+            "f1": 0.962963,
+            "field_cer": 0.071429,
+            "tp": 13,
+            "fp": 0,
+            "fn": 1,
+            "support": 14
+          },
+          "vat_amount": {
+            "precision": 1.0,
+            "recall": 0.789474,
+            "f1": 0.882353,
+            "field_cer": 0.210526,
+            "tp": 15,
+            "fp": 0,
+            "fn": 4,
+            "support": 19
+          },
+          "total_cost": {
+            "precision": 0.823529,
+            "recall": 0.7,
+            "f1": 0.756757,
+            "field_cer": 0.263333,
+            "tp": 14,
+            "fp": 3,
+            "fn": 6,
+            "support": 20
+          },
+          "payment_method": {
+            "precision": 0.785714,
+            "recall": 0.611111,
+            "f1": 0.6875,
+            "field_cer": 0.263889,
+            "tp": 11,
+            "fp": 3,
+            "fn": 7,
+            "support": 18
+          },
+          "items": {
+            "precision": 0.277778,
+            "recall": 0.263158,
+            "f1": 0.27027,
+            "field_cer": 0.297581,
+            "tp": 5,
+            "fp": 13,
+            "fn": 14,
+            "support": 19
+          }
+        },
+        "micro_precision": 0.758454,
+        "micro_recall": 0.700893,
+        "micro_f1": 0.728538,
+        "macro_precision": 0.77123,
+        "macro_recall": 0.708424,
+        "macro_f1": 0.736925,
+        "mean_field_cer": 0.17942
+      },
+      "item_metrics": {
+        "line_precision": 0.45283,
+        "line_recall": 0.489796,
+        "line_f1": 0.470588,
+        "cell_precision": 0.650943,
+        "cell_recall": 0.704082,
+        "cell_f1": 0.676471,
+        "matched_lines": 24,
+        "total_pred_lines": 53,
+        "total_gt_lines": 49
+      },
+      "reliability_metrics": {
+        "hallucination_rate": 0.05291,
+        "hallucinated_fields_count": 10,
+        "total_extracted_fields_count": 189,
+        "total_cost_math_error_rate": 0.5,
+        "exact_receipt_acc": 0.0,
+        "flagged_rate": 0.7
+      },
+      "cost_metrics": {
+        "mean_processing_time_sec": 6.774615,
+        "p95_processing_time_sec": 9.49502,
+        "total_input_tokens": 35368,
+        "total_output_tokens": 6233,
+        "mean_input_tokens": 1768.4,
+        "mean_output_tokens": 311.65
+      },
+      "mean_kie_latency_sec": 5.1025,
+      "mean_e2e_latency_sec": 6.7746
+    },
+    "config_4_llm_fewshot_lss": {
+      "title": "Cấu hình 4: LLM Delta-Rule Few-Shot + LSS Self-Correction",
+      "config_key": "config_4_llm_fewshot_lss",
+      "mcocr_4_fields": {
+        "mode": "mcocr_4_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "SELLER": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.031012,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "SELLER_ADDRESS": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.038521,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "TIMESTAMP": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.028947,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "TOTAL_COST": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "support": 20
+          }
+        },
+        "micro_precision": 0.9125,
+        "micro_recall": 0.9125,
+        "micro_f1": 0.9125,
+        "macro_precision": 0.9125,
+        "macro_recall": 0.9125,
+        "macro_f1": 0.9125,
+        "mean_field_cer": 0.02462
+      },
+      "extended_12_fields": {
+        "mode": "12_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "seller_name": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.031012,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "seller_address": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.038521,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "seller_phone": {
+            "precision": 0.833333,
+            "recall": 1.0,
+            "f1": 0.909091,
+            "field_cer": 0.166667,
+            "tp": 15,
+            "fp": 3,
+            "fn": 0,
+            "support": 15
+          },
+          "tax_id": {
+            "precision": 0.85,
+            "recall": 0.894737,
+            "f1": 0.871795,
+            "field_cer": 0.075,
+            "tp": 17,
+            "fp": 3,
+            "fn": 2,
+            "support": 19
+          },
+          "invoice_number": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.05,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "timestamp": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.028947,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "subtotal": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.016667,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "discount": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "support": 14
+          },
+          "vat_amount": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 19,
+            "fp": 0,
+            "fn": 0,
+            "support": 19
+          },
+          "total_cost": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "support": 20
+          },
+          "payment_method": {
+            "precision": 0.789474,
+            "recall": 0.833333,
+            "f1": 0.810811,
+            "field_cer": 0.092105,
+            "tp": 15,
+            "fp": 4,
+            "fn": 3,
+            "support": 18
+          },
+          "items": {
+            "precision": 0.7,
+            "recall": 0.736842,
+            "f1": 0.717949,
+            "field_cer": 0.152418,
+            "tp": 14,
+            "fp": 6,
+            "fn": 5,
+            "support": 19
+          }
+        },
+        "micro_precision": 0.891304,
+        "micro_recall": 0.915179,
+        "micro_f1": 0.903084,
+        "macro_precision": 0.893567,
+        "macro_recall": 0.917909,
+        "macro_f1": 0.90497,
+        "mean_field_cer": 0.054278
+      },
+      "item_metrics": {
+        "line_precision": 0.787234,
+        "line_recall": 0.755102,
+        "line_f1": 0.770833,
+        "cell_precision": 0.861702,
+        "cell_recall": 0.826531,
+        "cell_f1": 0.84375,
+        "matched_lines": 37,
+        "total_pred_lines": 47,
+        "total_gt_lines": 49
+      },
+      "reliability_metrics": {
+        "hallucination_rate": 0.028571,
+        "hallucinated_fields_count": 6,
+        "total_extracted_fields_count": 210,
+        "total_cost_math_error_rate": 0.25,
+        "exact_receipt_acc": 0.35,
+        "flagged_rate": 0.3
+      },
+      "cost_metrics": {
+        "mean_processing_time_sec": 7.714945,
+        "p95_processing_time_sec": 12.12975,
+        "total_input_tokens": 45092,
+        "total_output_tokens": 7245,
+        "mean_input_tokens": 2254.6,
+        "mean_output_tokens": 362.25
+      },
+      "mean_kie_latency_sec": 6.0428,
+      "mean_e2e_latency_sec": 7.7149
+    },
+    "config_5_hybrid_router": {
+      "title": "Cấu hình 5: Hybrid Nested Router (Fast Regex -> Slow LLM+LSS)",
+      "config_key": "config_5_hybrid_router",
+      "mcocr_4_fields": {
+        "mode": "mcocr_4_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "SELLER": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.031012,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "SELLER_ADDRESS": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.038521,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "TIMESTAMP": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.028947,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "TOTAL_COST": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "support": 20
+          }
+        },
+        "micro_precision": 0.9125,
+        "micro_recall": 0.9125,
+        "micro_f1": 0.9125,
+        "macro_precision": 0.9125,
+        "macro_recall": 0.9125,
+        "macro_f1": 0.9125,
+        "mean_field_cer": 0.02462
+      },
+      "extended_12_fields": {
+        "mode": "12_fields",
+        "num_receipts": 20,
+        "per_field": {
+          "seller_name": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.031012,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "seller_address": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "field_cer": 0.038521,
+            "tp": 17,
+            "fp": 3,
+            "fn": 3,
+            "support": 20
+          },
+          "seller_phone": {
+            "precision": 0.882353,
+            "recall": 1.0,
+            "f1": 0.9375,
+            "field_cer": 0.117647,
+            "tp": 15,
+            "fp": 2,
+            "fn": 0,
+            "support": 15
+          },
+          "tax_id": {
+            "precision": 0.85,
+            "recall": 0.894737,
+            "f1": 0.871795,
+            "field_cer": 0.075,
+            "tp": 17,
+            "fp": 3,
+            "fn": 2,
+            "support": 19
+          },
+          "invoice_number": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.05,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "timestamp": {
+            "precision": 0.95,
+            "recall": 0.95,
+            "f1": 0.95,
+            "field_cer": 0.028947,
+            "tp": 19,
+            "fp": 1,
+            "fn": 1,
+            "support": 20
+          },
+          "subtotal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "support": 20
+          },
+          "discount": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "support": 14
+          },
+          "vat_amount": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 19,
+            "fp": 0,
+            "fn": 0,
+            "support": 19
+          },
+          "total_cost": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "field_cer": 0.0,
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "support": 20
+          },
+          "payment_method": {
+            "precision": 0.947368,
+            "recall": 1.0,
+            "f1": 0.972973,
+            "field_cer": 0.052632,
+            "tp": 18,
+            "fp": 1,
+            "fn": 0,
+            "support": 18
+          },
+          "items": {
+            "precision": 0.75,
+            "recall": 0.789474,
+            "f1": 0.769231,
+            "field_cer": 0.150663,
+            "tp": 15,
+            "fp": 5,
+            "fn": 4,
+            "support": 19
+          }
+        },
+        "micro_precision": 0.917031,
+        "micro_recall": 0.9375,
+        "micro_f1": 0.927152,
+        "macro_precision": 0.919143,
+        "macro_recall": 0.940351,
+        "macro_f1": 0.929292,
+        "mean_field_cer": 0.045369
+      },
+      "item_metrics": {
+        "line_precision": 0.808511,
+        "line_recall": 0.77551,
+        "line_f1": 0.791667,
+        "cell_precision": 0.87234,
+        "cell_recall": 0.836735,
+        "cell_f1": 0.854167,
+        "matched_lines": 38,
+        "total_pred_lines": 47,
+        "total_gt_lines": 49
+      },
+      "reliability_metrics": {
+        "hallucination_rate": 0.014354,
+        "hallucinated_fields_count": 3,
+        "total_extracted_fields_count": 209,
+        "total_cost_math_error_rate": 0.2,
+        "exact_receipt_acc": 0.65,
+        "flagged_rate": 0.25
+      },
+      "cost_metrics": {
+        "mean_processing_time_sec": 3.88046,
+        "p95_processing_time_sec": 11.338335,
+        "total_input_tokens": 17878,
+        "total_output_tokens": 2514,
+        "mean_input_tokens": 893.9,
+        "mean_output_tokens": 125.7
+      },
+      "mean_kie_latency_sec": 2.2083,
+      "mean_e2e_latency_sec": 3.8805,
+      "router_stats": {
+        "fast_path_count": 14,
+        "escalated_path_count": 6,
+        "fast_path_ratio": 0.7
+      }
+    }
+  },
+  "mt3_improvement_analysis": {
+    "baseline_b1_micro_f1_4_fields": 0.8516,
+    "baseline_b1_micro_f1_12_fields": 0.8761,
+    "config4_micro_f1_4_fields": 0.9125,
+    "config4_micro_f1_12_fields": 0.9031,
+    "config5_micro_f1_4_fields": 0.9125,
+    "config5_micro_f1_12_fields": 0.9272,
+    "config4_abs_gain_4_fields_pct": 6.09,
+    "config4_rel_gain_4_fields_pct": 7.15,
+    "config4_abs_gain_12_fields_pct": 2.69,
+    "config4_rel_gain_12_fields_pct": 3.07,
+    "config5_abs_gain_12_fields_pct": 5.1,
+    "config5_rel_gain_12_fields_pct": 5.82
+  },
+  "mt4_lss_self_correction_analysis": {
+    "config3_math_or_total_error_count": 13,
+    "config4_math_or_total_error_count": 6,
+    "lss_detected_and_corrected_count": 12,
+    "config3_total_cost_math_error_rate": 0.5,
+    "config4_total_cost_math_error_rate": 0.25,
+    "lss_corrected_cases": [
+      {
+        "img_id": "hoadon_thucte_001.jpg",
+        "gt_subtotal": 154500,
+        "gt_discount": 4500,
+        "gt_vat_amount": 12000,
+        "gt_total_cost": 162000,
+        "config3_subtotal": 154500,
+        "config3_discount": 4500,
+        "config3_vat_amount": 12000,
+        "config3_total_cost": 162000,
+        "config3_issue_codes": [
+          "ITEMS_SUM_SUBTOTAL_MISMATCH"
+        ],
+        "config4_subtotal": 154500,
+        "config4_discount": 4500,
+        "config4_vat_amount": 12000,
+        "config4_total_cost": 162000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": false,
+        "fixed_subtotal_or_vat": false
+      },
+      {
+        "img_id": "hoadon_thucte_003.jpg",
+        "gt_subtotal": 168000,
+        "gt_discount": 18000,
+        "gt_vat_amount": 12000,
+        "gt_total_cost": 162000,
+        "config3_subtotal": 168000,
+        "config3_discount": 18000,
+        "config3_vat_amount": 12000,
+        "config3_total_cost": 162000,
+        "config3_issue_codes": [
+          "ITEMS_SUM_SUBTOTAL_MISMATCH"
+        ],
+        "config4_subtotal": 168000,
+        "config4_discount": 18000,
+        "config4_vat_amount": 12000,
+        "config4_total_cost": 162000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": false,
+        "fixed_subtotal_or_vat": false
+      },
+      {
+        "img_id": "hoadon_thucte_008.jpg",
+        "gt_subtotal": 56000,
+        "gt_discount": 6000,
+        "gt_vat_amount": 4000,
+        "gt_total_cost": 54000,
+        "config3_subtotal": 100000,
+        "config3_discount": 6000,
+        "config3_vat_amount": 4000,
+        "config3_total_cost": 54000,
+        "config3_issue_codes": [
+          "ITEMS_SUM_SUBTOTAL_MISMATCH",
+          "ARITHMETIC_MISMATCH_TOTAL"
+        ],
+        "config4_subtotal": 56000,
+        "config4_discount": 6000,
+        "config4_vat_amount": 4000,
+        "config4_total_cost": 54000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": false,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "hoadon_thucte_010.jpg",
+        "gt_subtotal": 72000,
+        "gt_discount": 2000,
+        "gt_vat_amount": 5600,
+        "gt_total_cost": 75600,
+        "config3_subtotal": 352000,
+        "config3_discount": 2000,
+        "config3_vat_amount": 5600,
+        "config3_total_cost": 352000,
+        "config3_issue_codes": [
+          "ITEM_MATH_MISMATCH",
+          "ITEMS_SUM_SUBTOTAL_MISMATCH",
+          "ARITHMETIC_MISMATCH_TOTAL",
+          "EVIDENCE_NOT_FOUND_TOTAL_COST"
+        ],
+        "config4_subtotal": 72000,
+        "config4_discount": 2000,
+        "config4_vat_amount": 5600,
+        "config4_total_cost": 75600,
+        "config4_retry_count": 1,
+        "fixed_total_cost": true,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "mcocr_public_002_02_winmart_co_dau_hop_le.jpg",
+        "gt_subtotal": 264500,
+        "gt_discount": 14500,
+        "gt_vat_amount": 20000,
+        "gt_total_cost": 270000,
+        "config3_subtotal": 264500,
+        "config3_discount": 14500,
+        "config3_vat_amount": 20000,
+        "config3_total_cost": 270000,
+        "config3_issue_codes": [
+          "ITEMS_SUM_SUBTOTAL_MISMATCH"
+        ],
+        "config4_subtotal": 264500,
+        "config4_discount": 14500,
+        "config4_vat_amount": 20000,
+        "config4_total_cost": 270000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": false,
+        "fixed_subtotal_or_vat": false
+      },
+      {
+        "img_id": "mcocr_public_006_06_nha_hang_mon_an_xuong_dong.jpg",
+        "gt_subtotal": 415000,
+        "gt_discount": 15000,
+        "gt_vat_amount": 32000,
+        "gt_total_cost": 432000,
+        "config3_subtotal": 425000,
+        "config3_discount": 15000,
+        "config3_vat_amount": 32000,
+        "config3_total_cost": 432000,
+        "config3_issue_codes": [
+          "ITEM_MATH_MISMATCH",
+          "ITEM_MATH_MISMATCH",
+          "ITEMS_SUM_SUBTOTAL_MISMATCH",
+          "ARITHMETIC_MISMATCH_TOTAL"
+        ],
+        "config4_subtotal": 415000,
+        "config4_discount": 15000,
+        "config4_vat_amount": 32000,
+        "config4_total_cost": 432000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": false,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "mcocr_public_007_07_circle_k_nhieu_ky_tu_ocr_lss.jpg",
+        "gt_subtotal": 80000,
+        "gt_discount": 5000,
+        "gt_vat_amount": 6000,
+        "gt_total_cost": 81000,
+        "config3_subtotal": 80000,
+        "config3_discount": 5000,
+        "config3_vat_amount": 6000,
+        "config3_total_cost": 81000,
+        "config3_issue_codes": [
+          "ITEM_MATH_MISMATCH"
+        ],
+        "config4_subtotal": 80000,
+        "config4_discount": 5000,
+        "config4_vat_amount": 6000,
+        "config4_total_cost": 81000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": false,
+        "fixed_subtotal_or_vat": false
+      },
+      {
+        "img_id": "mcocr_public_008_08_quan_an_viet_tat_k_khong_dau.jpg",
+        "gt_subtotal": 272000,
+        "gt_discount": 12000,
+        "gt_vat_amount": null,
+        "gt_total_cost": 260000,
+        "config3_subtotal": null,
+        "config3_discount": null,
+        "config3_vat_amount": null,
+        "config3_total_cost": null,
+        "config3_issue_codes": [
+          "MISSING_TOTAL_COST",
+          "ITEM_MATH_MISMATCH"
+        ],
+        "config4_subtotal": 272000,
+        "config4_discount": 12000,
+        "config4_vat_amount": null,
+        "config4_total_cost": 260000,
+        "config4_retry_count": 1,
+        "fixed_total_cost": true,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "mcocr_vn_0004.jpg",
+        "gt_subtotal": 16024000,
+        "gt_discount": null,
+        "gt_vat_amount": 1288320,
+        "gt_total_cost": 17312320,
+        "config3_subtotal": null,
+        "config3_discount": null,
+        "config3_vat_amount": null,
+        "config3_total_cost": null,
+        "config3_issue_codes": [
+          "MISSING_TOTAL_COST"
+        ],
+        "config4_subtotal": 16024000,
+        "config4_discount": null,
+        "config4_vat_amount": 1288320,
+        "config4_total_cost": 17312320,
+        "config4_retry_count": 1,
+        "fixed_total_cost": true,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "mcocr_vn_0009.jpg",
+        "gt_subtotal": 155602,
+        "gt_discount": null,
+        "gt_vat_amount": 12448,
+        "gt_total_cost": 168050,
+        "config3_subtotal": 0,
+        "config3_discount": null,
+        "config3_vat_amount": null,
+        "config3_total_cost": 0,
+        "config3_issue_codes": [
+          "INVALID_TOTAL_COST_VALUE",
+          "MISSING_DETECTED_FIELD"
+        ],
+        "config4_subtotal": 155602,
+        "config4_discount": null,
+        "config4_vat_amount": 12448,
+        "config4_total_cost": 168050,
+        "config4_retry_count": 1,
+        "fixed_total_cost": true,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "mcocr_vn_0012.jpg",
+        "gt_subtotal": 916000,
+        "gt_discount": null,
+        "gt_vat_amount": 74840,
+        "gt_total_cost": 990840,
+        "config3_subtotal": 0,
+        "config3_discount": null,
+        "config3_vat_amount": null,
+        "config3_total_cost": 0,
+        "config3_issue_codes": [
+          "INVALID_TOTAL_COST_VALUE",
+          "MISSING_DETECTED_FIELD"
+        ],
+        "config4_subtotal": 916000,
+        "config4_discount": null,
+        "config4_vat_amount": 74840,
+        "config4_total_cost": 990840,
+        "config4_retry_count": 1,
+        "fixed_total_cost": true,
+        "fixed_subtotal_or_vat": true
+      },
+      {
+        "img_id": "mcocr_vn_0014.jpg",
+        "gt_subtotal": 1297335,
+        "gt_discount": null,
+        "gt_vat_amount": 103787,
+        "gt_total_cost": 1401122,
+        "config3_subtotal": null,
+        "config3_discount": null,
+        "config3_vat_amount": null,
+        "config3_total_cost": null,
+        "config3_issue_codes": [
+          "MISSING_TOTAL_COST",
+          "MISSING_DETECTED_FIELD"
+        ],
+        "config4_subtotal": 1297335,
+        "config4_discount": null,
+        "config4_vat_amount": 103787,
+        "config4_total_cost": 1401122,
+        "config4_retry_count": 1,
+        "fixed_total_cost": true,
+        "fixed_subtotal_or_vat": true
+      }
+    ]
+  }
+}

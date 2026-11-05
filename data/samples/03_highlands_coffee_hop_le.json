@@ -1,0 +1,35 @@
+{
+  "img_id": "03_highlands_coffee_hop_le.jpg",
+  "image_quality": 0.93,
+  "seller_name": "HIGHLANDS COFFEE - BITEXCO TOWER",
+  "seller_address": "Số 2 Hải Triều, Bến Nghé, Quận 1, TP.HCM",
+  "seller_phone": null,
+  "tax_id": "0302088135",
+  "invoice_number": "HL-889210",
+  "timestamp": "17/10/2026 12:45:22",
+  "items": [
+    {
+      "item_name": "Phin Sữa Đá Size M",
+      "quantity": 2.0,
+      "unit_price": 39000,
+      "total_price": 78000
+    },
+    {
+      "item_name": "Trà Sen Vàng Size L",
+      "quantity": 1.0,
+      "unit_price": 55000,
+      "total_price": 55000
+    },
+    {
+      "item_name": "Bánh Phô Mai Trà Xanh",
+      "quantity": 1.0,
+      "unit_price": 35000,
+      "total_price": 35000
+    }
+  ],
+  "subtotal": 168000,
+  "discount": null,
+  "vat_amount": 13440,
+  "total_cost": 181440,
+  "payment_method": "MoMo"
+}

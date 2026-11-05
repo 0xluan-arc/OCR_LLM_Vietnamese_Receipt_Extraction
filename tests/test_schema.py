@@ -25,11 +25,59 @@ def test_receipt_item_creation():
 
 
 def test_receipt_data_defaults():
-    """Kiểm tra khởi tạo ReceiptData với các trường tùy chọn."""
+    """Kiểm tra khởi tạo ReceiptData với đủ 12 trường tùy chọn."""
     data = ReceiptData()
     assert data.seller_name is None
-    assert data.total_cost is None
+    assert data.seller_address is None
+    assert data.seller_phone is None
+    assert data.tax_id is None
+    assert data.invoice_number is None
+    assert data.timestamp is None
     assert data.items == []
+    assert data.subtotal is None
+    assert data.discount is None
+    assert data.vat_amount is None
+    assert data.total_cost is None
+    assert data.payment_method is None
+
+
+def test_receipt_data_to_mc_ocr_dict():
+    """Kiểm tra chuyển đổi ReceiptData sang 4 trường chuẩn của MC-OCR 2021."""
+    data = ReceiptData(
+        seller_name="SIÊU THỊ WINMART+",
+        seller_address="458 Nguyễn Thị Thập, Q7",
+        seller_phone="028 3822 9999",
+        timestamp="17/10/2026 18:15:00",
+        total_cost=270000,
+    )
+    mc_dict = data.to_mc_ocr_dict()
+    assert mc_dict == {
+        "SELLER": "SIÊU THỊ WINMART+",
+        "SELLER_ADDRESS": "458 Nguyễn Thị Thập, Q7",
+        "TIMESTAMP": "17/10/2026 18:15:00",
+        "TOTAL_COST": "270000",
+    }
+
+    empty_mc = ReceiptData().to_mc_ocr_dict()
+    assert empty_mc["TOTAL_COST"] is None
+
+
+def test_extraction_metadata_nested_learning_fields():
+    """Kiểm tra các trường metadata phục vụ Nested Learning và Cost-Aware LLM Pipeline."""
+    meta = ExtractionMetadata(
+        method="llm_fewshot",
+        ocr_engine="vietocr",
+        adaptation_mode="few_shot_cms",
+        retry_count=2,
+        needs_human_review=True,
+        input_tokens=840,
+        output_tokens=215,
+    )
+    assert meta.adaptation_mode == "few_shot_cms"
+    assert meta.retry_count == 2
+    assert meta.needs_human_review is True
+    assert meta.input_tokens == 840
+    assert meta.output_tokens == 215
 
 
 def test_receipt_data_serialization():

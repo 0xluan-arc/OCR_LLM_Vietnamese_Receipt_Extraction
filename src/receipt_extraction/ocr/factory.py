@@ -5,11 +5,12 @@ from pathlib import Path
 from .base import BaseOCREngine, OCRResult
 from .dummy_ocr import DummyOCREngine
 from .tesseract_ocr import TesseractOCREngine
+from .vietocr_engine import VietOCREngine, PaddleVietOCREngine
 from receipt_extraction.config import config
 
 
 class UnimplementedOCREngine(BaseOCREngine):
-    """Engine giữ chỗ cho các mô hình đang trong lộ trình phát triển (VietOCR, PaddleOCR)."""
+    """Engine giữ chỗ dự phòng cho các mô hình mở rộng tương lai."""
 
     def __init__(self, name: str, planned_phase: str):
         super().__init__(name=name)
@@ -28,23 +29,34 @@ class UnimplementedOCREngine(BaseOCREngine):
         )
 
 
-def get_ocr_engine(engine_name: Optional[str] = None) -> BaseOCREngine:
+def get_ocr_engine(
+    engine_name: Optional[str] = None,
+    fallback_to_tesseract: bool = False,
+) -> BaseOCREngine:
     """Trả về instance của OCR engine tương ứng.
-    
-    Quy tắc khoa học: Tuyệt đối KHÔNG giả lập OCR thật bằng Dummy nếu không được yêu cầu rõ ràng.
+
+    Nếu không truyền `engine_name` (dùng mặc định từ config là `paddleocr`) hoặc bật `fallback_to_tesseract=True`,
+    hệ thống sẽ ưu tiên `PaddleVietOCREngine` và tự động fallback về `TesseractOCREngine` nếu máy chưa hỗ trợ.
     """
-    name = (engine_name or config.ocr.engine).lower().strip()
-    
+    use_default = engine_name is None
+    name = (engine_name or config.ocr.engine or "paddleocr").lower().strip()
+
     if name == "dummy":
         return DummyOCREngine()
     elif name == "tesseract":
         return TesseractOCREngine()
     elif name == "vietocr":
-        return UnimplementedOCREngine(name="vietocr", planned_phase="Giai đoạn 3 - Tuần 3 (VietOCR recognition)")
-    elif name == "paddleocr":
-        return UnimplementedOCREngine(name="paddleocr", planned_phase="Giai đoạn 3 - Tuần 3 (PaddleOCR text detection)")
+        eng: BaseOCREngine = VietOCREngine()
+    elif name in ("paddleocr", "paddle_vietocr"):
+        eng = PaddleVietOCREngine()
     else:
         raise ValueError(
             f"Không nhận dạng được OCR engine '{name}'. "
             f"Các lựa chọn hợp lệ: 'dummy', 'tesseract', 'vietocr', 'paddleocr'."
         )
+
+    if (use_default or fallback_to_tesseract) and not eng.is_available()[0]:
+        tess = TesseractOCREngine()
+        if tess.is_available()[0]:
+            return tess
+    return eng

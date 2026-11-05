@@ -1,0 +1,227 @@
+{
+  "title": "Nghiên cứu Thực nghiệm Chứng minh Khung lý thuyết Nested Learning (NeurIPS 2025)",
+  "paper_reference": "Behrouz et al., 'Nested Learning: The Illusion of Deep Learning Architecture', NeurIPS 2025",
+  "experiment_1_memory_capacity_denoising": {
+    "num_samples": 30,
+    "feature_dim": 128,
+    "epochs": 5,
+    "final_hebbian_mse": 2.63959,
+    "final_delta_mse": 0.283675,
+    "mse_reduction_percentage": 89.25,
+    "history": {
+      "hebbian_mse": [
+        1.6357952983631252,
+        2.7460562932652,
+        2.362854636616897,
+        3.3204728867270976,
+        2.639589752745076
+      ],
+      "delta_mse": [
+        0.5066155091752699,
+        0.39244079941220167,
+        0.32530722808492385,
+        0.30929628953671245,
+        0.28367501338256684
+      ],
+      "hebbian_frob_norm": [
+        2.3384722223863954,
+        2.9534245231621106,
+        2.878349576813358,
+        3.1921156063741267,
+        2.968019436165185
+      ],
+      "delta_frob_norm": [
+        1.6870821951223967,
+        2.467555827538744,
+        3.0084493872514364,
+        3.3988347576384146,
+        3.706011264865888
+      ]
+    },
+    "noise_eval_results": [
+      {
+        "noise_sigma": 0.0,
+        "hebbian_top1_acc": 0.1333,
+        "hebbian_top3_acc": 0.3333,
+        "delta_top1_acc": 0.6,
+        "delta_top3_acc": 0.7
+      },
+      {
+        "noise_sigma": 0.05,
+        "hebbian_top1_acc": 0.1556,
+        "hebbian_top3_acc": 0.2667,
+        "delta_top1_acc": 0.5556,
+        "delta_top3_acc": 0.6667
+      },
+      {
+        "noise_sigma": 0.1,
+        "hebbian_top1_acc": 0.2222,
+        "hebbian_top3_acc": 0.3111,
+        "delta_top1_acc": 0.5889,
+        "delta_top3_acc": 0.7
+      },
+      {
+        "noise_sigma": 0.2,
+        "hebbian_top1_acc": 0.1889,
+        "hebbian_top3_acc": 0.3,
+        "delta_top1_acc": 0.5667,
+        "delta_top3_acc": 0.7333
+      },
+      {
+        "noise_sigma": 0.3,
+        "hebbian_top1_acc": 0.1556,
+        "hebbian_top3_acc": 0.2556,
+        "delta_top1_acc": 0.5,
+        "delta_top3_acc": 0.6556
+      }
+    ]
+  },
+  "experiment_2_continual_domain_adaptation": {
+    "num_tasks": 3,
+    "task_names": [
+      "Domain_1_Supermarket",
+      "Domain_2_FB_Restaurant",
+      "Domain_3_Pharmacy"
+    ],
+    "epochs_per_task": 15,
+    "learning_rate": 0.08,
+    "results": {
+      "Standard_SGD": {
+        "R_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.8,
+            1.0,
+            0.0
+          ],
+          [
+            0.4,
+            0.6,
+            1.0
+          ]
+        ],
+        "peak_accs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accs": [
+          0.4,
+          0.6,
+          1.0
+        ],
+        "avg_final_acc": 0.6667,
+        "forgetting_task1": 0.6,
+        "forgetting_task2": 0.4,
+        "avg_forgetting": 0.5,
+        "backward_transfer": -0.5
+      },
+      "Standard_Momentum": {
+        "R_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.8,
+            1.0,
+            0.0
+          ],
+          [
+            0.4,
+            0.2,
+            1.0
+          ]
+        ],
+        "peak_accs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accs": [
+          0.4,
+          0.2,
+          1.0
+        ],
+        "avg_final_acc": 0.5333,
+        "forgetting_task1": 0.6,
+        "forgetting_task2": 0.8,
+        "avg_forgetting": 0.7,
+        "backward_transfer": -0.7
+      },
+      "Delta_Gradient_Descent": {
+        "R_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.8,
+            1.0,
+            0.0
+          ],
+          [
+            0.4,
+            0.2,
+            1.0
+          ]
+        ],
+        "peak_accs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accs": [
+          0.4,
+          0.2,
+          1.0
+        ],
+        "avg_final_acc": 0.5333,
+        "forgetting_task1": 0.6,
+        "forgetting_task2": 0.8,
+        "avg_forgetting": 0.7,
+        "backward_transfer": -0.7
+      },
+      "MultiScale_Muon_M3": {
+        "R_matrix": [
+          [
+            0.8,
+            0.4,
+            0.0
+          ],
+          [
+            0.8,
+            0.6,
+            0.0
+          ],
+          [
+            0.8,
+            0.2,
+            0.6
+          ]
+        ],
+        "peak_accs": [
+          0.8,
+          0.6,
+          0.6
+        ],
+        "final_accs": [
+          0.8,
+          0.2,
+          0.6
+        ],
+        "avg_final_acc": 0.5333,
+        "forgetting_task1": 0.0,
+        "forgetting_task2": 0.4,
+        "avg_forgetting": 0.2,
+        "backward_transfer": -0.2
+      }
+    }
+  }
+}

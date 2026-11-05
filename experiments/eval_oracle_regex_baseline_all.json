@@ -1,0 +1,242 @@
+{
+  "config": {
+    "num_receipts": 5,
+    "ocr_engine": "oracle_gt",
+    "extractor": "regex_baseline",
+    "oracle": true,
+    "bootstrap_samples": 1000,
+    "seed": 42,
+    "timestamp": "2026-10-21T21:29:09"
+  },
+  "ocr_metrics": {
+    "cer": 0.0,
+    "wer": 0.0
+  },
+  "field_metrics_12": {
+    "mode": "12_fields",
+    "num_receipts": 5,
+    "per_field": {
+      "seller_name": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "seller_address": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "seller_phone": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "support": 0
+      },
+      "tax_id": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "invoice_number": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "timestamp": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "subtotal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "discount": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "support": 4
+      },
+      "vat_amount": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "total_cost": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "payment_method": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "items": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      }
+    },
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "mean_field_cer": 0.0
+  },
+  "field_metrics_mcocr_4": {
+    "mode": "mcocr_4_fields",
+    "num_receipts": 5,
+    "per_field": {
+      "SELLER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "SELLER_ADDRESS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "TIMESTAMP": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "TOTAL_COST": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "field_cer": 0.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      }
+    },
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "mean_field_cer": 0.0
+  },
+  "bootstrap_ci_12_micro_f1": {
+    "mean": 1.0,
+    "std": 0.0,
+    "ci_lower": 1.0,
+    "ci_upper": 1.0,
+    "formatted": "1.0000 ± 0.0000 (95% CI: [1.0000, 1.0000])"
+  },
+  "bootstrap_ci_mcocr_4_micro_f1": {
+    "mean": 1.0,
+    "std": 0.0,
+    "ci_lower": 1.0,
+    "ci_upper": 1.0,
+    "formatted": "1.0000 ± 0.0000 (95% CI: [1.0000, 1.0000])"
+  },
+  "item_metrics": {
+    "line_precision": 1.0,
+    "line_recall": 1.0,
+    "line_f1": 1.0,
+    "cell_precision": 1.0,
+    "cell_recall": 1.0,
+    "cell_f1": 1.0,
+    "matched_lines": 15,
+    "total_pred_lines": 15,
+    "total_gt_lines": 15
+  },
+  "reliability_metrics": {
+    "hallucination_rate": 0.0,
+    "hallucinated_fields_count": 0,
+    "total_extracted_fields_count": 49,
+    "total_cost_math_error_rate": 0.2,
+    "exact_receipt_acc": 1.0,
+    "flagged_rate": 0.2
+  },
+  "cost_metrics": {
+    "mean_processing_time_sec": 0.001701,
+    "p95_processing_time_sec": 0.004182,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0,
+    "mean_input_tokens": 0.0,
+    "mean_output_tokens": 0.0
+  }
+}

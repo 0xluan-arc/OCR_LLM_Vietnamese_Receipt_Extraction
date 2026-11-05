@@ -1,0 +1,15 @@
+SIEU THI CO.OPMART NGUYEN DINH CHIEU
+Dia chi: 168 Nguyen Dinh Chieu, Phuong 6, Quan 3
+MST: 0300624009
+So HD: COOP-2026-9011
+Ngay: 21/10/2026 10:45:10
+----------------------------------------
+Gao thom ST25 5kg      1   150.000  150.000
+Dau dau nanh Simply    2    65.000  130.000
+Nuoc ngot Coca Cola    6     9.000   54.000
+----------------------------------------
+Tam tinh:                         334.000
+Tong chiet khau:                  -16.000
+Thue VAT (8%):                     25.440
+Tong thanh toan:                  343.440
+Hinh thuc thanh toan: Chuyen khoan
