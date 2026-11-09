@@ -79,3 +79,8 @@ experiments/runs/*
 !experiments/runs/.gitkeep
 logs/
 *.log
+
+# Agent & Prompt custom configurations
+AGENTS.md
+GEMINI.md
+
